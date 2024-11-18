@@ -9,6 +9,65 @@
 #set document(title: title)
 #align(center, text(size: 18pt, weight: "bold")[#title])
 
+= Notes
+
+== General Framing
+- Continuum, not heterogeneity
+- Discretization for decision making purposes
+    - Not main focus, though
+- Without discretization, we can't draw any conclusions
+    - Just mapping all variation all at once
+- Start broad and general with examples
+    - Age classes -> individual OD -> diagnostic test
+    - Have to make decisions about how many classes (1 -> ABM)
+        - Represent heterogeneity without losing information or being overly complex
+        - LCA paper finds this for behavior
+        - OD paper finds this for classification of outbreaks
+- By discretizing, we can learn about the underlying processes:
+    - LCA:
+        - There is no inherent continuous measure of risk that we can measure, but LCA provides mechanism to group behaviors that can approximate risk, together
+        - How risk behaviors cluster
+        - How different the clusters are
+        - What is the resilience of the system / limits of action
+    - OD & CSD:
+        - What are the limits of possible discrimination
+        - How does individual level variability affect discriminatory ability
+
+
+
+== Beginning
+- If we discretize from continuous:
+    - How many?
+    - Where's the break point?
+
+- Then we can ask:
+    - What's the difference between the groups?
+        - May show that discretization doesn't provide us with groups that are meaningful in differences and/or action
+
+- Why do we want to categorize?
+    - Learn about:
+        - Clustering
+        - Scope of differences
+        - Discover unknown drivers that may not be present in the data (unsupervised clustering)
+            - Data4Action project
+            - First look for differences in behavior -> covariates
+    - To do stuff:
+        - Introduce sens/spec/accuracy/PPV
+            - Diagnostic tests (IgG & outbreaks)
+            - Talk in general terms
+
+== Chapters
+- LCA:
+- OD:
+    - Know discrete 2/3 groups (outbreak not present/small/large etc)
+    - We have noise in the system, so want to understand PPV of an alert
+        - Will depend upon the context (e.g. prevalence of outbreaks)
+    - Reactive setting
+- CSD:
+    - Similar to OD, but anticipating risk of outbreak risk
+
+#pagebreak()
+
 = Principal Points
 
 - Epidemiological triad:
