@@ -62,17 +62,15 @@
     - Much like Chapter 4, this work examines how uncertainty in individual-level discretization of heterogeneity can interact with the discretization at a population level (approaching $R#sub[#text[effective]] = 1$)
 - Even with 100% testing, we still have a partially observed system
     - We can never observe $R#sub[#text[effective]]$, only estimate $R#sub[#text[t]]$ as an approximation, so not possible to empirically study whether EWS metrics are predictive (in simulations we can know the true state of the whole system)
-
-
-#quote[
-    Fill in with key results once complete
-]
-
+- We show that the accuracy and predictive ability of outbreak alert systems depends upon the diagnostic uncertainty associated with the tests used to generate the time series the EWS are computed on.
+    - Under Poisson noise or low levels of dynamical noise, some EWS with RDTs can still be predictive of emergence
 - In the real world, there are logistical constraints that would lead to the inability to monitor systems under the most optimal conditions
+    - Our analysis required the need to tune the EWS alert criteria to the system properties
     - Likely not realistic to calculate multiple EWS metrics using different numbers of burn-in periods and percentile thresholds
     - Requires a decision to be made about whether to prioritize speed or sensitivity of an alert system
     - Given that prioritization, there may be an "optimum" approach that works in one context (e.g., noise shape & magnitude) and poorly in others, and many that are just slightly sub-optimal for that context but have a higher probability of producing acceptable results in other contexts
-        - #text(style: "italic", weight: "bold")[Add specific example from results]
+        - In Botswana, where the estimated incidence rates of rubella and measles are approximately equal, RDTs could be used effectively in outbreak warning systems.
+        - In Guinea Bissau where there is an order of magnitude more rubella, low accuracy this diagnostic uncertainty
 - This is about the approach to designing detection systems, not the design of any one surveillance system
 
 = Future Work
