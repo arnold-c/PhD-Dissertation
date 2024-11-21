@@ -46,8 +46,7 @@
   article_label: "lca_appendix"
 )
 
-== Results
-=== LCA Model Fitting
+== LCA Model Fitting
 
 #let lca_irp_table = csv("./supplemental_files/tables/lca-item-response-probs.csv")
 #let lca_irp_fill_table = csv("./supplemental_files/tables/lca-item-response-probs_fill.csv")
@@ -87,8 +86,8 @@
 <tbl-lca-props_4-class>
 
 
-=== Matrix Structure Sensitivity Analysis
-<matrix-structure-sensitivity-analysis>
+== Matrix Structure Sensitivity Analysis
+
 In the main body of the text, we present the results for the three-class model that corresponds to a scenario where public health measures (PHMs) reduce onwards risk of transmission (Supplemental Eq 1A), rather than conferring protection for the practitioner (Supplemental Eq 1B). Another alternative uses a single scaled value of $beta_(L L)$, representing all between-group interactions experiencing the same risk of transmission that is a fraction of the transmission observed between Low Adherence individuals (Supplemental Eq 1C).
 
 #set math.equation(numbering: "1")
@@ -118,7 +117,7 @@ rho mat(
 $
 Below are results for alternative scenarios, which show qualitatively similar results to the main body of the text, albeit with a wider distribution in the Approximate Bayesian Computation distance metrics.
 
-==== Eq 1B (PHMs Confer Protection)
+=== Eq 1B (PHMs Confer Protection)
 
 #figure(
   image(
@@ -143,7 +142,7 @@ Below are results for alternative scenarios, which show qualitatively similar re
 
 #pagebreak()
 
-==== Eq 1C (Identical Off-Diagonal Values)
+=== Eq 1C (Identical Off-Diagonal Values)
 
 #figure(
   image(
@@ -158,7 +157,7 @@ Below are results for alternative scenarios, which show qualitatively similar re
 #figure(
   image( "./supplemental_files/plots/intervention-stacked-bar_constant.png", width: 100% ),
   caption: [Identical off-diagonal values. A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0),
+  ],
   supplement: [Supplemental Figure]
-]
 )
 <fig-intervention-constant>

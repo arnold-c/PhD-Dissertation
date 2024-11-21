@@ -38,8 +38,7 @@
 )
 
 
-== Results
-=== Tables
+== Tables
 
 #let accuracy = csv("supplemental-appendix_files/tables/optimal-thresholds_accuracy.csv")
 #figure(
@@ -95,7 +94,7 @@
 <tbl-optimal-thresholds-delays>
 
 
-=== Figures
+== Figures
 
 #figure(
   image("supplemental-appendix_files/plots/optimal-thresholds_prop-outbreak-plot.svg"),
