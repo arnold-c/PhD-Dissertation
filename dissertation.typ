@@ -76,12 +76,19 @@
 
 #show: appendices
 
+#include "./chapter_2/d4a_supplemental-appendix.typ"
+#pagebreak()
+
+
 #include "./chapter_3/lca_supplemental-appendix.typ"
 #pagebreak()
 
 #include "./chapter_4/outbreak-detection_supplemental-appendix.typ"
+#pagebreak()
 
-// #heading("Appendix Title", supplement: "Appendix") <app_a>
+#include "./chapter_5/ews_supplemental-appendix.typ"
+#pagebreak()
+
 
 #set text(top-edge: "cap-height", bottom-edge: "baseline")
 #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)

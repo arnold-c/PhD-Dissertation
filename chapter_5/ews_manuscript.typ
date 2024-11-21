@@ -28,7 +28,8 @@
     In these situations, diagnostic test accuracy should not be a precursor to the implementation of an EWS metric-based alert system.
   ],
   word-count: false,
-  line-numbers: false
+  line-numbers: false,
+  article_label: "ews"
 )
 
 == Introduction

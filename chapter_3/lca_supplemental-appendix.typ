@@ -2,45 +2,44 @@
 
 #show: article.with(
   title: "Supplementary Material for Chapter 3",
-  authors: (
-    "Callum R.K. Arnold": (
-      affiliation: ("PSU-Bio", "CIDD"),
-      corresponding: "true",
-      email: "contact\@callumarnold.com",
-    ),
-    "Nita Bharti": (
-     affiliation: ("PSU-Bio", "CIDD"),
-    ),
-    "Cara Exten": (
-      affiliation: ("PSU-Nursing"),
-    ),
-    "Meg Small": (
-      affiliation: ("PSU-HHD", "PSU-SSRI"),
-    ),
-    "Sreenidhi Srinivasan": (
-      affiliation: ("CIDD", "Huck"),
-    ),
-    "Suresh V. Kuchipudi": (
-      affiliation: ("CIDD","PSU-Vet"),
-    ),
-    "Vivek Kapur": (
-      affiliation: ("CIDD","Huck", "PSU-Animal-Sci"),
-    ),
-    "Matthew J. Ferrari": (
-      affiliation: ("PSU-Bio", "CIDD"),
-    ),
-  ),
-  affiliations: (
-    "PSU-Bio": "Department of Biology, Pennsylvania State University, University Park, PA, USA 16802",
-    "CIDD": "Center for Infectious Disease Dynamics, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Nursing": "Ross & Carole Nese College of Nursing, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-HHD": "College of Health and Human Development, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-SSRI": "Social Science Research Institute, Pennsylvania State University, University Park, PA, USA 16802",
-    "Huck": "Huck Institutes of the Life Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Vet": "Department of Veterinary and Biomedical Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Animal-Sci": "Department of Animal Science, Pennsylvania State University, University Park, PA, USA 16802"
-  ),
-  keywords: ("Latent Class Analysis","SIR Model","Approximate Bayesian Computation","Behavioral Survey","IgG Serosurvey"),
+  header-title: "true",
+  // authors: (
+  //   "Callum R.K. Arnold": (
+  //     affiliation: ("PSU-Bio", "CIDD"),
+  //   ),
+  //   "Nita Bharti": (
+  //    affiliation: ("PSU-Bio", "CIDD"),
+  //   ),
+  //   "Cara Exten": (
+  //     affiliation: ("PSU-Nursing"),
+  //   ),
+  //   "Meg Small": (
+  //     affiliation: ("PSU-HHD", "PSU-SSRI"),
+  //   ),
+  //   "Sreenidhi Srinivasan": (
+  //     affiliation: ("CIDD", "Huck"),
+  //   ),
+  //   "Suresh V. Kuchipudi": (
+  //     affiliation: ("CIDD","PSU-Vet"),
+  //   ),
+  //   "Vivek Kapur": (
+  //     affiliation: ("CIDD","Huck", "PSU-Animal-Sci"),
+  //   ),
+  //   "Matthew J. Ferrari": (
+  //     affiliation: ("PSU-Bio", "CIDD"),
+  //   ),
+  // ),
+  // affiliations: (
+  //   "PSU-Bio": "Department of Biology, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "CIDD": "Center for Infectious Disease Dynamics, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "PSU-Nursing": "Ross & Carole Nese College of Nursing, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "PSU-HHD": "College of Health and Human Development, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "PSU-SSRI": "Social Science Research Institute, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "Huck": "Huck Institutes of the Life Sciences, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "PSU-Vet": "Department of Veterinary and Biomedical Sciences, Pennsylvania State University, University Park, PA, USA 16802",
+  //   "PSU-Animal-Sci": "Department of Animal Science, Pennsylvania State University, University Park, PA, USA 16802"
+  // ),
+  // keywords: ("Latent Class Analysis","SIR Model","Approximate Bayesian Computation","Behavioral Survey","IgG Serosurvey"),
   line-numbers: false,
   word-count: false,
   article_label: "lca_appendix"

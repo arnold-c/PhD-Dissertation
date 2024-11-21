@@ -2,6 +2,7 @@
 
 #show: article.with(
   title: "Supplemental Material for Chapter 2",
+  header-title: "true",
   authors: (
     "Callum R.K. Arnold": (
       affiliation: ("PSU-Bio", "CIDD"),

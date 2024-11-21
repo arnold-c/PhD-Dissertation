@@ -2,6 +2,7 @@
 
 #show: article.with(
   title: "A Longitudinal Study of the Impact of University Student Return to Campus on the SARS-CoV-2 Seroprevalence Among the Community Members",
+  header-title: "true",
   authors: (
     "Callum R.K. Arnold": (
       affiliation: ("PSU-Bio", "CIDD"),
