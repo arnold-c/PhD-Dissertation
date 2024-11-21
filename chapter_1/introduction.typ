@@ -1,11 +1,3 @@
-// #set page(numbering: "1/1")
-// #set par(first-line-indent: 2em, spacing: 2em)
-// #set text(top-edge: 0em, bottom-edge: -2em)
-//
-// #import "@preview/wordometer:0.1.4": word-count, word-count-of, total-words
-// #show: word-count.with(exclude: (heading, table, figure.caption, <additional-info>))
-// #text(weight: "bold", [Word count: #total-words])
-
 #heading("Introduction", supplement: "Chapter") <intro>
 
 Much of the world is complex, and in seeking to understand it we must make aggregations and assumptions to create groups _*[REF]*_.
@@ -17,6 +9,22 @@ Cases are counted, providing estimates of the number of new and cumulative infec
 This approach, however, leaves us with some questions; namely, how many groups are appropriate, how should the breakpoints between groups be defined, and are there meaningful differences between the groups that allow for inferences about the system in question?
 At every scale in an infectious disease system, from variability of infectivity within an individual's infection cycle, to defining outbreaks in a population from the accumulation of infections, these questions must be addressed.
 In this dissertation, I explore how variability in continuous measures can be discretized, and the interactions that arise from compounding these categorization decisions.
+
+The use of discretization is prevalent throughout the history of infectious disease biology and epidemiology; to more accurate mathematical models of disease transmission, detailed maps of contact rates have been generated that categorize a population into age groups and log the relative frequency of the interactions within and between these groups @mossongSocialContactsMixing2008 @klepacContagionBBCFour2018 @daviesAgedependentEffectsTransmission2020.
+Extending this work, networks of individuals and animals have been created to provide a more granular picture of interactions that can exist within an infectious disease system (human or animal), characterizing nodes and vertices to represent locations and movement patterns _*[REF]*_.
+Furthermore, there is variation that exists between the infectious properties of a population.
+The (basic) reproduction number is defined as the expected number of secondary cases generated from one infectious individual (in a completely susceptible population) @vynnyckyIntroductionInfectiousDisease2010a.
+While often used to describe the transmissibility of a disease within a population, it is a discretization of the underlying, continuous, infection hazard associated with each individual.
+As a consequence of variability in the pathogen load in an individual, the number of their contacts (and the susceptibility of those contacts), and the length of their infectious period, there is a distribution of secondary infection numbers that exists, and the reproduction number is the mean of this distribution.
+To gain a greater understanding of disease transmission within a population, individuals can be categorized as super-spreaders and super-shedders @lloyd-smithSuperspreadingEffectIndividual2005.
+Descriptions of heterogeneity also aid in the design of targeted interventions.
+By identifying the most at-risk groups in a population, limited resources can be most appropriately allocated @bryanBehaviouralScienceUnlikely2021.
+For example, accounting for injection drug use status can help target interventions to reduce human immunodeficiency virus (HIV) and Hepatitis C Virus incidence @levittInfectiousDiseasesInjection2020.
+
+Throughout my dissertation I specifically address the discretization of 3 categories of continuous phenomena: risk classes, infection status, and outbreaks.
+Chapters 2 & 3 address the definition of exposure and risk classes in the context of the COVID-19 pandemic and the implications for intervention effectiveness.
+In Chapters 4 & 5 I examine the impact of uncertainty in the binary classification of an individual's infection status via diagnostics on the determination of outbreak status, and consequentially, outbreak response and prediction.
+
 
 In the first half of my dissertation (Chapters 2 & 3), I explore how differences in infection rates between geographically co-incident groups can be evaluated in the context of the categorization process.
 In the spring of 2020, the COVID-19 pandemic resulted in many university campuses across the US to shut down, requiring their students to return to their respective homes _*[REF]*_.
@@ -57,4 +65,4 @@ Addressing the context explicitly when designing a reactive or proactive outbrea
 When evaluated in its entirety, my dissertation provides a clear and principled approach to evaluating the effects of categorizing continuous infectious disease data.
 I demonstrate that through acknowledging the imperfect nature of discretization, it is possible to identify meaningfully different clusters of individuals and outcomes that can inform our understanding of the populations most at risk of infection, and how outbreak surveillance systems can be designed to best address context-specific priorities.
 
-// #bibliography(style: "elsevier-vancouver", "./Dissertation.bib")
+// #bibliography(style: "elsevier-vancouver", "../Dissertation.bib")
