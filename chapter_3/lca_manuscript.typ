@@ -264,7 +264,6 @@ The datasets generated during and/or analyzed during the current study are not p
 #pagebreak()
 
 == Figures
-=== Figure 1
 
 #figure(
   image(
@@ -275,8 +274,6 @@ The datasets generated during and/or analyzed during the current study are not p
 Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing],
 )
 <fig-abc-distance-whiskers>
-
-=== Figure 2
 
 #figure(
   image(
@@ -293,7 +290,6 @@ Between-group mixing of 1.0 equates to between-group mixing as likely as within-
 #pagebreak()
 
 == Tables
-=== Table 1
 
 #let intention_table = csv("./manuscript_files/tables/intention-responses.csv")
 
@@ -309,8 +305,6 @@ Between-group mixing of 1.0 equates to between-group mixing as likely as within-
 
 #pagebreak()
 
-=== Table 2
-
 #let lca_fit_table = csv("./manuscript_files/tables/lca-fits.csv")
 
 #figure(
@@ -324,8 +318,6 @@ Between-group mixing of 1.0 equates to between-group mixing as likely as within-
 
 #pagebreak()
 
-=== Table 3
-
 #let lca_glm_fit_table = csv("./manuscript_files/tables/lca-glm-fits.csv")
 
 #figure(
@@ -338,8 +330,6 @@ Between-group mixing of 1.0 equates to between-group mixing as likely as within-
 <tbl-lca-glm-fits>
 
 #pagebreak()
-
-=== Table 4
 
 #let lca_irp_table = csv("./manuscript_files/tables/lca-item-response-probs.csv")
 #let lca_irp_fill_table = csv("./manuscript_files/tables/lca-item-response-probs_fill.csv")
@@ -376,8 +366,6 @@ Between-group mixing of 1.0 equates to between-group mixing as likely as within-
 <tbl-lca-props>
 
 #pagebreak()
-
-=== Table 5
 
 #let mice_glm_table = csv("./manuscript_files/tables/mice-glm-table.csv")
 
