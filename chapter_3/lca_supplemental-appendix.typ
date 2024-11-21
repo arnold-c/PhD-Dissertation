@@ -126,6 +126,7 @@ Below are results for alternative scenarios, which show qualitatively similar re
     width: 100%
   ),
   caption: [PHMs confer protection to the practitioner. Distribution of the distance from the ABC fits, with the minimum and maximum distances illustrated by the whiskers, and the median distance by the point. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing],
+  supplement: [Supplemental Figure]
 )
 <fig-abc-distance-whiskers-rows>
 
@@ -134,7 +135,8 @@ Below are results for alternative scenarios, which show qualitatively similar re
     "./supplemental_files/plots/intervention-stacked-bar_copy-rows.png",
     width: 100%
   ),
-  caption: [PHMs confer protection to the practitioner. A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0)]
+  caption: [PHMs confer protection to the practitioner. A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0)],
+  supplement: [Supplemental Figure]
 )
 <fig-intervention-rows>
 
@@ -149,12 +151,14 @@ Below are results for alternative scenarios, which show qualitatively similar re
     width: 100%
   ),
   caption: [Identical off-diagonal values. Distribution of the distance from the ABC fits, with the minimum and maximum distances illustrated by the whiskers, and the median distance by the point. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing],
+  supplement: [Supplemental Figure]
 )
 <fig-abc-distance-whiskers-constant>
 
 #figure(
   image( "./supplemental_files/plots/intervention-stacked-bar_constant.png", width: 100% ),
-  caption: [Identical off-diagonal values. A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0)
+  caption: [Identical off-diagonal values. A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity. Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0),
+  supplement: [Supplemental Figure]
 ]
 )
 <fig-intervention-constant>
