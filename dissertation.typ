@@ -15,7 +15,7 @@
 #import "psu_template.typ": *
 
 #show: psu_thesis.with(
-  title: "Dissertation Title",
+    title: "Opportunities & Uncertainty in the Quest to Understand Infectious Disease Outbreaks: Consequences of Creating Categories",
   author: "Callum R. K. Arnold",
   department: "Department of Biology",
   degree_type: "doctorate", // one of "doctorate" or "masters"
@@ -57,17 +57,17 @@
 #include "./chapter_1/introduction.typ"
 #pagebreak()
 
-// #include "./chapter_2/manuscript.typ"
-// #pagebreak()
-
-#include "./chapter_3/manuscript.typ"
+#include "./chapter_2/d4a_manuscript.typ"
 #pagebreak()
 
-#include "./chapter_4/manuscript.typ"
+#include "./chapter_3/lca_manuscript.typ"
 #pagebreak()
 
-// #include "./chapter_5/manuscript.typ"
-// #pagebreak()
+#include "./chapter_4/outbreak-detection_manuscript.typ"
+#pagebreak()
+
+#include "./chapter_5/ews_manuscript.typ"
+#pagebreak()
 
 #include "./chapter_6/synthesis.typ"
 #pagebreak()
@@ -76,10 +76,10 @@
 
 #show: appendices
 
-#include "./chapter_3/supplemental-appendix.typ"
+#include "./chapter_3/lca_supplemental-appendix.typ"
 #pagebreak()
 
-#include "./chapter_4/supplemental-appendix.typ"
+#include "./chapter_4/outbreak-detection_supplemental-appendix.typ"
 
 // #heading("Appendix Title", supplement: "Appendix") <app_a>
 
