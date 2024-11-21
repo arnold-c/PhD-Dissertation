@@ -27,11 +27,11 @@
     Not all EWS metrics performed equally; we find that the mean was the least affected by changes to the noise structure and magnitude, given a moderately accurate diagnostic test ($gt.eq 95%$ sensitive and specific), and the autocovariance and variance were the most predictive when the noise incidence did not exhibit large temporal variations.
     In these situations, diagnostic test accuracy should not be a precursor to the implementation of an EWS metric-based alert system.
   ],
-  word-count: true,
+  word-count: false,
   line-numbers: false
 )
 
-= Introduction
+== Introduction
 
 Despite sustained advances over decades, infectious diseases still pose a substantial threat to human life, causing an estimated 33.8 B infections, and 57.0 M deaths, per annum in 2019 (rising to an estimated 67.9 M deaths in 2021, as a result of the COVID-19 pandemic) @GBDResults.
 For many diseases, effective and affordable vaccines have played a substantial role in reducing this burden, averting 154 million deaths since the introduction of the Expanded Programme on Immunization in 1974 @shattockContributionVaccinationImproved2024.
@@ -62,8 +62,8 @@ Our goal is to characterize the performance of EWS metrics for outbreak detectio
 For diseases with non-specific symptoms, e.g., measles and rubella that often co-circulate and have similar clinical presentation @masreshaTrackingMeaslesRubella2024 @worldhealthorganizationMeaslesOutbreakGuide2022, an imperfect diagnostic test will result in false positive and negative cases.
 In this paper we show the conditions under which diagnostic uncertainty overwhelms the time series used to calculate EWS summary statistics, limiting the ability to predict epidemic transitions.
 
-= Materials & Methods
-== Model Structure
+== Materials & Methods
+=== Model Structure
 
 We modeled the dynamics of a target pathogen (measles), for which we want to detect outbreaks, with a stochastic compartmental non-age structured Susceptible-Exposed-Infected-Recovered (SEIR) model.
 The SEIR models was simulated using a Tau-leaping algorithm with a time step of 1 day, with binomial draws so that no jump resulted in negative compartment sizes @gillespieApproximateAcceleratedStochastic2001 @chatterjeeBinomialDistributionBased2005.
@@ -116,7 +116,7 @@ Each of the 100 emergent and 100 null time series are paired during the pre-proc
 
 All simulations and analysis was completed in Julia version 1.10.5 @bezansonJuliaFreshApproach2017, with all code stored at #link("https://github.com/arnold-c/CSDNoise").
 
-== Computing & Evaluating EWS
+=== Computing & Evaluating EWS
 Each set of null and emergent time series are aggregated by month and numerical estimates of the EWS metrics were then calculated on the aggregated time series, de-trended using backwards-facing moving averages with bandwidth $b = 52$ weeks.
 For example, the EWS metric, the mean, is given by the expectation:
 
@@ -174,8 +174,8 @@ If multiple hyperparameter combinations produce identical alert system accuracie
 After the optimal EWS hyperparameters have been selected, the accuracy of each EWS metric are compared across alert scenarios, at their respective maximal values.
 Finally, the speed and timing of detection relative to the critical transition is evaluated using Kaplan-Meier survival estimates @clarkSurvivalAnalysisPart2003.
 
-= Results
-== Correlation with Emergence
+== Results
+=== Correlation with Emergence
 
 The strength and direction of the raw correlation (Tau) between EWS metrics and the approach to the critical transition in emergent time series is strongly dependent upon the length of the time series evaluated; Tau is higher when calculated after the burn-in period for the top 5 ranked metrics (@tbl_csd-tau-ranking-perfect-test).
 Normalizing the correlation in the emergent time series against the correlation observed in null simulations yields comparable results when calculated from the full time series and only after the burn-in (@tbl_csd-tau-ranking-perfect-test).
@@ -220,7 +220,7 @@ At high dynamical noise, these correlations disappeared, with all EWS metrics ex
 )
 <tbl_csd-auc-magnitude-ranking-rdt-comparison>
 
-== Predictive Ability
+=== Predictive Ability
 
 Each alert scenario (the combination of diagnostic test, noise structure and magnitude, and EWS metric) produced its optimal accuracy at a different combination of EWS hyperparameters (the quantile threshold of the long-running metric distribution to be exceeded to return a flag, and the number of consecutive flags required to trigger an alert) (Supplemental Figures 9-12).
 At their respective maximal accuracies, the relative ranking of the EWS metrics computed with a perfect diagnostic test remained consistent to the ranking based upon $|"AUC" - 0.5|$: Mean (accuracy = 0.72), variance (0.72), autocovariance (0.7), index of dispersion (0.63), autocorrelation (0.62), skewness (0.6), kurtosis (0.58), and coefficient of variation (0.5) (Supplemental Table 3).
@@ -254,7 +254,7 @@ With high dynamical noise, an imperfect test failed to produce many alerts under
 <fig-autocovariance-survival>
 
 
-= Discussion
+== Discussion
 
 Outbreak detection using EWS metrics is robust to diagnostic uncertainty depending on the structure and magnitude of the noise due to non-target infections in the surveillance time series.
 Under Poisson noise, outbreak detection using a time-series of test-positive cases resulted in similar performance to a corresponding time series with a perfect diagnostic, regardless of the incidence of the non-target infections.
@@ -300,12 +300,12 @@ Our work expands upon these efforts, characterizing the limits of predictability
 //   numbering: none
 // )
 
-= Funding
+== Funding
 - #emph[What to put here?]
 
 
-= Acknowledgements
-== Author Contributions
+== Acknowledgements
+=== Author Contributions
 #emph[Conceptualization:] CA, MJF
 
 #emph[Data curation:] MJF, CA
@@ -322,11 +322,11 @@ Our work expands upon these efforts, characterizing the limits of predictability
 
 #emph[Writing - review and editing:] all authors.
 
-== Conflicts of Interest and Financial Disclosures
+=== Conflicts of Interest and Financial Disclosures
 The authors declare no conflicts of interest.
 
-== Data Access, Responsibility, and Analysis
+=== Data Access, Responsibility, and Analysis
 Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis. Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State University) conducted the data analysis.
 
-== Data Availability
+=== Data Availability
 All code and data for the simulations can be found at #link("https://github.com/arnold-c/CSDNoise")
