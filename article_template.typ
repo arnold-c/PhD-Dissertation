@@ -53,7 +53,7 @@
   // Line numbers
   line-numbers: false,
 
-    article_label: "",
+  article_label: "",
 
   // Paper's content
   body
@@ -61,25 +61,6 @@
     // set document(title: title, author: authors.keys())
     // set page(numbering: "1", number-align: center)
     // set text(font: font, size: font-size)
-   show heading.where(level: 2): it => {
-      let key = lower(it.body.text.replace(" ", "-"))
-      [#it #label(key)]
-    }
-
-    show heading.where(level: 2): it => block(above: 1.5em, below: 0.5em)[
-        #set text(1.03em, weight: "black")
-        #it.body
-    ]
-
-    show heading.where(level: 3): it => block(above: 1em, below: 0.5em)[
-        #set text(1.01em, weight: "black")
-        #it.body
-    ]
-
-    show heading.where(level: 4): it => block(above: 1em, below: 0.5em)[
-        #set text(1.01em, weight: "bold", style: "italic")
-        #it.body
-    ]
 
     show footnote.entry: it => [
         #set par(hanging-indent: 0.7em)
@@ -198,7 +179,7 @@
 
         // Author summary
         #if author-summary != [] {
-            heading(level: 1)[Author Summary]
+            heading(level: 2)[Author Summary]
             author-summary
 
             v(1em)

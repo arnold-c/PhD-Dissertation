@@ -222,6 +222,7 @@
 
   }
 
+{
     show heading: it => [
       #set align(center)
       #block(below: 2em)[#text(size: 14pt)[#upper(it)]]
@@ -281,6 +282,7 @@
       [#dedication]
       pagebreak(weak: true)
     }
+}
 
 
   show heading.where(level: 1): it => {
@@ -294,6 +296,26 @@
     ]
     v(0.5em)
   }
+     show heading.where(level: 2): it => {
+      let key = lower(it.body.text.replace(" ", "-"))
+      [#it #label(key)]
+    }
+
+    show heading.where(level: 2): it => block(above: 1.5em, below: 0.5em)[
+        #set text(1.03em, weight: "black")
+        #it.body
+    ]
+
+    show heading.where(level: 3): it => block(above: 1em, below: 0.5em)[
+        #set text(1.01em, weight: "black")
+        #it.body
+    ]
+
+    show heading.where(level: 4): it => block(above: 1em, below: 0.5em)[
+        #set text(1.01em, weight: "bold", style: "italic")
+        #it.body
+    ]
+
 
   set page(numbering: "1")
   set heading(numbering: "1.1")
