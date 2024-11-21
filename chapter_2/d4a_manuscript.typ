@@ -318,6 +318,37 @@ The datasets generated during and/or analyzed during the current study are not p
 
 #pagebreak()
 
+== Figures
+
+#figure(
+  image(
+    "./manuscript_files/comb-map-1.png",
+    width: 100%
+  ),
+  caption: [Map of Centre County, Pennsylvania, USA. Blue indicates the 5 townships and 1 borough that comprise the Centre Region. Red indicates the location of The Pennsylvania State University (PSU), University Park (UP) Campus. Inset illustrates the proportion of the county population in each region; PSU indicates the estimated student population that returned to campus for the Fall 2020 term.],
+)
+<fig-comb-map>
+
+#figure(
+  image(
+    "./manuscript_files/raw-prev-1.png",
+    width: 100%
+  ),
+  caption: [Raw seroprevalence (circles) with 95% binomial confidence intervals for the community residents at the first visit at the start of the Fall 2020 term (light blue), returning students at the end of the fall 2020 term (red), and community residents at either the first or the second visit after student departure (dark blue).],
+)
+<fig-raw-prev>
+
+#figure(
+  image(
+    "./manuscript_files/true-prev-1.png",
+    width: 100%
+  ),
+  caption: [Estimated true prevalence (circles, with 95% confidence intervals) among participants at each sampling interval corrected for estimated assay sensitivity as a function of the assumed assay specificity (x-axis). Light blue indicates community residents at the first visit at the start of the Fall 2020 term, red indicates returning students at the end of the Fall 2020 term, and dark blue indicates community residents at the second visit after student departure.],
+)
+<fig-true-prev>
+
+#pagebreak()
+
 == Tables
 
 #figure(
@@ -444,33 +475,3 @@ This category is aggregated to protect participant identities because no single 
 )
 <tbl-comb-or-table>
 
-#pagebreak()
-
-== Figures
-
-#figure(
-  image(
-    "./manuscript_files/comb-map-1.png",
-    width: 100%
-  ),
-  caption: [Map of Centre County, Pennsylvania, USA. Blue indicates the 5 townships and 1 borough that comprise the Centre Region. Red indicates the location of The Pennsylvania State University (PSU), University Park (UP) Campus. Inset illustrates the proportion of the county population in each region; PSU indicates the estimated student population that returned to campus for the Fall 2020 term.],
-)
-<fig-comb-map>
-
-#figure(
-  image(
-    "./manuscript_files/raw-prev-1.png",
-    width: 100%
-  ),
-  caption: [Raw seroprevalence (circles) with 95% binomial confidence intervals for the community residents at the first visit at the start of the Fall 2020 term (light blue), returning students at the end of the fall 2020 term (red), and community residents at either the first or the second visit after student departure (dark blue).],
-)
-<fig-raw-prev>
-
-#figure(
-  image(
-    "./manuscript_files/true-prev-1.png",
-    width: 100%
-  ),
-  caption: [Estimated true prevalence (circles, with 95% confidence intervals) among participants at each sampling interval corrected for estimated assay sensitivity as a function of the assumed assay specificity (x-axis). Light blue indicates community residents at the first visit at the start of the Fall 2020 term, red indicates returning students at the end of the Fall 2020 term, and dark blue indicates community residents at the second visit after student departure.],
-)
-<fig-true-prev>
