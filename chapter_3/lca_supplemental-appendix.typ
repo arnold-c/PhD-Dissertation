@@ -3,43 +3,6 @@
 #show: article.with(
   title: "Supplementary Material for Chapter 3",
   header-title: "true",
-  // authors: (
-  //   "Callum R.K. Arnold": (
-  //     affiliation: ("PSU-Bio", "CIDD"),
-  //   ),
-  //   "Nita Bharti": (
-  //    affiliation: ("PSU-Bio", "CIDD"),
-  //   ),
-  //   "Cara Exten": (
-  //     affiliation: ("PSU-Nursing"),
-  //   ),
-  //   "Meg Small": (
-  //     affiliation: ("PSU-HHD", "PSU-SSRI"),
-  //   ),
-  //   "Sreenidhi Srinivasan": (
-  //     affiliation: ("CIDD", "Huck"),
-  //   ),
-  //   "Suresh V. Kuchipudi": (
-  //     affiliation: ("CIDD","PSU-Vet"),
-  //   ),
-  //   "Vivek Kapur": (
-  //     affiliation: ("CIDD","Huck", "PSU-Animal-Sci"),
-  //   ),
-  //   "Matthew J. Ferrari": (
-  //     affiliation: ("PSU-Bio", "CIDD"),
-  //   ),
-  // ),
-  // affiliations: (
-  //   "PSU-Bio": "Department of Biology, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "CIDD": "Center for Infectious Disease Dynamics, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "PSU-Nursing": "Ross & Carole Nese College of Nursing, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "PSU-HHD": "College of Health and Human Development, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "PSU-SSRI": "Social Science Research Institute, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "Huck": "Huck Institutes of the Life Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "PSU-Vet": "Department of Veterinary and Biomedical Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-  //   "PSU-Animal-Sci": "Department of Animal Science, Pennsylvania State University, University Park, PA, USA 16802"
-  // ),
-  // keywords: ("Latent Class Analysis","SIR Model","Approximate Bayesian Computation","Behavioral Survey","IgG Serosurvey"),
   line-numbers: false,
   word-count: false,
   article_label: "lca_appendix"
@@ -87,9 +50,8 @@
 
 == Matrix Structure Sensitivity Analysis
 
-In the main body of the text, we present the results for the three-class model that corresponds to a scenario where public health measures (PHMs) reduce onwards risk of transmission (Supplemental Eq 1A), rather than conferring protection for the practitioner (Supplemental Eq 1B). Another alternative uses a single scaled value of $beta_(L L)$, representing all between-group interactions experiencing the same risk of transmission that is a fraction of the transmission observed between Low Adherence individuals (Supplemental Eq 1C).
+In the main body of the text, we present the results for the three-class model that corresponds to a scenario where public health measures (PHMs) reduce onwards risk of transmission (@eq_lca-supp-mixing-matrices\A), rather than conferring protection for the practitioner (@eq_lca-supp-mixing-matrices\B). Another alternative uses a single scaled value of $beta_(L L)$, representing all between-group interactions experiencing the same risk of transmission that is a fraction of the transmission observed between Low Adherence individuals (@eq_lca-supp-mixing-matrices\C).
 
-#set math.equation(numbering: "1")
 #let boldred(x) = text(fill: rgb("#8B0000"), $bold(#x)$)
 
 $
@@ -114,6 +76,8 @@ rho mat(
   boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)), beta_(L L) ;
 ) &&#text[mixing structure] bold(C)\
 $
+<eq_lca-supp-mixing-matrices>
+
 Below are results for alternative scenarios, which show qualitatively similar results to the main body of the text, albeit with a wider distribution in the Approximate Bayesian Computation distance metrics.
 
 === Eq 1B (PHMs Confer Protection)

@@ -1,17 +1,3 @@
-// #set heading(numbering: "1.1")
-// #set math.equation(numbering: "(1)" )
-//
-// #let title = "Thesis"
-//
-// #set document(title: title)
-// #align(center, text(size: 18pt, weight: "bold")[#title])
-//
-//
-// #include "chapter_3/manuscript.typ"
-//
-// #include "chapter_4/manuscript.typ"
-//
-
 #import "psu_template.typ": *
 
 #show: psu_thesis.with(
@@ -72,8 +58,6 @@
 #include "./chapter_6/synthesis.typ"
 #pagebreak()
 
-#pagebreak()
-
 #show: appendices
 
 #include "./chapter_2/d4a_supplemental-appendix.typ"
@@ -89,10 +73,14 @@
 #include "./chapter_5/ews_supplemental-appendix.typ"
 #pagebreak()
 
+#show heading.where(level: 1): it => {it.body}
 
 #set text(top-edge: "cap-height", bottom-edge: "baseline")
 #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
-#bibliography(style: "elsevier-vancouver", "./Dissertation.bib") <bibliography>
+#bibliography(
+    style: "elsevier-vancouver",
+    "./Dissertation.bib"
+) <bibliography>
 
 #pagebreak()
 

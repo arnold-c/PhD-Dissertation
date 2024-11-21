@@ -3,62 +3,6 @@
 #show: article.with(
   title: "Supplemental Material for Chapter 2",
   header-title: "true",
-  authors: (
-    "Callum R.K. Arnold": (
-      affiliation: ("PSU-Bio", "CIDD"),
-    ),
-    "Sreenidhi Srinivasan": (
-    affiliation: ("CIDD", "Huck"),
-    ),
-    "Sophie Rodriguez": (
-    affiliation: ("Huck")
-    ),
-    "Natalie Ryzdak": (
-      affiliation: ("PSU-Vet")
-    ),
-    "Catherine M. Herzog": (
-      affiliation: ("CIDD", "Huck"),
-    ),
-    " Abhinay Gontu": (
-      affiliation: ("PSU-Vet"),
-    ),
-    "Nita Bharti": (
-     affiliation: ("PSU-Bio", "CIDD"),
-    ),
-    "Meg Small": (
-      affiliation: ("PSU-HHD", "PSU-SSRI"),
-    ),
-    "Connie J. Rogers": (
-      affiliation: ("PSU-Nutrition"),
-    ),
-    "Margeaux M. Schade": (
-      affiliation: ("PSU-SSRI"),
-    ),
-    "Suresh V. Kuchipudi": (
-      affiliation: ("CIDD","PSU-Vet"),
-    ),
-    "Vivek Kapur": (
-      affiliation: ("CIDD","Huck", "PSU-Animal-Sci"),
-    ),
-    "Andrew F. Read": (
-      affiliation: ("PSU-Bio", "CIDD", "Huck"),
-    ),
-    "Matthew J. Ferrari": (
-      affiliation: ("PSU-Bio", "CIDD"),
-    ),
-  ),
-  affiliations: (
-    "PSU-Bio": "Department of Biology, Pennsylvania State University, University Park, PA, USA 16802",
-    "CIDD": "Center for Infectious Disease Dynamics, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Nursing": "Ross & Carole Nese College of Nursing, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-HHD": "College of Health and Human Development, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Nutrition": "Department of Nutritional Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-SSRI": "Social Science Research Institute, Pennsylvania State University, University Park, PA, USA 16802",
-    "Huck": "Huck Institutes of the Life Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Vet": "Department of Veterinary and Biomedical Sciences, Pennsylvania State University, University Park, PA, USA 16802",
-    "PSU-Animal-Sci": "Department of Animal Science, Pennsylvania State University, University Park, PA, USA 16802"
-  ),
-  keywords: ("Latent Class Analysis","SIR Model","Approximate Bayesian Computation","Behavioral Survey","IgG Serosurvey"),
   line-numbers: false,
   word-count: false,
   article_label: "data4action_appendix"

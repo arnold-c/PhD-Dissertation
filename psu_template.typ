@@ -71,8 +71,11 @@
   )
   let back_matter_sections = (
     [Bibliography],
-    [Vita]
   )
+  let excluded_bm_sections = (
+    [Vita],
+  )
+
   let line_spacings = if line-spacing == 1 {
     (top-edge: "cap-height", bottom-edge: "baseline", leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
   } else if line-spacing == 1.5 {
@@ -114,6 +117,7 @@
     v(10mm)
     [#date.month #date.year]
   }
+
   pagebreak(weak: true)
 
   // Front matter
@@ -128,11 +132,12 @@
         text[#member.title]
         v(12pt)
     }
+
     pagebreak(weak: true)
 
     {
-        set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
-        set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
+      set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
+      set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
 
       heading(level: 1)[Abstract]
       [#abstract]
@@ -141,6 +146,7 @@
 
     block(below: 2em)[#heading[Table of Contents]]
 
+    // Get TOC for front matter
     context {
       let items = query(heading)
       let fm = items.filter(it => it.level == 1)
@@ -155,13 +161,16 @@
         [\ ]
       }
     }
+
     v(1em)
+
+    // Get TOC for chapters
     context {
       let items = query(heading)
       let lines = items.filter(it => it.level == 1)
         .filter(it => it.body not in front_matter_sections)
         .filter(it => it.body not in excluded_fm_sections)
-        .filter(it => it.body not in back_matter_sections)
+        .filter(it => it.body not in excluded_bm_sections)
 
       let line_locs = lines.map(it => it.location())
       for (i, line) in lines.enumerate() {
@@ -217,12 +226,12 @@
         v(1em)
       }
     }
-    pagebreak(weak: true)
 
+    pagebreak(weak: true)
 
   }
 
-{
+  {
     show heading: it => [
       #set align(center)
       #block(below: 2em)[#text(size: 14pt)[#upper(it)]]
@@ -243,6 +252,7 @@
         v(0.5em)
       }
     }
+
     pagebreak(weak: true)
 
     heading[List of Tables]
@@ -259,6 +269,7 @@
         v(0.5em)
       }
     }
+
     pagebreak(weak: true)
 
     if abbreviations != [] {
@@ -266,7 +277,6 @@
       [#abbreviations]
       pagebreak(weak: true)
     }
-
 
     set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
     set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
@@ -282,11 +292,13 @@
       [#dedication]
       pagebreak(weak: true)
     }
-}
+  }
 
-
+  // Main Chapter Headings - reset figure counters to provide chapter-specific numbering
   show heading.where(level: 1): it => {
     set text(18pt)
+    counter(figure.where(kind:image)).update(0)
+    counter(figure.where(kind:table)).update(0)
     if it.supplement != auto [
       #it.supplement
       #counter(heading).display() |
@@ -296,27 +308,32 @@
     ]
     v(0.5em)
   }
-     show heading.where(level: 2): it => {
-      let key = lower(it.body.text.replace(" ", "-"))
-      [#it #label(key)]
-    }
 
-    show heading.where(level: 2): it => block(above: 1.5em, below: 0.5em)[
-        #set text(1.03em, weight: "black")
-        #it.body
-    ]
+  show heading.where(level: 2): it => block(above: 1.5em, below: 0.5em)[
+      #set text(1.03em, weight: "black")
+      #it.body
+  ]
 
-    show heading.where(level: 3): it => block(above: 1em, below: 0.5em)[
-        #set text(1.01em, weight: "black")
-        #it.body
-    ]
+  show heading.where(level: 3): it => block(above: 1em, below: 0.5em)[
+      #set text(1.01em, weight: "black")
+      #it.body
+  ]
 
-    show heading.where(level: 4): it => block(above: 1em, below: 0.5em)[
-        #set text(1.01em, weight: "bold", style: "italic")
-        #it.body
-    ]
+  show heading.where(level: 4): it => block(above: 1em, below: 0.5em)[
+      #set text(1.01em, weight: "bold", style: "italic")
+      #it.body
+  ]
 
+  // Set figure numbers equal to Chapter number `.` figure number
+  set figure(numbering: n => {
+	let hdr = counter(heading).get().first()
+	let num = query(
+		selector(heading).before(here())
+	).last().numbering
+	numbering(num, hdr, n)
+  })
 
+  // Set up page numbering for rest of dissertation
   set page(numbering: "1")
   set heading(numbering: "1.1")
   counter(page).update(1)

@@ -1,5 +1,3 @@
-#set page(numbering: "1/1")
-
 #heading("Synthesis", supplement: "Chapter") <synthesis>
 
 There is a growing body of literature that focusses on uncertainty in disease transmission; from incorporating viral dynamics into mechanistic models of disease @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024, to accounting for reporting and testing uncertainty in estimates of the _real-time_ reproduction number ($R_"t"$) @pitzerImpactChangesDiagnostic2021.
