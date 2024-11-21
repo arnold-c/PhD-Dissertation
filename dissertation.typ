@@ -35,11 +35,6 @@
   abbreviations: [#include("./additional_sections/abbreviations.typ")]
 )
 
-// Here you can include chapters (or anything) written in seperate files. One is given as an example
-// #include "ch1.typ"
-// #set text(top-edge: 0em, bottom-edge: -1em)
-// #set par(first-line-indent: 2em, spacing: 2em)
-
 #include "./chapter_1/introduction.typ"
 #pagebreak()
 

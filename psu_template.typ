@@ -17,7 +17,7 @@
         return value + "." + nums.pos().slice(1).map(str).join(".")
       }
     }
-  );
+  )
 
   body
 }
@@ -166,6 +166,8 @@
 
     // Get TOC for chapters
     context {
+      // Hack to correct appendix numbering in TOC
+      let letter_nums = "ABCDEFGHIJ"
       let items = query(heading)
       let lines = items.filter(it => it.level == 1)
         .filter(it => it.body not in front_matter_sections)
@@ -175,19 +177,26 @@
       let line_locs = lines.map(it => it.location())
       for (i, line) in lines.enumerate() {
         let string = [
-          #if line.supplement != auto [
-            #line.supplement
-            #counter(heading).at(line.location()).first() |
+
+          #if line.supplement != auto and line.body not in back_matter_sections [
+            #let header_num = counter(heading).at(line.location()).first()
+            #let num = [
+              #if line.supplement == [Appendix] {
+                letter_nums.at(header_num - 1)
+              } else { header_num }
+            ]
+            #line.supplement #num |
           ]
           #line.body
           #box(width: 1fr, repeat[.])
           #counter(page).at(line.location()).first()
           \
         ]
+
         if line.has("label") {
           link(line.label, string)
         } else {
-          string
+          link(line.location(), string)
         }
 
         let next_i = i+1
@@ -206,6 +215,7 @@
           )
         }
 
+        // Skip level 1 headings to avoid re-listing in TOC
         for h in its {
           if h.level == 1 {
             continue
@@ -219,8 +229,7 @@
           if h.has("label") {
             link(h.label, string)
           } else {
-            let loc = h.location()
-            link(loc)[#string]
+            link(h.location(), string)
           }
         }
         v(1em)
