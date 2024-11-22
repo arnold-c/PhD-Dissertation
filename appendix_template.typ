@@ -14,17 +14,6 @@
   // Paper's content
   body
 ) = {
-  if header-title == "true" {
-    header-title = title
-  }
-
-
-  set page(
-    header: [
-      #set text(8pt)
-      #align(right)[#header-title]
-    ]
-  )
 
   set math.equation(numbering: "1", supplement: "Supplemental")
 
@@ -58,11 +47,24 @@
   set table(fill: (x, y) => if y == 0 { gray })
   show table.cell.where(y: 0): strong
 
+  // Add header titles to all pages after the 1st (which contains the title)
+  set page(header: context {
+    let next_h1 = query(selector(heading.where(level: 1))
+      .after(here()))
+      .at(0)
+      .location()
+      .page()
+
+    if here().page() < next_h1 {
+      let header-title = if header-title == "true" { title }
+      align(right)[#header-title]
+    }
+  })
+
   block([
-      #set text(top-edge: "cap-height", bottom-edge: "baseline")
-      #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
-      // #set heading(numbering: "A")
-      #heading(title, supplement: "Appendix") #label(article_label)
+    #set text(top-edge: "cap-height", bottom-edge: "baseline")
+    #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
+    #heading(title, supplement: "Appendix") #label(article_label)
   ])
 
   body
