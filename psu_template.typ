@@ -303,6 +303,15 @@
     }
   }
 
+  // Set up page numbering for rest of dissertation
+  set page(numbering: "1")
+  set heading(numbering: "1.1")
+  counter(page).update(1)
+
+  // Set up line spacing for chapters
+  set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
+  set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
+
   // Main Chapter Headings - reset figure counters to provide chapter-specific numbering
   show heading.where(level: 1): it => {
     set text(18pt)
@@ -342,10 +351,6 @@
 	numbering(num, hdr, n)
   })
 
-  // Set up page numbering for rest of dissertation
-  set page(numbering: "1")
-  set heading(numbering: "1.1")
-  counter(page).update(1)
 
   body
 }
