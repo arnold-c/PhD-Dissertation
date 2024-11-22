@@ -241,10 +241,11 @@
   }
 
   {
-    show heading: it => [
+    show heading.where(level: 1): it => [
       #set align(center)
       #block(below: 2em)[#text(size: 14pt)[#upper(it)]]
     ]
+
 
     // We have to add headings to these lists to include them in the overall ToC
     heading[List of Figures]
