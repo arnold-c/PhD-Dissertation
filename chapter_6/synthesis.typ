@@ -31,7 +31,8 @@ Doing so placed realistic bounds on the expected benefit of an intervention, whi
 As a large proportion of the population were already in the most adherent group that always intended to follow public health guidance, interventions targets at them would serve no direct effect: their risk of transmission was dictated by interactions with less-adherent individuals.
 
 If we are to design effective interventions, it is essential to first characterize the limits of what can realistically be achieved.
-For example, it is well known that supplemental immunization activities aimed to minimize the effects of an outbreak, reactively or prospectively, are partially limited by the vaccination coverage that can be achieved: those who are able to access the care are more likely to also be individuals who can attend routine immunizations _*[Portnoy REF]*_.
+For example, supplemental immunization activities aimed to minimize the effects of an outbreak, reactively or prospectively, are partially limited by the vaccination coverage that can be achieved.
+While SIAs can achieve modest improvements over routine immunization coverage, individuals who are able to access the care provided by SIAs are more likely to also be individuals who can attend routine immunizations, minimizing the potential impact of inflated efforts through traditional mechanisms @portnoyImpactMeaslesSupplementary2018 @portnoyComparativeDistributionalImpact2020 @lesslerMeasuringPerformanceVaccination2011.
 Incorporating access and dose redundancy data can provide more realistic estimates on the effectiveness of future efforts.
 Similarly, incorporating behavioral information into epidemiological models can shed light on the potential effectiveness of vaccination campaigns.
 Defining latent groups of individuals by vaccine-seeking or hesitancy behaviors, it would be possible to calculate an expected uptake, augmenting estimates provided through access data.
@@ -41,18 +42,18 @@ Modeling these latent sentiments offers a mechanism to account for these discrep
 Not only does this approach potentially provide more accurate projections of the limits of vaccination coverage, but may also improve disease burden estimates by describing _who_ can be immunized; overlap between access and healthcare-seeking behavior with disease vulnerability will highlight gaps that need to be overcome.
 
 This approach can also shed light on effectiveness of non-pharmaceutical interventions in heterogeneous populations, where traditional measures derived from demographic data, such as age-based mixing matrices, may over-simplify the dynamics.
-Characterizing complex network structures has been a point of focus in the study and prevention of sexually transmitted infections (STIs) _*[REF]*_.
-However, the process if often laborious, disease-specific, and subject to change _*[REF]*_.
+Characterizing complex network structures has been a point of focus in the study and prevention of sexually transmitted infections (STIs) @kretzschmarMeasuresConcurrencyNetworks1996 @whittlesDynamicPowerlawSexual2019 @spicknallModelingImpactSexual2022.
+However, the process if often laborious, requires the computation of difficult-to-calculate network measures like partner concurrency, and is subject to change @uongAssessmentBiasEstimates2020 @drumrightPeopleReallyKnow2004 @nelsonMeasuringSexPartner2007.
 In such systems heterogeneity exists across multiple facets, which may not be adequately captured by standard discretizations.
-The incorporation of different data sources and categorization approaches may serve as a beneficial middle ground, allowing for a more accurate depiction of the true heterogeneity in disease risk than age classes, while also requiring less hands-on data collection than mapping contact networks; behavioral surveys can be implemented online, and pose potentially less sensitive questions that may otherwise act as a barrier to participation.
-This is particularly important when designing interventions for novel pathogens, where the most at-risk groups, and therefore most beneficial to target, might not translate to previously observed pathogens and outbreaks and may change over time, and urgent actions are necessary to minimize the impact _*[REF]*_.
+The incorporation of different data sources and categorization approaches may serve as a beneficial middle ground, allowing for a more accurate depiction of the true heterogeneity in disease risk than provided by age classes and demographic data, while also requiring less hands-on data collection than mapping contact networks; behavioral surveys can be implemented online, and pose potentially less sensitive questions than necessary to build a sexual network, which may act as a barrier to participation @itoExploringSexualContact2022.
+This is particularly important when designing interventions for novel pathogens, where information is limited, prior observations may not hold and are likely to change over time, and urgent actions are necessary to minimize the impact @glennonChallengesModelingEmergence2021 @lloyd-smithNineChallengesModelling2015.
 
 == Discretization of Infection Status
 
 It is imperative to evaluate the effects of discretizing not only exposure classes, but also the outcomes of an infectious disease system.
 In public health surveillance programs, incidence of disease occurrence must be tabulated before the need for and level of action can be decided upon.
 Uncertainty in the observational process can occur through two mechanisms: uncertainty in who and how many individuals are counted (observed and tested), and uncertainty in the underlying test results.
-Incorporating uncertainty in the reporting of cases has been of increasing interest in the parameterization of mathematical models, particularly for the estimation of $R_"t"$ @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 and disease burden _*[REF]*_.
+Incorporating uncertainty in the reporting of cases has been of increasing interest in the parameterization of mathematical models, particularly for the estimation of $R_"t"$ @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 and disease burden @shattockContributionVaccinationImproved2024 @vosGlobalBurden3692020 @winterFeasibilityMeaslesRubella2022.
 However, the accuracy of the diagnostic used to make this determination affects the incidence, necessarily turning a quantitative input (pathogen load/host response) into a binary value, with associated classification errors.
 Previous inclusions of diagnostic uncertainty amount to under-reporting as only one pathogen is simulated, removing the opportunity for false-positive test results @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024.
 
@@ -90,16 +91,6 @@ By relaxing prior constraints on the outbreak detection system, such as the numb
 In doing so, this opens the opportunity for the development and use of cheaper, less labor intensive, and logistically simpler diagnostics, such as (rapid) lateral flow diagnostic assays  @brownRapidDiagnosticTests2020 @warrenerEvaluationRapidDiagnostic2023 @millerAddressingBarriersDevelopment2015.
 Further, we identified conditions where accuracy was fundamentally limited; even with a perfect test, EWS occasionally trigger under null simulations due to endemic and imported cases.
 These boundaries can only be illustrated through comprehensive exploration across all axes of the surveillance system.
-
-#quote[
-  These two chapters illustrate the complexity in evaluating the performance (accuracy) of a detection system because the outcome depends on multiple interacting axes (% tested, test characteristics, threshold, shape and magnitude of noise). We found that similar accuracy could be achieved for a range of setting by trading off characteristics of these axes of the surveillance system. Further,
-
-  we identified regions of dynamics where accuracy was fundamentally limited — which can only be illustrated by considering the performance across all these axes.
-
-  Within Chapter 5, for example, there are numerous opportunities to balance the speed of detection against the frequency of false alerts.
-  Through the approach laid out in this dissertation, an explicit choice about the weight of speed against false positive rates must be made for the calculation of the accuracy of the alert system.
-  Furthermore, once parameters have been set and simulations run,
-]
 
 Assuming this approach provides public health personnel and policy makers the ability to consider all options and "optimize" the surveillance system to best suit their needs.
 Trade-offs and the balance of priorities must be evaluated on a context-specific basis.
@@ -148,4 +139,4 @@ Throughout my dissertation I characterize the benefits and pitfalls of discretiz
 This topic presents many exciting avenues for future research, with those that address findings from all levels of the infection observation process offering the most opportunity to minimize burden and save lives.
 
 
-#bibliography(style: "elsevier-vancouver", "../Dissertation.bib")
+// #bibliography(style: "elsevier-vancouver", "../Dissertation.bib")
