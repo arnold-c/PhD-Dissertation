@@ -214,7 +214,7 @@ Future research should consider including perceived agency and efficacy for PHM 
 This work was supported by funding from the Office of the Provost and the Clinical and Translational Science Institute, Huck Life Sciences Institute, and Social Science Research Institutes at the Pennsylvania State University.
 The project described was supported by the National Center for Advancing Translational Sciences, National Institutes of Health, through Grant UL1 TR002014.
 The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH.
-The funding sources had no role in the collection, analysis, interpretation, or writing of the report.
+The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
 === Conflicts of Interest and Financial Disclosures
 The authors declare no conflicts of interest.

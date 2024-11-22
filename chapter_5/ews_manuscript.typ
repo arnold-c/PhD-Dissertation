@@ -302,7 +302,10 @@ Our work expands upon these efforts, characterizing the limits of predictability
 // )
 
 == Funding
-- #emph[What to put here?]
+
+This work was supported by the Bill & Melinda Gates Foundation through grant No. INV-016091_2020.
+This project was also supported by the National Science Foundation, by grant: NSF-NIH-NIFA Ecology and Evolution of Infectious Disease award DEB 1911962.
+The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
 
 == Acknowledgements

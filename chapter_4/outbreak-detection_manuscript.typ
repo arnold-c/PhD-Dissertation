@@ -315,11 +315,11 @@ However, the general patterns should hold, and more importantly, the analysis fr
 
 
 #pagebreak()
-== Funding
-- #emph[Something about GAVI/Gates]
 
-The content is solely the responsibility of the authors and does not necessarily represent the official views of #highlight[...].
-The funding sources had no role in the collection, analysis, interpretation, or writing of the report.
+== Funding
+
+This work was supported by Gavi, the Vaccine Alliance, through Contract No. 266639 PO4500012795, A01.
+The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
 == Acknowledgements
 === Author Contributions
