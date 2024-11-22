@@ -1,7 +1,7 @@
 #import "psu_template.typ": *
 
 #show: psu_thesis.with(
-    title: "Opportunities & Uncertainty in the Quest to Understand Infectious Disease Outbreaks: Consequences of Creating Categories",
+    title: "Constructing Categories in Infectious Disease Outbreaks: Opportunities, Uncertainty, and Consequences",
   author: "Callum R. K. Arnold",
   department: "Department of Biology",
   degree_type: "doctorate", // one of "doctorate" or "masters"
@@ -30,7 +30,7 @@
   ),
   font-size: 12pt,
   line-spacing: 2,
-  // abstract: [#include("./additional_sections/abstract.typ")],
+  abstract: [#include("./additional_sections/abstract.typ")],
   acknowledgements: [#include("./additional_sections/acknowledgements.typ")],
   abbreviations: [#include("./additional_sections/abbreviations.typ")]
 )
