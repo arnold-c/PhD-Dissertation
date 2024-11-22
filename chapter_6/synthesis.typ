@@ -82,12 +82,26 @@ Additionally, the evaluation of EWS performance required the alert in emergent s
 As this tipping point essentially acts as a necessary precursor to an outbreak (though exceptions can occur due to the stochastic nature of infectious disease transmission), each warning would be provided with sufficient time for action to potentially avert an outbreak.
 
 The primary focus of this section of work (Chapters 4 & 5) has been to motivate new approaches to the design of surveillance systems at large, not any one specific implementation.
+These two chapters illustrate the complexity in evaluating the performance of reactive and proactive outbreak detection systems.
+The system's accuracy is dependent on the interaction between multiple axes: the proportion of individuals tested, the diagnostic test characteristic, the shape and magnitude of the background noise, the and the criteria required to trigger an alert.
+Each of which can be adjusted, and without consideration of the knock-on effects, can easily lead to a suboptimal path being followed.
+We found that similar accuracy could be achieved for a range of conditions by balancing traits of each of the levers of the surveillance system.
+By relaxing prior constraints on the outbreak detection system, such as the number of test positives (Chapter 5) or the maximum number of consecutive data points (Chapter 5) required to trigger and outbreak alert, for example, it is possible for imperfect diagnostic tests to obtain outbreak detection performance that mirrors performance under perfect tests.
+In doing so, this opens the opportunity for the development and use of cheaper, less labor intensive, and logistically simpler diagnostics, such as (rapid) lateral flow diagnostic assays  @brownRapidDiagnosticTests2020 @warrenerEvaluationRapidDiagnostic2023 @millerAddressingBarriersDevelopment2015.
+Further, we identified conditions where accuracy was fundamentally limited; even with a perfect test, EWS occasionally trigger under null simulations due to endemic and imported cases.
+These boundaries can only be illustrated through comprehensive exploration across all axes of the surveillance system.
 
-Chapter 4 highlights the need to consider all sources of uncertainty arising from discretization when designing an infection surveillance program.
+#quote[
+  These two chapters illustrate the complexity in evaluating the performance (accuracy) of a detection system because the outcome depends on multiple interacting axes (% tested, test characteristics, threshold, shape and magnitude of noise). We found that similar accuracy could be achieved for a range of setting by trading off characteristics of these axes of the surveillance system. Further,
 
-#quote[These two chapters illustrate the complexity in evaluating the performance (accuracy) of a detection system because the outcome depends on multiple interacting axes (% tested, test characteristics, threshold, shape and magnitude of noise). We found that similar accuracy could be achieved for a range of setting by trading off characteristics of these axes of the surveillance system. Further, we identified regions of dynamics where accuracy was fundamentally limited — which can only be illustrated by considering the performance across all these axes.]
+  we identified regions of dynamics where accuracy was fundamentally limited — which can only be illustrated by considering the performance across all these axes.
 
+  Within Chapter 5, for example, there are numerous opportunities to balance the speed of detection against the frequency of false alerts.
+  Through the approach laid out in this dissertation, an explicit choice about the weight of speed against false positive rates must be made for the calculation of the accuracy of the alert system.
+  Furthermore, once parameters have been set and simulations run,
+]
 
+Assuming this approach provides public health personnel and policy makers the ability to consider all options and "optimize" the surveillance system to best suit their needs.
 Trade-offs and the balance of priorities must be evaluated on a context-specific basis.
 There has long been a tension in designing disease surveillance programs: the needs of an individual may be at odds with those of the wider population.
 During the early stages of the COVID-19 pandemic, when vaccines were first being developed and their potential effectiveness unknown, there were discussions around who should be prioritized during initial roll-outs: the elderly and those with known co-morbidities, who would most likely receive the largest direct benefit from immunization; or younger individuals with larger numbers of contacts, whose vaccination would most likely result in the largest reduction in incidence, with an indirect benefit to vulnerable individuals @bubarModelinformedCOVID19Vaccine2021.
@@ -95,10 +109,12 @@ For infectious disease outbreak surveillance, a similar conflict exists.
 Systems are often built upon routine, passive, surveillance that uses health facility visits for case identification @craggOutbreakResponse2018 @gieseckeRoutineSurveillanceInfectious2016.
 As a result, reducing the accuracy of the diagnostic test used may be associated with a corresponding reduction in cost and technical requirements, allowing for a greater proportion of the population to be tested.
 This, in turn, may improve outbreak detection, providing an indirect effect to any specific individual, but at the expense of a more accurate diagnosis and care provided to the patient seeking treatment at a healthcare facility.
+In a region with high disease burden and large period outbreaks, this may be an acceptable trade-off; in other locations, unacceptable.
 
 In addition to ethics-based decisions, countries must decide how to balance the relative costs and benefits of more sensitive versus specific alert systems.
 My analysis does not represent a true optimization; the partial observation of the system necessitates decisions and actions be made on the basis of incomplete information.
-Additionally, the need to prioritize the speed of outbreak detection and response against the false positive rate of alerts will change by region, and over time.
+In particular, the true outbreak status (and $R_"E"$) are never known, and can only be inferred.
+As a result, incorrect inferences will be made and the need to prioritize the speed of outbreak detection and response against the false positive rate of alerts will depend upon the costs associated with each, which changes by region, and over time.
 In Chapters 4 & 5 I provide equal weight to the associated alert speed and specificity metrics utilized in the system's evaluation.
 In locations that experience large, devastating, outbreaks, where response mobilization may be heavily delayed, a greater premium could be placed on sensitive alert systems, if only to launch an active preliminary investigation.
 Furthermore, the evaluation of each alert threshold, be that incidence-based alert triggers for reactive surveillance programs, or EWS-based approaches for proactive systems, was conducted at the 'optimal' set of hyperparameters.
