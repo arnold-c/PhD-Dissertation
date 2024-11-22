@@ -8,19 +8,23 @@
   committee_members: (
     (
         name: "Dr. Katriona Shea",
-        title: "Chair of Committee",
+        title: "Professor of Biology\nAlumni Professor in the Biological Sciences",
+        committee-position: "Chair of Committee",
     ),
     (
         name: "Dr. Matthew J. Ferrari",
-        title: "Major Field Member & Dissertation Advisor",
+        title: "Professor of Biology\nCenter for Infectious Disease Dynamics Director",
+        committee-position: "Major Field Member & Dissertation Advisor",
     ),
     (
         name: "Dr. Maciej Boni",
-        title: "Major Field Member",
+        title: "Professor of Biology, Temple University",
+        committee-position: "Major Field Member",
     ),
     (
         name: "Dr. Stephen Berg",
-        title: "Outside Unit & Field Member",
+        title: "Assistant Professor of Statistics",
+        committee-position: "Outside Unit & Field Member",
     ),
   ),
   date: ( // Date of degree CONFERRAL

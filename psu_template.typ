@@ -129,7 +129,8 @@
     v(10mm)
     for member in committee_members {
         text[#member.name] + "\n"
-        text[#member.title]
+        text[#member.title] + "\n"
+        text[#member.committee-position] + "\n"
         v(12pt)
     }
 
