@@ -154,13 +154,47 @@ A large proportion (30.4%) were positive for IgG antibodies, and 93.5% (100) of 
 Of the 673 participants, most students intended to always mask (81.0%), always cover their coughs/sneezes (81.9%), and always stay home when ill (78.2%) (@tbl-plan-adherence).
 Two of the least common intentions were social distancing by maintaining a distance of at least 6 feet from others outside of their home, avoiding crowded places and mass gatherings \> 25 people (43.4% and 53.1% respectively), and avoiding face-touching with unwashed hands (43.5%).
 
+#let intention_table = csv("./manuscript_files/tables/intention-responses.csv")
+
+#figure(
+  table(
+    columns: 3,
+    align: (left, center, center),
+    ..intention_table.flatten()
+  ),
+  caption: [Participants' intention to always or not always follow 8 public health measures],
+)
+<tbl-plan-adherence>
+
 The four- and the three-class LCA models had the lowest BIC respectively (@tbl-lca-fits).
 Examining the four-class model, there was minimal difference in the classification of individuals, relative to the three-class model.
 In the four-class model, the middle class (of the three-class model) was split into two groups with qualitatively similar class-conditional item response probabilities i.e., conditional on class membership, the probability of responding "Always" to a given question, except for hand washing and avoiding face-touching with unwashed hands (Supplemental Tables 1 & 2).
 
+#let lca_fit_table = csv("./manuscript_files/tables/lca-fits.csv")
+
+#figure(
+  table(
+    columns: 4,
+    ..lca_fit_table.flatten()
+  ),
+  caption: [Log likelihood, AIC, and BIC of two to seven class LCA model fits],
+)
+<tbl-lca-fits>
+
 We fit a logistic regression model to predict binary IgG serostatus that included inferred class membership, in addition to other predictor variables we previously identified in @arnoldLongitudinalStudyImpact2022.
 The mean and median BIC and AIC indicated similar predictive ability of the three- and four-class LCA models (@tbl-lca-glm-fits).
 Given these factors, the three-class model was selected for use in simulation for parsimony, requiring fewer assumptions and parameters to fit.
+
+#let lca_glm_fit_table = csv("./manuscript_files/tables/lca-glm-fits.csv")
+
+#figure(
+  table(
+    columns: 5,
+    ..lca_glm_fit_table.flatten()
+  ),
+  caption: [Mean and median AIC and BIC of multiply-imputed logistic regressions for two to seven class LCA models against IgG serostatus],
+)
+<tbl-lca-glm-fits>
 
 In the three-class model, approximately 15.75% of individuals were members of the group that rarely intended to always follow the PHMs, 38.04% intended to always follow all guidelines, and the remaining 46.21% mostly intended to mask, test, and manage symptoms, but not distance or avoid crowds (@tbl-lca-props).
 We have labelled the three classes as "Low-", "High-" and "Medium-Adherence" groups, respectively, for ease of interpretation.
@@ -169,10 +203,78 @@ Calculating the class-specific seroprevalence, the Low Adherence group had the h
 Incorporating latent class membership into the imputed GLM model described in our previous paper (30) retained the relationship between adherence and infection.
 Relative to the least adherent group, the Medium Adherence group experienced a non-significant reduction in infection risk (aOR, 95% CI: 0.73, 0.45-1.18), and the most adherent group a significant reduction (aOR, 95% CI: 0.59, 0.36-0.98) (@tbl-lca-mice-fit).
 
+#let lca_irp_table = csv("./manuscript_files/tables/lca-item-response-probs.csv")
+#let lca_irp_fill_table = csv("./manuscript_files/tables/lca-item-response-probs_fill.csv")
+#let lca_irp_colors_table = csv("./manuscript_files/tables/lca-item-response-probs_colors.csv")
+
+#figure(
+  table(
+    columns: 4,
+    align: (left, horizon, horizon, horizon),
+    fill: (x, y) => {
+      if y > 0 {
+        let cell_color = lca_irp_fill_table.at(y).at(x)
+        rgb(cell_color)
+      }
+    },
+    table.cell(fill: gray)[Measure \ Intention to Always:],
+    table.cell(fill: rgb("#2f0f3e"))[#text(fill: rgb("#ffffff"))[Low Adherence]],
+    table.cell(fill: rgb("#911f63"))[#text(fill: rgb("#ffffff"))[Medium Adherence]],
+    table.cell(fill: rgb("#e05d53"))[#text(fill: rgb("#ffffff"))[High Adherence]],
+    ..for ((val), (text_color)) in lca_irp_table.slice(1).flatten().zip(lca_irp_colors_table.slice(1).flatten()) {
+      if text_color == "" {
+        if val == "Group Size" or val == "Seroprevalence" {
+        (table.cell[#text(weight: "bold")[#val]],)
+        } else {
+        (table.cell[#val],)
+        }
+      } else {
+        (table.cell[#text(fill: rgb(text_color))[#val]],)
+      }
+    }
+  ),
+  caption: [Class-conditional item response probabilities shown in the main body of the table for a three-class LCA model, with footers indicating the size of the respective classes, and the class-specific seroprevalence],
+)
+<tbl-lca-props>
+
+#let mice_glm_table = csv("./manuscript_files/tables/mice-glm-table.csv")
+
+#figure(
+  table(
+    columns: 2,
+    align: (left, center),
+    ..mice_glm_table.flatten()
+  ),
+  caption: [Adjusted odds ratio (aOR) for risk factors of infection among the returning PSU UP student cohort],
+)
+<tbl-lca-mice-fit>
+
 === Compartmental Model
 The ABC distance distributions indicated that near-homogeneous levels of between-group mixing better fit the data (@fig-abc-distance-whiskers).
 After model parameterization, we examined the effect of increasing adherence to public health guidance.
 Moving all individuals into the High Adherence class resulted in a 76-93% reduction in final size; when moderate between-group mixing is simulated, a fully effective intervention results in approximately 80% reduction in final seroprevalence, and when between-group mixing is as likely as within-group mixing, a 93% reduction is observed (@fig-intervention).
+
+#figure(
+  image(
+    "./manuscript_files/plots/fig-1_abc-distance-whiskers_copy-cols.png",
+    width: 100%
+  ),
+  caption: [Distribution of the distance from the ABC fits, with the minimum and maximum distances illustrated by the whiskers, and the median distance by the point.
+Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing],
+)
+<fig-abc-distance-whiskers>
+
+#figure(
+  image(
+    "./manuscript_files/plots/fig-2_intervention-stacked-bar_copy-cols.png",
+    width: 100%
+  ),
+  caption: [
+A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity.
+Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0)
+],
+)
+<fig-intervention>
 
 == Discussion
 In this interdisciplinary analysis, we collected behavioral data from surveys and integrated it with serosurveillance results.
@@ -260,121 +362,3 @@ The datasets generated during and/or analyzed during the current study are not p
 + Scott E. Lindner, Allen M. Minns, Randall Rossi produced and purified RBD
 + The D4A Research Group: Dee Bagshaw, Clinical & Translational Science Institute, Cyndi Flanagan, Clinical Research Center and the Clinical & Translational Science Institute; Thomas Gates, Social Science Research Institute; Margeaux Gray, Dept. of Biobehavioral Health; Stephanie Lanza, Dept. of Biobehavioral Health and Prevention Research Center; James Marden, Dept. of Biology and Huck Institutes of the Life Sciences; Susan McHale, Dept. of Human Development and Family Studies and the Social Science Research Institute; Glenda Palmer, Social Science Research Institute; Connie J. Rogers, Dept. of Nutritional Sciences; Rachel Smith, Dept. of Communication Arts and Sciences and Huck Institutes of the Life Sciences; and Charima Young, Penn State Office of Government and Community Relations.
 + The authors thank the following for their assistance in the lab: Sophie Rodriguez, Natalie Rydzak, Liz D. Cambron, Elizabeth M. Schwartz, Devin F. Morrison, Julia Fecko, Brian Dawson, Sean Gullette, Sara Neering, Mark Signs, Nigel Deighton, Janhayi Damani, Mario Novelo, Diego Hernandez, Ester Oh, Chauncy Hinshaw, B. Joanne Power, James McGee, Riëtte van Biljon, Andrew Stephenson, Alexis Pino, Nick Heller, Rose Ni, Eleanor Jenkins, Julia Yu, Mackenzie Doyle, Alana Stracuzzi, Brielle Bellow, Abriana Cain, Jaime Farrell, Megan Kostek, Amelia Zazzera, Sara Ann Malinchak, Alex Small, Sam DeMatte, Elizabeth Morrow, Ty Somberger, Haylea Debolt, Kyle Albert, Corey Price, Nazmiye Celik
-
-#pagebreak()
-
-== Figures
-
-#figure(
-  image(
-    "./manuscript_files/plots/fig-1_abc-distance-whiskers_copy-cols.png",
-    width: 100%
-  ),
-  caption: [Distribution of the distance from the ABC fits, with the minimum and maximum distances illustrated by the whiskers, and the median distance by the point.
-Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing],
-)
-<fig-abc-distance-whiskers>
-
-#figure(
-  image(
-    "./manuscript_files/plots/fig-2_intervention-stacked-bar_copy-cols.png",
-    width: 100%
-  ),
-  caption: [
-A) The reduction in final infection size across a range of intervention effectiveness (1.0 is a fully effective intervention), accounting for a range of assortativity.
-Between-group mixing of 1.0 equates to between-group mixing as likely as within-group mixing; B) The relative distribution of group sizes at three levels of intervention effectiveness (0.0, 0.5, 1.0)
-],
-)
-<fig-intervention>
-
-#pagebreak()
-
-== Tables
-
-#let intention_table = csv("./manuscript_files/tables/intention-responses.csv")
-
-#figure(
-  table(
-    columns: 3,
-    align: (left, center, center),
-    ..intention_table.flatten()
-  ),
-  caption: [Participants' intention to always or not always follow 8 public health measures],
-)
-<tbl-plan-adherence>
-
-#pagebreak()
-
-#let lca_fit_table = csv("./manuscript_files/tables/lca-fits.csv")
-
-#figure(
-  table(
-    columns: 4,
-    ..lca_fit_table.flatten()
-  ),
-  caption: [Log likelihood, AIC, and BIC of two to seven class LCA model fits],
-)
-<tbl-lca-fits>
-
-#pagebreak()
-
-#let lca_glm_fit_table = csv("./manuscript_files/tables/lca-glm-fits.csv")
-
-#figure(
-  table(
-    columns: 5,
-    ..lca_glm_fit_table.flatten()
-  ),
-  caption: [Mean and median AIC and BIC of multiply-imputed logistic regressions for two to seven class LCA models against IgG serostatus],
-)
-<tbl-lca-glm-fits>
-
-#pagebreak()
-
-#let lca_irp_table = csv("./manuscript_files/tables/lca-item-response-probs.csv")
-#let lca_irp_fill_table = csv("./manuscript_files/tables/lca-item-response-probs_fill.csv")
-#let lca_irp_colors_table = csv("./manuscript_files/tables/lca-item-response-probs_colors.csv")
-
-#figure(
-  table(
-    columns: 4,
-    align: (left, horizon, horizon, horizon),
-    fill: (x, y) => {
-      if y > 0 {
-        let cell_color = lca_irp_fill_table.at(y).at(x)
-        rgb(cell_color)
-      }
-    },
-    table.cell(fill: gray)[Measure \ Intention to Always:],
-    table.cell(fill: rgb("#2f0f3e"))[#text(fill: rgb("#ffffff"))[Low Adherence]],
-    table.cell(fill: rgb("#911f63"))[#text(fill: rgb("#ffffff"))[Medium Adherence]],
-    table.cell(fill: rgb("#e05d53"))[#text(fill: rgb("#ffffff"))[High Adherence]],
-    ..for ((val), (text_color)) in lca_irp_table.slice(1).flatten().zip(lca_irp_colors_table.slice(1).flatten()) {
-      if text_color == "" {
-        if val == "Group Size" or val == "Seroprevalence" {
-        (table.cell[#text(weight: "bold")[#val]],)
-        } else {
-        (table.cell[#val],)
-        }
-      } else {
-        (table.cell[#text(fill: rgb(text_color))[#val]],)
-      }
-    }
-  ),
-  caption: [Class-conditional item response probabilities shown in the main body of the table for a three-class LCA model, with footers indicating the size of the respective classes, and the class-specific seroprevalence],
-)
-<tbl-lca-props>
-
-#pagebreak()
-
-#let mice_glm_table = csv("./manuscript_files/tables/mice-glm-table.csv")
-
-#figure(
-  table(
-    columns: 2,
-    align: (left, center),
-    ..mice_glm_table.flatten()
-  ),
-  caption: [Adjusted odds ratio (aOR) for risk factors of infection among the returning PSU UP student cohort],
-)
-<tbl-lca-mice-fit>
