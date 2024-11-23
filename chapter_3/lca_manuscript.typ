@@ -139,7 +139,7 @@ $
 The former assumes that between-group transmission is dominated by the transmissibility of the source individuals, implying that adherence to the PHMs primarily prevents onwards transmission, rather than protecting against infection.
 The latter assumes that between-group transmission is dominated by the susceptibility of the recipient individuals, implying that adherence to the PHMs primarily prevents infection, rather than protecting against onwards transmission.
 A range of between-group scaling values ($phi.alt$) were simulated to perform sensitivity analysis for the degree of assortativity.
-Results are only shown for matrix structure $bold("A")$, but alternative assumptions about between-group mixing can be found in the supplement (Supplemental Figures 1-4).
+Results are only shown for matrix structure $bold("A")$, but alternative assumptions about between-group mixing can be found in the supplement (@fig-abc-distance-whiskers-rows, @fig-intervention-rows, @fig-abc-distance-whiskers-constant, @fig-intervention-constant).
 To examine the effect of an intervention to increase PHM adherence, we redistributed a proportion of low- and medium adherence individuals to the high adherence latent class, i.e., a fully effective intervention is equivalent to a single-group SIR model of high adherent individuals.
 Model fitting and simulation was conducted using the Julia programming language, version 1.10.5 @bezansonJuliaFreshApproach2017.
 
@@ -168,7 +168,7 @@ Two of the least common intentions were social distancing by maintaining a dista
 
 The four- and the three-class LCA models had the lowest BIC respectively (@tbl-lca-fits).
 Examining the four-class model, there was minimal difference in the classification of individuals, relative to the three-class model.
-In the four-class model, the middle class (of the three-class model) was split into two groups with qualitatively similar class-conditional item response probabilities i.e., conditional on class membership, the probability of responding "Always" to a given question, except for hand washing and avoiding face-touching with unwashed hands (Supplemental Tables 1 & 2).
+In the four-class model, the middle class (of the three-class model) was split into two groups with qualitatively similar class-conditional item response probabilities i.e., conditional on class membership, the probability of responding "Always" to a given question, except for hand washing and avoiding face-touching with unwashed hands (@tbl-lca-props_4-class).
 
 #let lca_fit_table = csv("./manuscript_files/tables/lca-fits.csv")
 
@@ -289,7 +289,7 @@ Examining the three classes, 38% of individuals already intended to always follo
 As a result, only 62% of the study population could have their risk reduced with respect to the PHMs surveyed.
 Further, the infection rates observed in the High Adherence group indicates that even a perfectly effective intervention aimed at increasing adherence to non-pharmaceutical PHMs (i.e., after the intervention, all individuals always followed every measure) would not eliminate transmission in a population, an observation that aligns with prior COVID-19 research @flaxmanEstimatingEffectsNonpharmaceutical2020a @banholzerEstimatingEffectsNonpharmaceutical2021 @braunerInferringEffectivenessGovernment2021 @geUntanglingChangingImpact2022.
 The extent to which the infection in the High Adherence group is a result of mixing with lower adherence classes cannot be explicitly described, but the sensitivity analysis allows for an exploration of the effect and ABC fits suggest near-homogeneous mixing occurred.
-Varying the structure of the transmission matrix yielded very similar quantitative and qualitative results (Supplemental Figures 1-4).
+Varying the structure of the transmission matrix yielded very similar quantitative and qualitative results (@fig-abc-distance-whiskers-rows, @fig-intervention-rows, @fig-abc-distance-whiskers-constant, @fig-intervention-constant).
 
 Examining the impact of increasing adherence to PHMs (modeled as increasing the proportion of the population in the High Adherence class), a fully effective intervention saw between a 76-93% reduction in the final size of the simulation outbreak.
 The small but appreciable dependence of the reduction’s magnitude on the degree of between-group mixing can be explained as such: with higher levels of between-group mixing, the initial SIR parameterization results in lower transmission parameters for the High-High adherence interactions, as more infections in the High Adherence group originate from interactions with Low and Medium Adherence individuals.
