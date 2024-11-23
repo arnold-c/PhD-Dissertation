@@ -66,6 +66,48 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
 == Tables
 
 #figure(
+  table(
+    columns: 3,
+    align: horizon,
+    [Wave 1 Assay Result], [Not Similar to Students \ (N=1209)], [Similar to Students \ (N=104)],
+    [Negative], [1173 (97.0%)], [98 (94.2%)],
+    [Positive], [36 (3.0%)], [6 (5.8%)],
+  ),
+  caption: [Wave 1 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
+)
+<tbl-comm-sim-wave-1>
+
+#v(1em)
+
+#figure(
+  table(
+    columns: 3,
+    align: horizon,
+    [Wave 2 Assay Result], [Not Similar to Students \ (N=1209)], [Similar to Students \ (N=104)],
+    [Negative], [1138 (94.1%)], [98 (94.2%)],
+    [Positive], [71 (5.9%)], [6 (5.8%)],
+  ),
+  caption: [Wave 2 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
+)
+<tbl-comm-sim-wave-2>
+
+#v(1em)
+
+#figure(
+  table(
+    columns: 3,
+    align: horizon,
+    [Wave 2 Assay Result], [Not Similar to Students \ (N=1209)], [Similar to Students \ (N=104)],
+    [Negative], [1122 (92.8%)], [95 (91.3%)],
+    [Positive], [87 (7.2%)], [9 (8.7%)],
+  ),
+  caption: [Wave 2 cumulative seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
+)
+<tbl-comm-sim-wave-2-cum>
+
+#pagebreak()
+
+#figure(
   two_header_table(
     columns: 5,
     align: horizon,
@@ -112,45 +154,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
 
 #pagebreak()
 
-#figure(
-  table(
-    columns: 3,
-    align: horizon,
-    [Wave 1 Assay Result], [Not Similar to Students \ (N=1209)], [Similar to Students \ (N=104)],
-    [Negative], [1173 (97.0%)], [98 (94.2%)],
-    [Positive], [36 (3.0%)], [6 (5.8%)],
-  ),
-  caption: [Wave 1 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
-)
-<tbl-comm-sim-wave-1>
-
-#v(1em)
-
-#figure(
-  table(
-    columns: 3,
-    align: horizon,
-    [Wave 2 Assay Result], [Not Similar to Students \ (N=1209)], [Similar to Students \ (N=104)],
-    [Negative], [1138 (94.1%)], [98 (94.2%)],
-    [Positive], [71 (5.9%)], [6 (5.8%)],
-  ),
-  caption: [Wave 2 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
-)
-<tbl-comm-sim-wave-2>
-
-#v(1em)
-
-#figure(
-  table(
-    columns: 3,
-    align: horizon,
-    [Wave 2 Assay Result], [Not Similar to Students \ (N=1209)], [Similar to Students \ (N=104)],
-    [Negative], [1122 (92.8%)], [95 (91.3%)],
-    [Positive], [87 (7.2%)], [9 (8.7%)],
-  ),
-  caption: [Wave 2 cumulative seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
-)
-<tbl-comm-sim-wave-2-cum>
 
 == Figures
 

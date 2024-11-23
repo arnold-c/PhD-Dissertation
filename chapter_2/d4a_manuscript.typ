@@ -134,7 +134,8 @@ Missing values were deemed "Missing At Random" and imputed, as described in the 
 We estimated the adjusted odds ratios (aOR) of IgG positivity in the student subgroup using multivariable logistic regression implemented with the *mice* and *finalfit* packages @harrisonFinalfitQuicklyCreate2021 @vanbuurenMiceMultivariateImputation2011, two-sided Chi-squared tests for raw odds ratios (OR), and Welch Two Sample t-test for continuous distributions, and present 95% confidence intervals.
 We considered the following variables _a priori_ to be potential risk factors as they increase contact with individuals outside of a participants' household @huangEstimationSecondaryAttack2020 @chengContactTracingAssessment2020 @leclercWhatSettingsHave2020 @brooks-pollockPopulationAttributableFraction2020: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); attendance at a small gathering (20-50 people) in the past 3 months; attendance at a medium gathering (51-1000 people) in the past 3 months; lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; travelled in the 3 months prior to returning to campus; and travelled since returning to campus for the Fall term.
 
-We estimated the aOR of IgG positivity at either time point in the returning community subgroup, with the following risk factors determined _a priori_ to the study's inception: being a PSU employee; and the amount of contact with PSU students when "Stay at home" orders are not in place (self-reported on a scale of 1-10). BIC and AIC were used to evaluate the contribution of the variables to the model.
+We estimated the aOR of IgG positivity at either time point in the returning community subgroup, with the following risk factors determined _a priori_ to the study's inception: being a PSU employee; and the amount of contact with PSU students when "Stay at home" orders are not in place (self-reported on a scale of 1-10).
+BIC and AIC were used to evaluate the contribution of the variables to the model.
 
 All statistical analyses were conducted using R version 4.2.1 (2022-06-23) @rcoreteamLanguageEnvironmentStatistical2021, with a pipeline created using the *targets* package @landauTargetsPackageDynamic2021.
 
@@ -237,7 +238,7 @@ Among the community resident participants, 42 of 1313 (3.2%) were positive for S
 Between their first and second visit, 54 participants converted from negative to positive and 19 converted from positive to negative; 96 (7.3%) were positive for SARS-CoV-2 IgG antibodies at either visit.
 There were no differences by age or the number of days separating visit samples, between those that seroconverted and seroreverted (p = 0.91; p = 0.91, respectively).
 The Wave 1 quantitative OD values of those who seroreverted (n = 19) were significantly lower than individuals who remained positive from waves 1 to 2 (n = 23) (Welch's t-test, p = 0.001; mean of 0.32 vs 0.63).
-Community residents who were of similar age and household income as the returning students (age <= 30y and income <= 50k USD) did not have significantly different seroprevalence than community residents age >30y or with income > 50k USD (Supplemental Tables 3, 4, 5).
+Community residents who were of similar age and household income as the returning students (age <= 30y and income <= 50k USD) did not have significantly different seroprevalence than community residents age >30y or with income > 50k USD (@tbl-comm-sim-wave-1, @tbl-comm-sim-wave-2, @tbl-comm-sim-wave-2-cum).
 
 #figure(
   two_header_table(
@@ -316,8 +317,8 @@ Neither AIC or BIC were improved by the addition of student contact as a variabl
 )
 <tbl-comb-or-table>
 
-Both the returning students and community residents self-reported high masking compliance; 86.7% and 75.9%, respectively, reported always wearing mask or cloth face covering when in public (Table S1, Table S2).
-Less than one third of both groups (28.9% and 29.8%, respectively) self-reported always maintaining 6-feet of distance from others in public. Less than half (42.8%) of returning students indicated that they always avoided groups of 25 or greater, in contrast with 65.7% of community residents.
+Both the returning students and community residents self-reported high masking compliance; 87.0% and 76.1%, respectively, reported always wearing mask or cloth face covering when in public (@tbl-ph-meas-freq, @tbl-ph-meas-seroprev).
+Less than one third of both groups (29.1% and 30.0%, respectively) self-reported always maintaining 6-feet of distance from others in public. Less than half (43.0%) of returning students indicated that they always avoided groups of 25 or greater, in contrast with 65.8% of community residents.
 
 == Discussion
 
