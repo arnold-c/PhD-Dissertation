@@ -128,7 +128,7 @@ Community resident and returning student cohorts' seroprevalence are presented w
 We estimated each subgroup's true prevalence, accounting for imperfect sensitivity and specificity of the IgG assay, using the *prevalence* package in R @devleesschauwerPrevalenceToolsPrevalence2014.
 We calculated a 95% binomial confidence interval for test sensitivity of the IgG assay for detecting prior self-reported positive tests in the returning student cohort (students had high access to testing from a common University provider) with a uniform prior distribution between these limits.
 Prevalence estimates were then calculated across all possible values of specificity between 0.85 and 0.99. Estimates were not corrected for demographics as participants were not enrolled using a probability-based sample.
-We assessed demographic characteristics of the tested participants relative to all study participants to illustrate potential selection biases (Table 1).
+We assessed demographic characteristics of the tested participants relative to all study participants to illustrate potential selection biases (@tbl-comb-demo-table).
 
 Missing values were deemed "Missing At Random" and imputed, as described in the Supplement.
 We estimated the adjusted odds ratios (aOR) of IgG positivity in the student subgroup using multivariable logistic regression implemented with the *mice* and *finalfit* packages @harrisonFinalfitQuicklyCreate2021 @vanbuurenMiceMultivariateImputation2011, two-sided Chi-squared tests for raw odds ratios (OR), and Welch Two Sample t-test for continuous distributions, and present 95% confidence intervals.
@@ -154,6 +154,80 @@ The median household income in the county is \$60,403 @unitedstatescensusbureauC
 47.4% of the county is female, 87.9% white, and 70.3% are between the ages of 18-65 years old @unitedstatescensusbureauCensusBureauQuickFacts2019.
 The study cohort is moderately older and more affluent (in part because of the exclusion of returning students), and disproportionately female compared to the general Centre County population.
 
+#figure(
+  two_header_table(
+    columns: (15%, auto, auto, auto, auto),
+    align: (horizon, right, horizon, horizon, horizon),
+    table.cell(rowspan: 2, colspan: 2)[], table.cell(colspan: 2)[D4A Participant], [],
+    [Assay Subset \ (N = 1313)], [Non-Assay Subset \ (N = 218)], [Non-Participant],
+    table.cell(rowspan: 2)[Age (years)],
+      [Median \[IQR\]], [47.0 \[36.0, 58.0\]], [42.0 \[34.0, 60.0\]], [49.0 \[37.0, 60.0\]],
+      [Median \[Min, Max\]],[47.0 \[19.0, 99.0\]], [42.0 \[18.0, 91.0\]], [49.0 \[18.0, 861\]],
+    table.cell(rowspan: 4)[Race],
+      [White], [1220 (92.9%)], [194 (89.0%)], [6206 (79.9%)],
+      [Aggregated Category\*], [12 (0.9%)], [2 (0.9%)], [256 (3.3%)],
+      [Listed more than one race or ethnicity], [6 (0.5%)], [0 (0%)], [18 (0.2%)],
+      [Missing], [5 (5.7%)], [22 (10.1%)], [1288 (16.6%)],
+    table.cell(rowspan: 5)[Gender],
+      [Female], [879 (66.9%)], [113 (51.8%)], [0 (0%)],
+      [Male], [424 (32.3%)], [54 (24.8%)], [0 (0%)],
+      [Non-binary/Transgender/Self-described], [10 (0.8%)], [1 (0.5%)], [0 (0%)],
+      [Prefer not to answer], [0 (0%)], [0 (0%)], [0 (0%)],
+      [Missing], [0 (0%)], [50 (22.9%)], [7768 (100%)],
+    table.cell(rowspan: 9)[Household Income (USD)],
+      [\$200,000 and over], [137 (10.4%)], [21 (9.6%)], [681 (8.8%)],
+      [\$150,000 to \$199,999], [186 (14.2%)], [24 (11.0%)], [764 (9.8%)],
+      [\$100,000 to \$149,999], [348 (26.5%)], [54 (24.8%)], [1502 (19.3%)],
+      [\$75,000 to \$99,999], [179 (13.6%)], [31 (14.2%)], [1093 (14.1%)],
+      [\$50,000 to \$74,999], [175 (13.3%)], [27 (12.4%)], [957 (12.3%)],
+      [\$25,000 to \$49,999], [142 (10.8%)], [22 (10.1%)], [747 (9.6%)],
+      [Under \$25,000], [43 (3.3%)], [13 (6.0%)], [256 (3.3%)],
+      [Prefer not to answer], [102 (7.8%)], [26 (11.9%)], [799 (10.3%)],
+      [Missing], [1 (0.1%)], [0 (0%)], [969 (12.5%)],
+  ),
+  caption: [Demographic characteristics of study participants. Non-D4A participants are all participants in the initial anonymous survey from which Data4Action participants were drawn. D4A participants are divided into subsets for which antibody assays were conducted (N=1313) and those for which assays were not conducted (N=218).],
+)
+<tbl-comb-demo-table>
+
+#figure(
+  table(
+    columns: 4,
+    align: (horizon, right, horizon, horizon),
+    table.cell(colspan: 2)[], [Assay Subset \ (N = 684)], [Non-Assay Subset \ (N = 41)],
+    table.cell(rowspan: 3)[Age (years)],
+      [Median \[IQR\]], [20.0 \[19.0, 21.0\]], [20.0 \[20.0, 21.0\]],
+      [Median \[Min, Max\]], [20.0 \[18.0, 67.0\]], [20.0 \[18.0, 32.0\]],
+      [Missing], [1 (0.1%)], [18 (43.9%)],
+    table.cell(rowspan: 4)[Race],
+      [White], [560 (81.9%)], [27 (65.9%)],
+      [Aggregated Category\*], [86 (12.6%)], [5 (12.2%)],
+      [Listed more than one race], [32 (4.7%)], [2 (4.9%)],
+      [Missing], [6 (0.9%)], [7 (17.1%)],
+    table.cell(rowspan: 4)[Gender],
+      [Female], [441 (64.5%)], [19 (46.3%)],
+      [Male], [237 (34.6%)], [22 (53.7%)],
+      [Genderqueer/nonconforming/transgender/different identity], [5 (0.7%)], [0 (0%)],
+      [Missing], [1 (0.1%)], [0 (0%)],
+    table.cell(rowspan: 3)[University Housing],
+      [Not Uni housing], [501 (73.2%)], [27 (65.9%)],
+      [Uni housing], [181 (26.5%)], [8 (19.5%)],
+      [Missing], [2 (0.3%)], [6 (14.6%)],
+
+  ),
+  caption: [Demographic characteristics of the returning student participants],
+)
+<tbl-stu-demo-table>
+
+
+#figure(
+  image(
+    "./manuscript_files/comb-map-1.png",
+    width: 100%
+  ),
+  caption: [Map of Centre County, Pennsylvania, USA. Blue indicates the 5 townships and 1 borough that comprise the Centre Region. Red indicates the location of The Pennsylvania State University (PSU), University Park (UP) Campus. Inset illustrates the proportion of the county population in each region; PSU indicates the estimated student population that returned to campus for the Fall 2020 term.],
+)
+<fig-comb-map>
+
 === Prior Positive Results and Seroprevalence
 
 Of the returning student participants, 673 (92.8%) had at least one test prior to enrollment in the study; of these, 107 (15.9%) self-reported a positive result (@tbl-prior-pos-table)).
@@ -165,8 +239,40 @@ There were no differences by age or the number of days separating visit samples,
 The Wave 1 quantitative OD values of those who seroreverted (n = 19) were significantly lower than individuals who remained positive from waves 1 to 2 (n = 23) (Welch's t-test, p = 0.001; mean of 0.32 vs 0.63).
 Community residents who were of similar age and household income as the returning students (age <= 30y and income <= 50k USD) did not have significantly different seroprevalence than community residents age >30y or with income > 50k USD (Supplemental Tables 3, 4, 5).
 
+#figure(
+  two_header_table(
+    columns: 5,
+    align: horizon,
+    table.cell(rowspan: 2)[ELISA Result], table.cell(colspan:3)[Prior Test], [],
+    [Prior Positive \ (N = 107)], [No Prior Positive \ (N = 550)], [Awaiting Results \ (N = 16)], [No Prior Test],
+      [Positive], [95 (88.8%)], [102 (18.5%)], [3 (18.8%)],	[8 (15.4%)],
+      [Negative], [7 (6.5%)], [419 (76.2%)], [13 (81.3%)], [37 (71.2%)],
+      [Missing], [5 (4.7%)], [29 (5.3%)], [0 (0%)], [7 (13.5%)],
+  ),
+  caption: [IgG ELISA results as a function of self-reported prior SARS-CoV-2 diagnostic test outcome among returning student cohort participants],
+)
+<tbl-prior-pos-table>
+
+#figure(
+  image(
+    "./manuscript_files/raw-prev-1.png",
+    width: 100%
+  ),
+  caption: [Raw seroprevalence (circles) with 95% binomial confidence intervals for the community residents at the first visit at the start of the Fall 2020 term (light blue), returning students at the end of the fall 2020 term (red), and community residents at either the first or the second visit after student departure (dark blue).],
+)
+<fig-raw-prev>
+
 Of returning students with a self-reported prior positive SARS-CoV-2 test, 93.1% (95% CI: 86.4-97.2%) had positive IgG antibodies; this was used as an estimate of sensitivity of the IgG assay for detecting previously detectable infection (see Supplement for an alternative calculation of sensitivity that includes community resident responses).
 For all values of specificity below 0.95, the 95% credible intervals for the prevalence in the community residents overlapped for the pre- and post-term time points, and neither overlapped with the returning student subgroup (@fig-true-prev).
+
+#figure(
+  image(
+    "./manuscript_files/true-prev-1.png",
+    width: 100%
+  ),
+  caption: [Estimated true prevalence (circles, with 95% confidence intervals) among participants at each sampling interval corrected for estimated assay sensitivity as a function of the assumed assay specificity (x-axis). Light blue indicates community residents at the first visit at the start of the Fall 2020 term, red indicates returning students at the end of the Fall 2020 term, and dark blue indicates community residents at the second visit after student departure.],
+)
+<fig-true-prev>
 
 === Variables Associated with IgG Positivity
 
@@ -175,6 +281,40 @@ Attending medium gatherings (51-1000 people) (OR: 1.78, 1.17-2.69), and close pr
 Among the community cohort, the amount of student contact was not associated with cumulative IgG positivity.
 However, PSU employees experienced reduced odds of positivity (OR: 0.56, 0.35-0.90).
 Neither AIC or BIC were improved by the addition of student contact as a variable over employment status only, or using student contact as the only variable.
+
+#figure(
+  block[
+    #set text(size: 9pt)
+    #table(
+      columns: 6,
+      align: horizon,
+      inset: 3pt,
+      [Risk Factor], [Response], [Negative], [Positive], [OR (univariable)], [aOR (multiple imputation)],
+      table.cell(rowspan: 2)[Close proximity to known COVID-19 Positive Individual], [No], [277  \ (58.3%)], [61  \ (29.5%)],[-], [-],
+          [Yes], [198  \ (41.7%)], [146  \ (70.5%)], [3.35  \ (2.37-4.78, p < 0.001)], [3.10  \ (2.07-4.64, p < 0.001)],
+      table.cell(rowspan: 2)[Close proximity to individual showing COVID-19 symptoms], [No], [346  \ (73.0%)], [128  \ (61.8%)],[-], [-],
+          [Yes], [128  \ (27.0%)], [79  \ (38.2%)], [1.67  \ (1.18-2.36, p = 0.004)], [0.87  \ (0.58-1.30, p = 0.494)],
+      table.cell(rowspan: 2)[Travelled in the 3 months prior to campus arrival], [No], [209  \ (45.4%)], [82  \ (40.8%)],[-], [-],
+          [Yes], [251  \ (54.6%)], [119  \ (59.2%)], [1.21  \ (0.86-1.69, p = 0.269)], [1.05  \ (0.73-1.53, p = 0.785)],
+      table.cell(rowspan: 2)[Travelled since campus arrival], [No], [183  \ (38.5%)], [82  \ (39.6%)],[-], [-],
+          [Yes], [292  \ (61.5%)], [125  \ (60.4%)], [0.96  \ (0.68-1.34, p = 0.789)], [0.85  \ (0.59-1.23, p = 0.394)],
+      table.cell(rowspan: 2)[Attended a gathering of 20-50 people since arrival for the Fall Semester], [No], [280  \ (59.1%)], [82  \ (39.6%)],[-], [-],
+          [Yes], [194  \ (40.9%)], [125  \ (60.4%)], [2.20  \ (1.58-3.08, p < 0.001)], [1.52  \ (1.03-2.24, p = 0.034)],
+      table.cell(rowspan: 2)[Attended a gathering of 51-1000 people since arrival for the Fall Semester], [No], [396  \ (85.3%)], [154  \ (76.6%)],[-], [-],
+          [Yes], [68  \ (14.7%)], [47  \ (23.4%)], [1.78  \ (1.17-2.69, p = 0.007)], [1.32  \ (0.83-2.10, p = 0.238)],
+      table.cell(rowspan: 2)[Ate in a dining hall in the past 7 days], [No], [394  \ (83.1%)], [163  \ (79.1%)],[-], [-],
+          [Yes], [80  \ (16.9%)], [43  \ (20.9%)], [1.30  \ (0.85-1.96, p = 0.214)], [1.30  \ (0.74-2.28, p = 0.356)],
+      table.cell(rowspan: 2)[Ate in a restaurant in the past 7 days], [No], [250  \ (52.5%)], [96  \ (46.8%)],[-], [-],
+          [Yes], [226  \ (47.5%)], [109  \ (53.2%)], [1.26  \ (0.91-1.75, p = 0.173)], [1.12  \ (0.78-1.61, p = 0.539)],
+      table.cell(rowspan: 2)[Only ate in their room in the past 7 days], [No], [158  \ (33.2%)], [76  \ (36.9%)],[-], [-],
+          [Yes], [318  \ (66.8%)], [130  \ (63.1%)], [0.85  \ (0.61-1.20, p = 0.350)], [0.91  \ (0.61-1.34, p = 0.625)],
+      table.cell(rowspan: 2)[Lives in University housing], [No], [349  \ (73.5%)], [152  \ (73.4%)],[-], [-],
+          [Yes], [126  \ (26.5%)], [55  \ (26.6%)], [1.00  \ (0.69-1.45, p = 0.991)], [0.89  \ (0.54-1.45, p = 0.630)],
+    )
+  ],
+  caption: [Crude and adjusted odds ratios (OR; aOR) of risk factors among returning PSU UP student cohort],
+)
+<tbl-comb-or-table>
 
 Both the returning students and community residents self-reported high masking compliance; 86.7% and 75.9%, respectively, reported always wearing mask or cloth face covering when in public (Table S1, Table S2).
 Less than one third of both groups (28.9% and 29.8%, respectively) self-reported always maintaining 6-feet of distance from others in public. Less than half (42.8%) of returning students indicated that they always avoided groups of 25 or greater, in contrast with 65.7% of community residents.
@@ -290,163 +430,3 @@ The datasets generated during and/or analyzed during the current study are not p
 + Scott E. Lindner, Allen M. Minns, Randall Rossi produced and purified RBD
 + The D4A Research Group: Dee Bagshaw, Clinical & Translational Science Institute, Cyndi Flanagan, Clinical Research Center and the Clinical & Translational Science Institute, Thomas Gates, Social Science Research Institute, Margeaux Gray, Dept. of Biobehavioral Health, Stephanie Lanza, Dept. of Biobehavioral Health and Prevention Research Center, James Marden, Dept. of Biology and Huck Institutes of the Life Sciences, Susan McHale, Dept. of Human Development and Family Studies and the Social Science Research Institute, Glenda Palmer, Social Science Research Institute, Rachel Smith, Dept. of Communication Arts and Sciences and Huck Institutes of the Life Sciences, and Charima Young, Penn State Office of Government and Community Relations.
 + The authors thank the following for their assistance in the lab: Liz D. Cambron, Elizabeth M. Schwartz, Devin F. Morrison, Julia Fecko, Brian Dawson, Sean Gullette, Sara Neering, Mark Signs, Nigel Deighton, Janhayi Damani, Mario Novelo, Diego Hernandez, Ester Oh, Chauncy Hinshaw, B. Joanne Power, James McGee, Riëtte van Biljon, Andrew Stephenson, Alexis Pino, Nick Heller, Rose Ni, Eleanor Jenkins, Julia Yu, Mackenzie Doyle, Alana Stracuzzi, Brielle Bellow, Abriana Cain, Jaime Farrell, Megan Kostek, Amelia Zazzera, Sara Ann Malinchak, Alex Small, Sam DeMatte, Elizabeth Morrow, Ty Somberger, Haylea Debolt, Kyle Albert, Corey Price, Nazmiye Celik
-
-#pagebreak()
-
-== Figures
-
-#figure(
-  image(
-    "./manuscript_files/comb-map-1.png",
-    width: 100%
-  ),
-  caption: [Map of Centre County, Pennsylvania, USA. Blue indicates the 5 townships and 1 borough that comprise the Centre Region. Red indicates the location of The Pennsylvania State University (PSU), University Park (UP) Campus. Inset illustrates the proportion of the county population in each region; PSU indicates the estimated student population that returned to campus for the Fall 2020 term.],
-)
-<fig-comb-map>
-
-#figure(
-  image(
-    "./manuscript_files/raw-prev-1.png",
-    width: 100%
-  ),
-  caption: [Raw seroprevalence (circles) with 95% binomial confidence intervals for the community residents at the first visit at the start of the Fall 2020 term (light blue), returning students at the end of the fall 2020 term (red), and community residents at either the first or the second visit after student departure (dark blue).],
-)
-<fig-raw-prev>
-
-#figure(
-  image(
-    "./manuscript_files/true-prev-1.png",
-    width: 100%
-  ),
-  caption: [Estimated true prevalence (circles, with 95% confidence intervals) among participants at each sampling interval corrected for estimated assay sensitivity as a function of the assumed assay specificity (x-axis). Light blue indicates community residents at the first visit at the start of the Fall 2020 term, red indicates returning students at the end of the Fall 2020 term, and dark blue indicates community residents at the second visit after student departure.],
-)
-<fig-true-prev>
-
-#pagebreak()
-
-== Tables
-
-#figure(
-  two_header_table(
-    columns: (15%, auto, auto, auto, auto),
-    align: (horizon, right, horizon, horizon, horizon),
-    table.cell(rowspan: 2, colspan: 2)[], table.cell(colspan: 2)[D4A Participant], [],
-    [Assay Subset \ (N = 1313)], [Non-Assay Subset \ (N = 218)], [Non-Participant],
-    table.cell(rowspan: 2)[Age (years)],
-      [Median \[IQR\]], [47.0 \[36.0, 58.0\]], [42.0 \[34.0, 60.0\]], [49.0 \[37.0, 60.0\]],
-      [Median \[Min, Max\]],[47.0 \[19.0, 99.0\]], [42.0 \[18.0, 91.0\]], [49.0 \[18.0, 861\]],
-    table.cell(rowspan: 4)[Race],
-      [White], [1220 (92.9%)], [194 (89.0%)], [6206 (79.9%)],
-      [Aggregated Category\*], [12 (0.9%)], [2 (0.9%)], [256 (3.3%)],
-      [Listed more than one race or ethnicity], [6 (0.5%)], [0 (0%)], [18 (0.2%)],
-      [Missing], [5 (5.7%)], [22 (10.1%)], [1288 (16.6%)],
-    table.cell(rowspan: 5)[Gender],
-      [Female], [879 (66.9%)], [113 (51.8%)], [0 (0%)],
-      [Male], [424 (32.3%)], [54 (24.8%)], [0 (0%)],
-      [Non-binary/Transgender/Self-described], [10 (0.8%)], [1 (0.5%)], [0 (0%)],
-      [Prefer not to answer], [0 (0%)], [0 (0%)], [0 (0%)],
-      [Missing], [0 (0%)], [50 (22.9%)], [7768 (100%)],
-    table.cell(rowspan: 9)[Household Income (USD)],
-      [\$200,000 and over], [137 (10.4%)], [21 (9.6%)], [681 (8.8%)],
-      [\$150,000 to \$199,999], [186 (14.2%)], [24 (11.0%)], [764 (9.8%)],
-      [\$100,000 to \$149,999], [348 (26.5%)], [54 (24.8%)], [1502 (19.3%)],
-      [\$75,000 to \$99,999], [179 (13.6%)], [31 (14.2%)], [1093 (14.1%)],
-      [\$50,000 to \$74,999], [175 (13.3%)], [27 (12.4%)], [957 (12.3%)],
-      [\$25,000 to \$49,999], [142 (10.8%)], [22 (10.1%)], [747 (9.6%)],
-      [Under \$25,000], [43 (3.3%)], [13 (6.0%)], [256 (3.3%)],
-      [Prefer not to answer], [102 (7.8%)], [26 (11.9%)], [799 (10.3%)],
-      [Missing], [1 (0.1%)], [0 (0%)], [969 (12.5%)],
-  ),
-  caption: [Demographic characteristics of study participants. Non-D4A participants are all participants in the initial anonymous survey from which Data4Action participants were drawn. D4A participants are divided into subsets for which antibody assays were conducted (N=1313) and those for which assays were not conducted (N=218).],
-)
-<tbl-comb-demo-table>
-
-\* Asian; Hispanic, Lantino/a, or Spanish; Black or African American; Middle Eastern or North African; Native American or Alaska Native; other race or ethnicity.
-This category is aggregated to protect participant identities because no single group comprised >4% of participants.
-
-#pagebreak()
-
-#figure(
-  table(
-    columns: 4,
-    align: (horizon, right, horizon, horizon),
-    table.cell(colspan: 2)[], [Assay Subset \ (N = 684)], [Non-Assay Subset \ (N = 41)],
-    table.cell(rowspan: 3)[Age (years)],
-      [Median \[IQR\]], [20.0 \[19.0, 21.0\]], [20.0 \[20.0, 21.0\]],
-      [Median \[Min, Max\]], [20.0 \[18.0, 67.0\]], [20.0 \[18.0, 32.0\]],
-      [Missing], [1 (0.1%)], [18 (43.9%)],
-    table.cell(rowspan: 4)[Race],
-      [White], [560 (81.9%)], [27 (65.9%)],
-      [Aggregated Category\*], [86 (12.6%)], [5 (12.2%)],
-      [Listed more than one race], [32 (4.7%)], [2 (4.9%)],
-      [Missing], [6 (0.9%)], [7 (17.1%)],
-    table.cell(rowspan: 4)[Gender],
-      [Female], [441 (64.5%)], [19 (46.3%)],
-      [Male], [237 (34.6%)], [22 (53.7%)],
-      [Genderqueer/nonconforming/transgender/different identity], [5 (0.7%)], [0 (0%)],
-      [Missing], [1 (0.1%)], [0 (0%)],
-    table.cell(rowspan: 3)[University Housing],
-      [Not Uni housing], [501 (73.2%)], [27 (65.9%)],
-      [Uni housing], [181 (26.5%)], [8 (19.5%)],
-      [Missing], [2 (0.3%)], [6 (14.6%)],
-
-  ),
-  caption: [Demographic characteristics of the returning student participants],
-)
-<tbl-stu-demo-table>
-
-\* Asian; Hispanic, Lantino/a, or Spanish; Black or African American; Middle Eastern or North African; Native American or Alaska Native; other race or ethnicity.
-This category is aggregated to protect participant identities because no single group comprised >4% of participants.
-
-#pagebreak()
-
-
-#figure(
-  two_header_table(
-    columns: 5,
-    align: horizon,
-    table.cell(rowspan: 2)[ELISA Result], table.cell(colspan:3)[Prior Test], [],
-    [Prior Positive \ (N = 107)], [No Prior Positive \ (N = 550)], [Awaiting Results \ (N = 16)], [No Prior Test],
-      [Positive], [95 (88.8%)], [102 (18.5%)], [3 (18.8%)],	[8 (15.4%)],
-      [Negative], [7 (6.5%)], [419 (76.2%)], [13 (81.3%)], [37 (71.2%)],
-      [Missing], [5 (4.7%)], [29 (5.3%)], [0 (0%)], [7 (13.5%)],
-  ),
-  caption: [IgG ELISA results as a function of self-reported prior SARS-CoV-2 diagnostic test outcome among returning student cohort participants],
-)
-<tbl-prior-pos-table>
-
-#pagebreak()
-
-#figure(
-  block[
-    #set text(size: 10pt)
-    #table(
-      columns: 6,
-      align: horizon,
-      [Risk Factor], [Response], [Negative], [Positive], [OR (univariable)], [aOR (multiple imputation)],
-      table.cell(rowspan: 2)[Close proximity to known COVID-19 Positive Individual], [No], [277  \ (58.3%)], [61  \ (29.5%)],[-], [-],
-          [Yes], [198  \ (41.7%)], [146  \ (70.5%)], [3.35  \ (2.37-4.78, p < 0.001)], [3.10  \ (2.07-4.64, p < 0.001)],
-      table.cell(rowspan: 2)[Close proximity to individual showing COVID-19 symptoms], [No], [346  \ (73.0%)], [128  \ (61.8%)],[-], [-],
-          [Yes], [128  \ (27.0%)], [79  \ (38.2%)], [1.67  \ (1.18-2.36, p = 0.004)], [0.87  \ (0.58-1.30, p = 0.494)],
-      table.cell(rowspan: 2)[Travelled in the 3 months prior to campus arrival], [No], [209  \ (45.4%)], [82  \ (40.8%)],[-], [-],
-          [Yes], [251  \ (54.6%)], [119  \ (59.2%)], [1.21  \ (0.86-1.69, p = 0.269)], [1.05  \ (0.73-1.53, p = 0.785)],
-      table.cell(rowspan: 2)[Travelled since campus arrival], [No], [183  \ (38.5%)], [82  \ (39.6%)],[-], [-],
-          [Yes], [292  \ (61.5%)], [125  \ (60.4%)], [0.96  \ (0.68-1.34, p = 0.789)], [0.85  \ (0.59-1.23, p = 0.394)],
-      table.cell(rowspan: 2)[Attended a gathering of 20-50 people since arrival for the Fall Semester], [No], [280  \ (59.1%)], [82  \ (39.6%)],[-], [-],
-          [Yes], [194  \ (40.9%)], [125  \ (60.4%)], [2.20  \ (1.58-3.08, p < 0.001)], [1.52  \ (1.03-2.24, p = 0.034)],
-      table.cell(rowspan: 2)[Attended a gathering of 51-1000 people since arrival for the Fall Semester], [No], [396  \ (85.3%)], [154  \ (76.6%)],[-], [-],
-          [Yes], [68  \ (14.7%)], [47  \ (23.4%)], [1.78  \ (1.17-2.69, p = 0.007)], [1.32  \ (0.83-2.10, p = 0.238)],
-      table.cell(rowspan: 2)[Ate in a dining hall in the past 7 days], [No], [394  \ (83.1%)], [163  \ (79.1%)],[-], [-],
-          [Yes], [80  \ (16.9%)], [43  \ (20.9%)], [1.30  \ (0.85-1.96, p = 0.214)], [1.30  \ (0.74-2.28, p = 0.356)],
-      table.cell(rowspan: 2)[Ate in a restaurant in the past 7 days], [No], [250  \ (52.5%)], [96  \ (46.8%)],[-], [-],
-          [Yes], [226  \ (47.5%)], [109  \ (53.2%)], [1.26  \ (0.91-1.75, p = 0.173)], [1.12  \ (0.78-1.61, p = 0.539)],
-      table.cell(rowspan: 2)[Only ate in their room in the past 7 days], [No], [158  \ (33.2%)], [76  \ (36.9%)],[-], [-],
-          [Yes], [318  \ (66.8%)], [130  \ (63.1%)], [0.85  \ (0.61-1.20, p = 0.350)], [0.91  \ (0.61-1.34, p = 0.625)],
-      table.cell(rowspan: 2)[Lives in University housing], [No], [349  \ (73.5%)], [152  \ (73.4%)],[-], [-],
-          [Yes], [126  \ (26.5%)], [55  \ (26.6%)], [1.00  \ (0.69-1.45, p = 0.991)], [0.89  \ (0.54-1.45, p = 0.630)],
-    )
-  ],
-  caption: [Crude and adjusted odds ratios (OR; aOR) of risk factors among returning PSU UP student cohort],
-)
-<tbl-comb-or-table>
-
