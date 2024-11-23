@@ -38,8 +38,11 @@
       #it.body
   ]
 
+  show figure.where(kind: table): set figure(supplement: [Supplemental Table])
+  show figure.where(kind: image): set figure(supplement: [Supplemental Figure])
+
   show figure.caption: it => [
-      #set text(style: "italic", top-edge: "cap-height", bottom-edge: "baseline")
+      #set text(top-edge: "cap-height", bottom-edge: "baseline")
       #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
       #it
   ]

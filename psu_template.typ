@@ -67,7 +67,6 @@
     [Epigraph],
     [Frontispiece],
     [Dedication],
-
   )
   let back_matter_sections = (
     [Bibliography],
@@ -137,8 +136,15 @@
     pagebreak(weak: true)
 
     {
-      set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
-      set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
+      set text(
+        top-edge: line_spacings.top-edge,
+        bottom-edge: line_spacings.bottom-edge
+      )
+      set par(
+        leading: line_spacings.leading,
+        first-line-indent: line_spacings.first-line-indent,
+        spacing: line_spacings.spacing
+      )
 
       heading(level: 1)[Abstract]
       [#abstract]
@@ -289,8 +295,15 @@
       pagebreak(weak: true)
     }
 
-    set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
-    set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
+    set text(
+      top-edge: line_spacings.top-edge,
+      bottom-edge: line_spacings.bottom-edge
+    )
+    set par(
+      leading: line_spacings.leading,
+      first-line-indent: line_spacings.first-line-indent,
+      spacing: line_spacings.spacing
+    )
 
     if acknowledgements != [] {
       heading(level: 1)[Acknowledgements]
@@ -311,8 +324,15 @@
   counter(page).update(1)
 
   // Set up line spacing for chapters
-  set text(top-edge: line_spacings.top-edge, bottom-edge: line_spacings.bottom-edge)
-  set par(leading: line_spacings.leading, first-line-indent: line_spacings.first-line-indent, spacing: line_spacings.spacing)
+  set text(
+    top-edge: line_spacings.top-edge,
+    bottom-edge: line_spacings.bottom-edge
+  )
+  set par(
+    leading: line_spacings.leading,
+    first-line-indent: line_spacings.first-line-indent,
+    spacing: line_spacings.spacing
+  )
 
   // Main Chapter Headings - reset figure counters to provide chapter-specific numbering
   show heading.where(level: 1): it => {
@@ -346,13 +366,14 @@
 
   // Set figure numbers equal to Chapter number `.` figure number
   set figure(numbering: n => {
-	let hdr = counter(heading).get().first()
-	let num = query(
-		selector(heading).before(here())
-	).last().numbering
-	numbering(num, hdr, n)
+      let hdr = counter(heading).get().first()
+      let num = query(
+              selector(heading).before(here())
+      ).last().numbering
+      numbering(num, hdr, n)
   })
 
+  show figure.where(kind: table): set figure.caption(position: top)
 
   body
 }

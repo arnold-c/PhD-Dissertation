@@ -82,7 +82,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
       [Not Always], [285 (34.2%)], [389 (57.0%)],
   ),
   caption: [Propensity of following public health measures in returning students and community members with PSU ELISA results; subset of community members that received the “Health Messaging” survey. P-value refers to Chi-square test with Yates’ continuity correction of proportions in the predictor level by cohort.],
-  supplement: [Supplemental Table]
 )
 <tbl-ph-meas-freq>
 
@@ -108,7 +107,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
       [Missing], [1 (0.1%)], [0 (0%)], [1 (0.2%)], [1 (0.5%)],
   ),
   caption: [Raw prevalence in each subgroup by adherence to PH public health],
-  supplement: [Supplemental Table]
 )
 <tbl-ph-meas-seroprev>
 
@@ -123,7 +121,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     [Positive], [36 (3.0%)], [6 (5.8%)],
   ),
   caption: [Wave 1 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
-  supplement: [Supplemental Table]
 )
 <tbl-comm-sim-wave-1>
 
@@ -138,7 +135,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     [Positive], [71 (5.9%)], [6 (5.8%)],
   ),
   caption: [Wave 2 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
-  supplement: [Supplemental Table]
 )
 <tbl-comm-sim-wave-2>
 
@@ -153,7 +149,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     [Positive], [87 (7.2%)], [9 (8.7%)],
   ),
   caption: [Wave 2 cumulative seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
-  supplement: [Supplemental Table]
 )
 <tbl-comm-sim-wave-2-cum>
 
@@ -165,7 +160,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     width: 100%
   ),
   caption: [Imputation method comparison among returning students],
-  supplement: [Supplemental Figure]
 )
 <fig-imputation-log-ors>
 
@@ -175,6 +169,5 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     width: 100%
   ),
   caption: [Sensitivity analysis of true prevalence amongst returning student and community subgroups, using pooled estimate of IgG test sensitivity against self-reported prior positive test],
-  supplement: [Supplemental Figure]
 )
 <fig-true-prev-pooled>
