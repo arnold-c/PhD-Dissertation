@@ -457,7 +457,11 @@
       numbering(num, hdr, n)
   })
 
-  show figure.where(kind: table): set figure.caption(position: top)
+  show figure.where(kind: table): it => {
+    set figure.caption(position: top)
+    show: reset_linespacing
+    it
+  }
 
   // Set equation numbers equal to Chapter number `.` equation number
   set math.equation(numbering: n => {
