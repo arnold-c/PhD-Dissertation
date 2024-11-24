@@ -428,15 +428,8 @@
   counter(page).update(1)
 
   // Set up line spacing for chapters
-  set text(
-    top-edge: line_spacings.top-edge,
-    bottom-edge: line_spacings.bottom-edge
-  )
-  set par(
-    leading: line_spacings.leading,
-    first-line-indent: line_spacings.first-line-indent,
-    spacing: line_spacings.spacing
-  )
+  show: set_linespacing.with(..line_spacings)
+  show: set_headings.with(..line_spacings)
 
   // Main Chapter Headings - reset figure counters to provide chapter-specific numbering
   show heading.where(level: 1): it => {
@@ -454,9 +447,6 @@
     v(0.5em)
   }
 
-  show: set_headings.with(
-    ..line_spacings
-  )
 
   // Set figure numbers equal to Chapter number `.` figure number
   set figure(numbering: n => {
