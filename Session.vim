@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Documents/Repos/Dissertation
+cd ~/Documents/Repos/PhD-Dissertation
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,31 +13,17 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +67 planning/intro-plan.typ
-badd +37 chapter_1/introduction.typ
+badd +66 chapter_1/introduction.typ
+badd +282 psu_template.typ
+badd +60 dissertation.typ
+badd +71 chapter_6/synthesis.typ
+badd +61 article_template.typ
+badd +276 chapter_5/ews_manuscript.typ
+badd +3 chapter_2/manuscript.typ
 argglobal
 %argdel
 $argadd planning/intro-plan.typ
-tabnew +setlocal\ bufhidden=wipe
-tabrewind
-edit chapter_1/introduction.typ
-argglobal
-balt planning/intro-plan.typ
-setlocal fdm=expr
-setlocal fde=v:lua.vim.treesitter.foldexpr()
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=5
-setlocal fml=1
-setlocal fdn=5
-setlocal fen
-let s:l = 37 - ((36 * winheight(0) + 50) / 101)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 37
-normal! 0
-tabnext
+edit chapter_6/synthesis.typ
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -46,19 +32,22 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-enew
-file NeogitStatus
-balt chapter_1/introduction.typ
-setlocal fdm=manual
+balt dissertation.typ
+setlocal fdm=expr
 setlocal fde=v:lua.vim.treesitter.foldexpr()
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=99
-setlocal fml=0
+setlocal fdl=5
+setlocal fml=1
 setlocal fdn=5
 setlocal fen
-lcd ~/Documents/Repos/Dissertation
-tabnext 2
+let s:l = 71 - ((25 * winheight(0) + 50) / 101)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 71
+normal! 0119|
+tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
