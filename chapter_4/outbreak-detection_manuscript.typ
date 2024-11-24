@@ -317,8 +317,7 @@ However, the general patterns should hold, and more importantly, the analysis fr
 #pagebreak()
 
 
-#show: reset_linespacing
-
+#reset_linespacing[
 == Acknowledgements
 
 === Funding
@@ -361,3 +360,4 @@ Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the 
 
 == Data Availability
 All code and data for the simulations can be found at #link("https://github.com/arnold-c/OutbreakDetection")
+]
