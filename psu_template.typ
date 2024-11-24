@@ -492,5 +492,16 @@
 
   show figure.where(kind: table): set figure.caption(position: top)
 
+  // Set equation numbers equal to Chapter number `.` figure number
+  set math.equation(numbering: n => {
+      let hdr = counter(heading).get().first()
+      let num = query(
+              selector(heading).before(here())
+      )
+      if num != () {
+        numbering(num.last().numbering, hdr, n)
+      }
+  })
+
   body
 }

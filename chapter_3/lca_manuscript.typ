@@ -114,9 +114,8 @@ We parameterized a deterministic compartmental Susceptible-Infected-Recovered (S
 The recovery rate was set to 8 days.
 Diagonal values of the transmission matrix were constrained such that $beta_(H H) lt.eq beta_(M M) lt.eq beta_(L L)$ (#emph[H] represents high-adherence to public health guidelines, and #emph[M] and #emph[L] represent medium- and low-adherence, respectively), with the following parameters fit: the transmission matrix diagonals, a scaling factor for the off-diagonal values ($phi.alt$), and a scaling factor for the whole transmission matrix ($rho$).
 The off-diagonal values are equal to a within-group value (diagonal) multiplied by a scaling factor ($phi.alt$).
-This scaling factor can either multiply the within-group beta value of the source group (e.g., $beta_(H L) = phi.alt dot.op beta_(L L)$; Eq. 1A), or the recipient group (e.g., $beta_(L H) = phi.alt dot.op beta_(L L)$; Eq. 1B), each with a different interpretation.
+This scaling factor can either multiply the within-group beta value of the source group (e.g., $beta_(H L) = phi.alt dot.op beta_(L L)$; @eq_lca-mixing-structures\A), or the recipient group (e.g., $beta_(L H) = phi.alt dot.op beta_(L L)$; @eq_lca-mixing-structures\B), each with a different interpretation.
 
-#set math.equation(numbering: "1")
 #let boldred(x) = text(fill: rgb("#8B0000"), $bold(#x)$)
 
 $
@@ -136,6 +135,7 @@ rho mat(
   boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)), boldred(beta_(L L)) ;
 ) &&#text[mixing structure] bold(B)\
 $
+<eq_lca-mixing-structures>
 
 The former assumes that between-group transmission is dominated by the transmissibility of the source individuals, implying that adherence to the PHMs primarily prevents onwards transmission, rather than protecting against infection.
 The latter assumes that between-group transmission is dominated by the susceptibility of the recipient individuals, implying that adherence to the PHMs primarily prevents infection, rather than protecting against onwards transmission.
