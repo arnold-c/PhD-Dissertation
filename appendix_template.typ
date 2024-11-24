@@ -17,7 +17,7 @@
   body
 ) = {
 
-  set math.equation(numbering: "1", supplement: "Supplemental")
+  set math.equation(supplement: "Supplemental Equation")
 
   show figure.where(kind: table): set figure(supplement: [Supplemental Table])
   show figure.where(kind: image): set figure(supplement: [Supplemental Figure])

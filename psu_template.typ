@@ -441,6 +441,7 @@
   // Main Chapter Headings - reset figure counters to provide chapter-specific numbering
   show heading.where(level: 1): it => {
     set text(18pt)
+    counter(math.equation).update(0)
     counter(figure.where(kind:image)).update(0)
     counter(figure.where(kind:table)).update(0)
     if it.supplement != auto [
@@ -457,30 +458,6 @@
     ..line_spacings
   )
 
-  // show heading.where(level: 2): it => block(
-  //   above: line_spacings.spacing+1.5em,
-  //   below: line_spacings.spacing+0.5em
-  // )[
-  //     #set text(1.03em, weight: "black")
-  //     #it.body
-  // ]
-  //
-  // show heading.where(level: 3): it => block(
-  //   above: line_spacings.spacing+1em,
-  //   below: line_spacings.spacing+0.5em
-  // )[
-  //     #set text(1.01em, weight: "black")
-  //     #it.body
-  // ]
-  //
-  // show heading.where(level: 4): it => block(
-  //   above: line_spacings.spacing+1em,
-  //   below: line_spacings.spacing+0.5em
-  // )[
-  //     #set text(1.01em, weight: "bold", style: "italic")
-  //     #it.body
-  // ]
-
   // Set figure numbers equal to Chapter number `.` figure number
   set figure(numbering: n => {
       let hdr = counter(heading).get().first()
@@ -492,14 +469,15 @@
 
   show figure.where(kind: table): set figure.caption(position: top)
 
-  // Set equation numbers equal to Chapter number `.` figure number
+  // Set equation numbers equal to Chapter number `.` equation number
   set math.equation(numbering: n => {
       let hdr = counter(heading).get().first()
       let num = query(
               selector(heading).before(here())
       )
       if num != () {
-        numbering(num.last().numbering, hdr, n)
+        let num = num.last().numbering
+        numbering(num, hdr, n)
       }
   })
 
