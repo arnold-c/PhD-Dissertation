@@ -1,7 +1,7 @@
 #import "psu_template.typ": *
 
 #show: psu_thesis.with(
-    title: "Constructing Categories in Infectious Disease Outbreaks: Opportunities, Uncertainty, and Consequences",
+    title: "The Role of Categories in Shaping Our Understanding of Infectious Disease Outbreaks",
     author: "Callum R. K. Arnold",
     department: "Department of Biology",
     degree_type: "doctorate", // one of "doctorate" or "masters"
