@@ -249,7 +249,7 @@ This reflects the change from highly sensitive systems with low thresholds to mo
 For Poisson noise, similar detection delays are observed for all test and noise magnitudes, with most of the variation attributable to the change in the testing rate (means of -3.7 to 36.1 days).
 Under dynamical noise, there are clearer differences in the performance of perfect and imperfect diagnostic tests, with the separation of outcomes occurring later than observed for surveillance accuracy ($Lambda(8)$ vs $Lambda(2)$ #sym.dash.em @fig-delay and @fig-accuracy #sym.dash.em respectively).
 With large amounts of dynamical noise ($Lambda(8)$), the mean detection delay of the 90% and 85% imperfect tests range from -17.5 days to 3.2 days, and from -25.2 days to -3.4 days, respectively.
-Negative delays indicate that alerts are being triggered before the start of the outbreak and is correlated with the proportion of the time series that is under alert, with larger negative delays associated with more and/or longer alert periods (@fig-alert-proportion, Supplemental Figures 1 and 2).
+Negative delays indicate that alerts are being triggered before the start of the outbreak and is correlated with the proportion of the time series that is under alert, with larger negative delays associated with more and/or longer alert periods (@fig-alert-proportion, @fig-alert-duration, @fig-num-alerts).
 Long detection delays manifest as large numbers of unavoidable cases (i.e., cases that occur between the outbreak start and its detection) (@fig-unavoidable).
 Given the exponential trajectory of infections in the initial phase of an outbreak, the pattern of unavoidable cases follows the same shape as for detection delays, but more exaggerated.
 
