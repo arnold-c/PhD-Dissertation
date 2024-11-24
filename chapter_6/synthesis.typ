@@ -29,54 +29,56 @@ As a large proportion of the population were already in the most adherent group 
 
 If we are to design effective interventions, it is essential to first characterize the limits of what can realistically be achieved.
 For example, supplemental immunization activities (SIAs) aimed to minimize the effects of an outbreak, reactively or prospectively, are partially limited by the vaccination coverage that can be achieved.
-While SIAs can achieve modest improvements over routine immunization coverage, individuals who are able to access the care provided by SIAs are more likely to also be individuals who can attend routine immunizations, minimizing the potential impact of inflated efforts through traditional mechanisms @portnoyImpactMeaslesSupplementary2018 @portnoyComparativeDistributionalImpact2020 @lesslerMeasuringPerformanceVaccination2011.
+While SIAs can achieve modest improvements over routine immunization coverage, individuals who are able to access the care provided by SIAs are more likely to also be individuals who can attend routine immunizations, minimizing the potential impact of expanded efforts through traditional mechanisms @portnoyImpactMeaslesSupplementary2018 @portnoyComparativeDistributionalImpact2020 @lesslerMeasuringPerformanceVaccination2011.
 Incorporating access and dose redundancy data can provide more realistic estimates on the effectiveness of future efforts.
 Similarly, incorporating behavioral information into epidemiological models can shed light on the potential effectiveness of vaccination campaigns.
-Defining latent groups of individuals by vaccine-seeking or hesitancy behaviors, it would be possible to calculate an expected uptake, augmenting estimates provided through access data.
-This could allow for a more realistic estimate of intervention effectiveness at reducing disease burden, characterizing a limit for coverage that incorporates previously observed aggregate information (the number of redundant doses provided), and individual intention behavior; there will be situations where individuals will choose not to be vaccinated, despite access expanding to incorporate them.
+Defining latent groups of individuals by vaccine-seeking or hesitancy behaviors, it would be possible to calculate an expected uptake, augmenting estimates provided through data on accessibility.
+This could allow for a more realistic estimate of intervention effectiveness at reducing disease burden, characterizing a limit for coverage that incorporates previously observed aggregate information (the number of redundant doses provided), and individual intention behavior.
+For example, this may identify situations where individuals will choose not to be vaccinated, despite access expanding to incorporate them.
 It is possible that vaccine-intentions differ between groups with and without access, so efforts improve access alone may overestimate the protection benefits gained.
 Modeling these latent sentiments offers a mechanism to account for these discrepancies.
-Not only does this approach potentially provide more accurate projections of the limits of vaccination coverage, but may also improve disease burden estimates by describing _who_ can be immunized; overlap between access and healthcare-seeking behavior with disease vulnerability will highlight gaps that need to be overcome.
+Not only does this approach potentially provide more accurate projections of the limits of vaccination coverage, it may also improve disease burden projections by describing _who_ can be immunized; overlap between access and healthcare-seeking behavior with disease vulnerability will highlight gaps that need to be overcome.
 
 This approach can also shed light on effectiveness of non-pharmaceutical interventions in heterogeneous populations, where traditional measures derived from demographic data, such as age-based mixing matrices, may over-simplify the dynamics.
 Characterizing complex network structures has been a point of focus in the study and prevention of sexually transmitted infections (STIs) @kretzschmarMeasuresConcurrencyNetworks1996 @whittlesDynamicPowerlawSexual2019 @spicknallModelingImpactSexual2022.
 However, the process if often laborious, requires the computation of difficult-to-calculate network measures like partner concurrency, and is subject to change @uongAssessmentBiasEstimates2020 @drumrightPeopleReallyKnow2004 @nelsonMeasuringSexPartner2007.
-In such systems heterogeneity exists across multiple facets, which may not be adequately captured by standard discretizations.
-The incorporation of different data sources and categorization approaches may serve as a beneficial middle ground, allowing for a more accurate depiction of the true heterogeneity in disease risk than provided by age classes and demographic data, while also requiring less hands-on data collection than mapping contact networks; behavioral surveys can be implemented online, and pose potentially less sensitive questions than necessary to build a sexual network, which may act as a barrier to participation @itoExploringSexualContact2022.
+In such systems heterogeneity exists across multiple facets, which may not be adequately captured by standard discretization.
+The incorporation of different data sources and categorization approaches may serve as a beneficial middle ground, allowing for a more accurate depiction of the true heterogeneity in disease risk than provided by age classes and demographic data, while also requiring less hands-on data collection than mapping contact networks; behavioral surveys can be implemented online, and pose potentially less sensitive questions than those necessary to build a sexual network, which may reduce a barrier to participation @itoExploringSexualContact2022.
 This is particularly important when designing interventions for novel pathogens, where information is limited, prior observations may not hold and are likely to change over time, and urgent actions are necessary to minimize the impact @glennonChallengesModelingEmergence2021 @lloyd-smithNineChallengesModelling2015.
 
 == Discretization of Infection Status
 
 It is imperative to evaluate the effects of discretizing not only exposure classes, but also the outcomes of an infectious disease system.
-In public health surveillance programs, incidence of disease occurrence must be tabulated before the need for and level of action can be decided upon.
+In public health surveillance programs, incidence of disease occurrence must be tabulated before the need for, and level of, action can be decided upon.
 Uncertainty in the observational process can occur through two mechanisms: uncertainty in who and how many individuals are counted (observed and tested), and uncertainty in the underlying test results.
 Incorporating uncertainty in the reporting of cases has been of increasing interest in the parameterization of mathematical models, particularly for the estimation of $R_"t"$ @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 and disease burden @shattockContributionVaccinationImproved2024 @vosGlobalBurden3692020 @winterFeasibilityMeaslesRubella2022.
 However, the accuracy of the diagnostic used to make this determination affects the incidence, necessarily turning a quantitative input (pathogen load/host response) into a binary value, with associated classification errors.
-Previous inclusions of diagnostic uncertainty amount to under-reporting as only one pathogen is simulated, removing the opportunity for false-positive test results @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024.
+Previous inclusions of diagnostic uncertainty solely address under-reporting as only one pathogen is simulated, removing the opportunity for false-positive test results @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024.
+Here I address the potential impact of false positives by simulating a two-pathogen system.
 
 To account for diagnostic uncertainty, in @outbreak-detection and @ews I simulated both a target pathogen and background noise, using representative parameters of measles and rubella, respectively.
-Through variations to the rubella vaccination coverage, I was able to evaluate the degradation of outbreak detection performance with tests of decreasingly sensitivity and specificity.
+Through variations to the rubella vaccination coverage, I was able to evaluate the degradation of outbreak detection performance with tests of decreasing sensitivity and specificity.
 When the background noise did not exhibit large peaks and troughs i.e., was drawn from a Poisson distribution or when there was sufficiently high vaccination coverage in the rubella dynamical noise simulations, both imperfect and perfect diagnostic tests could adequately discriminate between outbreak and non-outbreak periods.
 However, this was not the case at higher levels of dynamical noise ($approx$ 6 times, or greater, than the average incidence of measles).
 In these situations the reduced diagnostic accuracy of imperfect tests could not be alleviated through increasing the testing rate.
 Across the WHO's African Region, there is typically far more circulating measles than rubella; in 2023, the average incidence of measles was 60.3 cases per 1M population, in contrast to 5.2 rubella cases per 1M population @masreshaTrackingMeaslesRubella2024.
 In general, this would point to the widespread viability of imperfect diagnostic tests within infectious disease surveillance systems for the purposes of outbreak detection.
-However, there is great variability in these incidence rates by country.
-At the one end, countries like Burkina Faso experienced measles incidence of 69.7 measles cases per 1M population, relative to 0.4 rubella cases per 1M; testing 80% of reported cases, there were 4.2 times as many IgM positive and epidemiologically-linked measles cases as other clinically-compatible infections (i.e. rubella or otherwise) @masreshaTrackingMeaslesRubella2024.
+However, there is great variability in the incidence rates by country.
+At the one end, Burkina Faso experienced measles incidence of 69.7 measles cases per 1M population, relative to 0.4 rubella cases per 1M; testing 80% of reported cases, there were 4.2 times as many IgM positive and epidemiologically-linked measles cases as other clinically-compatible infections (i.e. rubella or otherwise) @masreshaTrackingMeaslesRubella2024.
 As a result, imperfect diagnostics would likely be able to accurately discriminate between outbreaks of measles from changes in the incidence of other sources of febrile rash.
 In contrast, Zimbabwe reported rubella incidence that was approximately 7.3 times higher than measles incidence, presenting a location where the increased uncertainty of imperfect diagnostics would result in poor outbreak detection @masreshaTrackingMeaslesRubella2024.
 Lastly, Eritrea experienced 5.0 measles cases, and 1.3 rubella cases, per 1M population @masreshaTrackingMeaslesRubella2024.
-While this may appear to be a good candidate for the use of imperfect tests, the incidence rate for clinically compatible cases that were not measles or rubella, was 21.3 cases per 1M population @masreshaTrackingMeaslesRubella2024.
+While this may appear to be a good candidate for the use of imperfect tests, the incidence rate for clinically compatible cases that were not measles or rubella was 21.3 cases per 1M population @masreshaTrackingMeaslesRubella2024.
 As a result, before imperfect diagnostic tests could be implemented with confidence, a careful evaluation of the dynamics of the non-rubella background noise cases would be required; if it demonstrated large episodic outbreaks, its scale in relation to the expected measles incidence would necessitate the use of high-accuracy diagnostic tests.
 
 In @ews, I build off the work in the previous chapter to explore the effects of the outlined diagnostic uncertainty on our ability to predict risk of future outbreaks.
 Traditional outbreak detection that utilizes the exceedance of an incidence threshold is necessarily reactive in nature.
 Under ideal circumstances, it would be possible to measure trends in summary statistics derived from infection data to infer the emergence of outbreaks before they occur.
-This would allow proactive actions that could avert the most cases, reducing the morbidity and mortality resulting from a pathogen.
+This would allow for proactive actions that could avert the most cases, reducing the morbidity and mortality resulting from a pathogen.
 Prior work has demonstrated the viability of early warning signals (EWS), albeit only accounting for errors stemming from testing rates, not diagnostic uncertainty @brettAnticipatingEpidemicTransitions2018 @southallEarlyWarningSignals2021 @brettDetectingCriticalSlowing2020 @brettAnticipatingEmergenceInfectious2017.
-I demonstrate that, similar to reactive outbreak detection, predictive systems can be designed around the use of RDTs for case identification, so long as the magnitude of dynamical noise is low relative to the incidence of the target pathogen.
+I demonstrate that, similar to reactive outbreak detection, predictive systems can be designed around the use of imperfect diagnostics e.g., RDTs, for case identification, so long as the magnitude of dynamical noise is low relative to the incidence of the target pathogen.
 Not all EWS metrics performed well, but, aligning with the literature, the mean, variance, autocovariance, and index of dispersion were able to discriminate between emergent and non-emergent time series in these situations.
-Additionally, the evaluation of EWS performance required the alert in emergent simulations to occur before the tipping point $R_"E" = 1$, which indicates the potential for a future outbreak.
+Additionally, the evaluation of EWS performance required that the alert in emergent simulations occur before the tipping point $R_"E" = 1$ to be considered successful.
 As this tipping point essentially acts as a necessary precursor to an outbreak (though exceptions can occur due to the stochastic nature of infectious disease transmission), each warning would be provided with sufficient time for action to potentially avert an outbreak.
 
 The primary focus of this section of work (@outbreak-detection & @ews) has been to motivate new approaches to the design of surveillance systems at large, not any one specific implementation.
@@ -89,7 +91,7 @@ In doing so, this opens the opportunity for the development and use of cheaper, 
 Further, we identified conditions where accuracy was fundamentally limited; even with a perfect test, EWS occasionally trigger under null simulations due to endemic and imported cases.
 These boundaries can only be illustrated through comprehensive exploration across all axes of the surveillance system.
 
-Assuming this approach provides public health personnel and policy makers the ability to consider all options and "optimize" the surveillance system to best suit their needs.
+This approach provides public health personnel and policy makers the ability to consider all options and "optimize" the surveillance system to best suit their needs.
 Trade-offs and the balance of priorities must be evaluated on a context-specific basis.
 There has long been a tension in designing disease surveillance programs: the needs of an individual may be at odds with those of the wider population.
 During the early stages of the COVID-19 pandemic, when vaccines were first being developed and their potential effectiveness unknown, there were discussions around who should be prioritized during initial roll-outs: the elderly and those with known co-morbidities, who would most likely receive the largest direct benefit from immunization; or younger individuals with larger numbers of contacts, whose vaccination would most likely result in the largest reduction in incidence, with an indirect benefit to vulnerable individuals @bubarModelinformedCOVID19Vaccine2021.
@@ -128,12 +130,10 @@ Exploration of these issues should be the target of future work.
 
 == Conclusion
 
-Without categorization, understanding disease systems and decision-making can become intractably complex; a map of everything is a map of nothing.
+Without categorization, understanding disease systems and decision-making can become intractably complex.
+To paraphrase "Del rigor en la ciencia" by Jorge Luis Borges; "a map of everything is a map of nothing".
 Through discretization we can describe trends in disease burden, discover emergent risk groups, and plan targeted actions to most efficiently use limited resources.
 But the choices we make to define breakpoints and strata introduce challenges that must be addressed, particularly at the boundaries.
-Through careful, intentional, investigation, it is possible to balance the trade-offs that arise from the uncertainty.
+With careful, intentional, investigation, it is possible to balance the trade-offs that arise from the uncertainty.
 Throughout my dissertation I characterize the benefits and pitfalls of discretizing continuous phenomena, and present novel approaches to integrate across scales.
 This topic presents many exciting avenues for future research, with those that address findings from all levels of the infection observation process offering the most opportunity to minimize burden and save lives.
-
-
-// #bibliography(style: "elsevier-vancouver", "../Dissertation.bib")
