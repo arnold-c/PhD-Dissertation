@@ -2,10 +2,10 @@
 
 #show: psu_thesis.with(
     title: "Constructing Categories in Infectious Disease Outbreaks: Opportunities, Uncertainty, and Consequences",
-  author: "Callum R. K. Arnold",
-  department: "Department of Biology",
-  degree_type: "doctorate", // one of "doctorate" or "masters"
-  committee_members: (
+    author: "Callum R. K. Arnold",
+    department: "Department of Biology",
+    degree_type: "doctorate", // one of "doctorate" or "masters"
+    committee_members: (
     (
         name: "Dr. Katriona Shea",
         title: "Professor of Biology\nAlumni Professor in the Biological Sciences",
@@ -26,17 +26,18 @@
         title: "Assistant Professor of Statistics",
         committee-position: "Outside Unit & Field Member",
     ),
-  ),
-  date: ( // Date of degree CONFERRAL
+    ),
+    date: ( // Date of degree CONFERRAL
     year: "2024",
     month: "December",
     day: "22",
-  ),
-  font-size: 12pt,
-  line-spacing: 2,
-  abstract: [#include("./additional_sections/abstract.typ")],
-  acknowledgements: [#include("./additional_sections/acknowledgements.typ")],
-  abbreviations: [#include("./additional_sections/abbreviations.typ")]
+    ),
+    font-size: 12pt,
+    line-spacing: 2,
+    abstract: [#include("./additional_sections/abstract.typ")],
+    acknowledgements: [#include("./additional_sections/acknowledgements.typ")],
+    abbreviations: [#include("./additional_sections/abbreviations.typ")],
+    // dedication: [#include "./additional_sections/dedication.typ"]
 )
 
 #include "./chapter_1/introduction.typ"
