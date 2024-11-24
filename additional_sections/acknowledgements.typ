@@ -1,6 +1,6 @@
 To begin, I would like to thank my committee, Kat Shea, Maciej Boni, Stephen Berg, and Matt Ferrari, for their support, patience, and guidance throughout my PhD.
 I am so very grateful to have had the opportunity to work and discuss science with you all; my work is immeasurably better as a result.
-In particular, I would like to pay particular tribute to Matt.
+In particular, I would like to pay tribute to Matt.
 Not only have you helped guide me through all academic puzzles an aspiring researcher could ask for, facilitated numerous collaboration opportunities, and been tireless in helping me become a better scientist, but you are one of the few that pair it with a deep-seated kindness and humanity.
 I can truly say that the last four years would not have been as productive or joyous without your care and understanding; always providing time and support when I needed it.
 
@@ -10,7 +10,7 @@ Birgit Nikolay, Thomas Roederer, Etienne Gignoux, Catherine Eisenhauer, and Klau
 Amy Winter, Bill Moss, Bryan Patenaude, and Alex Kong for irreplaceable feedback in the development of the outbreak detection project.
 
 I am also incredibly grateful to the whole of the Ferrari lab: Deepit Bhatia, Ariel Greiner, Brian Lambert, Tiffany Leung, Candace Todd, Kai Zou, and honorary member, Emily Howerton.
-Thank you for acting as a sounding board and providing feedback; my work is notably better for your engagement and strength to listen to me repeat the same presentation multiple meetings in a row.
+Thank you for acting as a sounding board and providing constructive criticism; my work is notably better for your engagement and strength to listen to me repeat the same presentation multiple meetings in a row.
 
 To the friends throughout my time: John, Suzana, Alexa, Kate, Des, Deepit, Emily, Chiara, Alex, Jared, Ryan, Scott, Betty, Dave, Jen.
 Thank you for joining me on various outdoor excursions, or just grabbing a coffee or something to eat, and helping make both State College and Toronto wonderful places to live for the past 4 years.
