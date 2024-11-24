@@ -327,7 +327,7 @@ The funding sources had no role in the collection, analysis, interpretation, or 
 
 #emph[Data curation:] CA, MJF
 
-#emph[Formal analysis:] CA, MJF
+#emph[Formal analysis:] CA
 
 #emph[Funding acquisition:] MJF
 
@@ -337,13 +337,13 @@ The funding sources had no role in the collection, analysis, interpretation, or 
 
 #emph[Project administration:] MJF
 
-#emph[Software:] CA, MJF
+#emph[Software:] CA
 
 #emph[Supervision:] MJF
 
-#emph[Validation:] CA, MJF
+#emph[Validation:] CA
 
-#emph[Visualization:] CA, MJF
+#emph[Visualization:] CA
 
 #emph[Writing - original draft:] CA
 
@@ -354,7 +354,7 @@ The authors declare no conflicts of interest.
 
 === Data Access, Responsibility, and Analysis
 Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis.
-Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State University) conducted the data analysis.
+Callum Arnold (Department of Biology, Pennsylvania State University) conducted the data analysis.
 
 === Collaborators
 
