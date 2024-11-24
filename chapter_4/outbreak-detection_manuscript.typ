@@ -1,3 +1,4 @@
+#import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": article
 
 #show: article.with(
@@ -314,6 +315,9 @@ However, the general patterns should hold, and more importantly, the analysis fr
 
 
 #pagebreak()
+
+
+#show: reset_linespacing
 
 == Acknowledgements
 

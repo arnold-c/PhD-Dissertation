@@ -12,7 +12,10 @@
   .slice(sliceval)
 }
 
+// Adjust to ensure first table doesn't overflow to second page
+#block(above: 0.75em)[
 == Tables
+]
 
 #let tau_comparison_table = csv("./manuscript_files/tables/tau-comparison.csv")
 #let tau_comparison_vals = rename_noise_extract_vals(tau_comparison_table)

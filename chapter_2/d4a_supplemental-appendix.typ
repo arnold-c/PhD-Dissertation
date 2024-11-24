@@ -105,7 +105,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
 )
 <tbl-comm-sim-wave-2-cum>
 
-#pagebreak()
 
 #figure(
   two_header_table(
@@ -151,8 +150,6 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
   caption: [Raw prevalence in each subgroup by adherence to PH public health],
 )
 <tbl-ph-meas-seroprev>
-
-#pagebreak()
 
 
 == Figures

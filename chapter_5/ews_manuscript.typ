@@ -1,3 +1,4 @@
+#import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": *
 
 #show: article.with(
@@ -304,6 +305,7 @@ Our work expands upon these efforts, characterizing the limits of predictability
 
 #pagebreak()
 
+#reset_linespacing[
 == Acknowledgements
 
 === Funding
@@ -313,13 +315,15 @@ This project was also supported by the National Science Foundation, by grant: NS
 The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
 === Author Contributions
+
+
 #emph[Conceptualization:] CA, MJF
 
 #emph[Data curation:] MJF, CA
 
 #emph[Formal analysis:] CA, MJF
 
-#emph[Funding acquisition:] ???
+#emph[Funding acquisition:] MJF
 
 #emph[Investigation:] CA, MJF
 
@@ -337,3 +341,4 @@ Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the 
 
 == Data Availability
 All code and data for the simulations can be found at #link("https://github.com/arnold-c/CSDNoise")
+]

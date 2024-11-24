@@ -1,3 +1,4 @@
+#import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": article
 
 #show: article.with(
@@ -311,6 +312,7 @@ Future research should consider including perceived agency and efficacy for PHM 
 
 #pagebreak()
 
+#reset_linespacing[
 == Acknowledgements
 
 === Funding
@@ -363,6 +365,4 @@ Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania St
 
 == Data Availability
 The datasets generated during and/or analyzed during the current study are not publicly available as they contain personally identifiable information, but are available from the corresponding author on reasonable request.
-
-#pagebreak()
-
+]

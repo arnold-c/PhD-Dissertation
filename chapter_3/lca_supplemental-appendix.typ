@@ -8,7 +8,10 @@
   article_label: "lca_appendix"
 )
 
+// Adjust to ensure first table doesn't overflow to second page
+#block(above: 0.75em)[
 == LCA Model Fitting
+]
 
 #let lca_irp_table = csv("./supplemental_files/tables/lca-item-response-probs.csv")
 #let lca_irp_fill_table = csv("./supplemental_files/tables/lca-item-response-probs_fill.csv")

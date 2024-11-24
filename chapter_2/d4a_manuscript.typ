@@ -1,3 +1,4 @@
+#import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": *
 
 #show: article.with(
@@ -375,6 +376,7 @@ Other studies have observed this influence using a cross-sectional or matched ca
 
 #pagebreak()
 
+#reset_linespacing[
 == Acknowledgements
 === Funding
 
@@ -430,3 +432,4 @@ Callum Arnold, Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State
 
 == Data Availability
 The datasets generated during and/or analyzed during the current study are not publicly available due to containing personally identifiable information but are available from the corresponding author on reasonable request.
+]
