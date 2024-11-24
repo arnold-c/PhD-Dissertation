@@ -125,14 +125,13 @@ All simulations and analysis was completed in Julia version 1.10.5 @bezansonJuli
 
 === Computing & Evaluating EWS
 Each set of null and emergent time series are aggregated by month and numerical estimates of the EWS metrics were then calculated on the aggregated time series, de-trended using backwards-facing moving averages with bandwidth $b = 52$ weeks.
-For example, the EWS metric, the mean, is given by the expectation:
+For example, the EWS metric, the mean, is given by the expectation in @eq_ews-mu-computation where: $X_s$ represents the aggregated incidence at time point (month) $s$, and $delta = 1$ time step (in the simulation results presented, 1 month).
+At the beginning of the time series when $t < b$, $b$ is set equal to $t$.
 
 $$$
 hat(mu)_t &= sum_(s = t-b delta)^(s = t) X_s / b
 $$$
-
-where $X_s$ represents the aggregated incidence at time point (month) $s$, and $delta = 1$ time step (in the simulation results presented, 1 month).
-At the beginning of the time series when $t < b$, $b$ is set equal to $t$.
+<eq_ews-mu-computation>
 
 In this paper we evaluate the performance of the following EWS metrics: the mean, variance, coefficient of variation, index of dispersion, skewness, kurtosis, autocovariance, and autocorrelation at lag-1, which have previously been show to be correlated or predictive of disease emergence @brettAnticipatingEpidemicTransitions2018 @drakeStatisticsEpidemicTransitions2019 @southallEarlyWarningSignals2021 @southallEarlyWarningSignals2021 @brettDetectingCriticalSlowing2020.
 The full list of numerical formulas for each EWS metric can be found in @tbl_csd-ews-formulas.

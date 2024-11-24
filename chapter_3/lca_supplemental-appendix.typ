@@ -52,10 +52,17 @@
 
 == Matrix Structure Sensitivity Analysis
 
-In the main body of the text, we present the results for the three-class model that corresponds to a scenario where public health measures (PHMs) reduce onwards risk of transmission (@eq_lca-supp-mixing-matrices\A), rather than conferring protection for the practitioner (@eq_lca-supp-mixing-matrices\B). Another alternative uses a single scaled value of $beta_(L L)$, representing all between-group interactions experiencing the same risk of transmission that is a fraction of the transmission observed between Low Adherence individuals (@eq_lca-supp-mixing-matrices\C).
+In the main body of the text, we present the results for the three-class model that corresponds to a scenario where public health measures (PHMs) reduce onwards risk of transmission (@eq_lca-mixing-structure)
+Two alternative were also simulated.
+
++ A transmission matrix that implies PHMs confer protection for the practitioner (@eq_lca-copy-rows).
++ A transmission matrix that uses a single scaled value of $beta_(L L)$, thereby all between-group interactions experience the same risk of transmission. This risk is a fraction of the transmission observed between Low Adherence individuals (@eq_lca-identical-off-diagonals).
+
+Below are results for alternative scenarios, which show qualitatively similar results to the main body of the text, albeit with a wider distribution in the Approximate Bayesian Computation distance metrics.
+
+=== PHMs Confer Protection
 
 #let boldred(x) = text(fill: rgb("#8B0000"), $bold(#x)$)
-
 $
 rho mat(
   beta_(H H), beta_(H M), beta_(H L) ;
@@ -63,26 +70,12 @@ rho mat(
   beta_(L H), beta_(H M), beta_(L L) ;
 )
 &&arrow rho mat(
-  beta_(H H), phi.alt beta_(M M), boldred(phi.alt beta_(L L)) ;
-  phi.alt beta_(H H), beta_(M M), boldred(phi.alt beta_(L L)) ;
-  phi.alt beta_(H H), phi.alt beta_(M M), boldred(beta_(L L)) ;
-) &&#text[mixing structure] bold(A)\
-&&arrow rho mat(
   beta_(H H), phi.alt beta_(H H), phi.alt beta_(H H) ;
   phi.alt beta_(M M), beta_(M M), beta_(M M) ;
   boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)), boldred(beta_(L L)) ;
-) &&#text[mixing structure] bold(B)\
-&&arrow rho mat(
-  beta_(H H), boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)) ;
-  boldred(phi.alt beta_(L L)), beta_(M M), boldred(phi.alt beta_(L L)) ;
-  boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)), beta_(L L) ;
-) &&#text[mixing structure] bold(C)\
+) &&#text[mixing structure]
 $
-<eq_lca-supp-mixing-matrices>
-
-Below are results for alternative scenarios, which show qualitatively similar results to the main body of the text, albeit with a wider distribution in the Approximate Bayesian Computation distance metrics.
-
-=== Eq 1B (PHMs Confer Protection)
+<eq_lca-copy-rows>
 
 #figure(
   image(
@@ -106,6 +99,20 @@ Below are results for alternative scenarios, which show qualitatively similar re
 #pagebreak()
 
 === Eq 1C (Identical Off-Diagonal Values)
+
+$
+rho mat(
+  beta_(H H), beta_(H M), beta_(H L) ;
+  beta_(M H), beta_(H M), beta_(M L) ;
+  beta_(L H), beta_(H M), beta_(L L) ;
+)
+&&arrow rho mat(
+  beta_(H H), boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)) ;
+  boldred(phi.alt beta_(L L)), beta_(M M), boldred(phi.alt beta_(L L)) ;
+  boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)), beta_(L L) ;
+) &&#text[mixing structure]
+$
+<eq_lca-identical-off-diagonals>
 
 #figure(
   image(

@@ -114,7 +114,7 @@ We parameterized a deterministic compartmental Susceptible-Infected-Recovered (S
 The recovery rate was set to 8 days.
 Diagonal values of the transmission matrix were constrained such that $beta_(H H) lt.eq beta_(M M) lt.eq beta_(L L)$ (#emph[H] represents high-adherence to public health guidelines, and #emph[M] and #emph[L] represent medium- and low-adherence, respectively), with the following parameters fit: the transmission matrix diagonals, a scaling factor for the off-diagonal values ($phi.alt$), and a scaling factor for the whole transmission matrix ($rho$).
 The off-diagonal values are equal to a within-group value (diagonal) multiplied by a scaling factor ($phi.alt$).
-This scaling factor can either multiply the within-group beta value of the source group (e.g., $beta_(H L) = phi.alt dot.op beta_(L L)$; @eq_lca-mixing-structures\A), or the recipient group (e.g., $beta_(L H) = phi.alt dot.op beta_(L L)$; @eq_lca-mixing-structures\B), each with a different interpretation.
+This scaling factor can either multiply the within-group beta value of the source group (e.g., $beta_(H L) = phi.alt dot.op beta_(L L)$; @eq_lca-mixing-structure), or the recipient group (e.g., $beta_(L H) = phi.alt dot.op beta_(L L)$; @eq_lca-copy-rows), each with a different interpretation.
 
 #let boldred(x) = text(fill: rgb("#8B0000"), $bold(#x)$)
 
@@ -128,19 +128,15 @@ rho mat(
   beta_(H H), phi.alt beta_(M M), boldred(phi.alt beta_(L L)) ;
   phi.alt beta_(H H), beta_(M M), boldred(phi.alt beta_(L L)) ;
   phi.alt beta_(H H), phi.alt beta_(M M), boldred(beta_(L L)) ;
-) &&#text[mixing structure] bold(A)\
-&&arrow rho mat(
-  beta_(H H), phi.alt beta_(H H), phi.alt beta_(H H) ;
-  phi.alt beta_(M M), beta_(M M), beta_(M M) ;
-  boldred(phi.alt beta_(L L)), boldred(phi.alt beta_(L L)), boldred(beta_(L L)) ;
-) &&#text[mixing structure] bold(B)\
+) &&#text[mixing structure]
 $
-<eq_lca-mixing-structures>
+<eq_lca-mixing-structure>
 
-The former assumes that between-group transmission is dominated by the transmissibility of the source individuals, implying that adherence to the PHMs primarily prevents onwards transmission, rather than protecting against infection.
-The latter assumes that between-group transmission is dominated by the susceptibility of the recipient individuals, implying that adherence to the PHMs primarily prevents infection, rather than protecting against onwards transmission.
+The former assumes that between-group transmission is dominated by the transmissibility of the source individuals, implying that adherence to the PHMs primarily prevents onwards transmission, rather than protecting the recipient against infection.
+The latter assumes that between-group transmission is dominated by the susceptibility of the recipient individuals, implying that adherence to the PHMs primarily protects the recipient from infection, rather than preventing onwards transmission.
 A range of between-group scaling values ($phi.alt$) were simulated to perform sensitivity analysis for the degree of assortativity.
-Results are only shown for matrix structure $bold("A")$, but alternative assumptions about between-group mixing can be found in the supplement (@fig-abc-distance-whiskers-rows, @fig-intervention-rows, @fig-abc-distance-whiskers-constant, @fig-intervention-constant).
+Results are only shown for the matrix structure in @eq_lca-mixing-structure, but results for simulations that imply PHMs prevent infections through protecting the recipient can be found in the supplement (@eq_lca-copy-rows, @fig-abc-distance-whiskers-rows, @fig-intervention-rows).
+We also present the results of simulations where all between-group mixing is assumed to be equal (@eq_lca-identical-off-diagonals, @fig-abc-distance-whiskers-constant, @fig-intervention-constant).
 To examine the effect of an intervention to increase PHM adherence, we redistributed a proportion of low- and medium adherence individuals to the high adherence latent class, i.e., a fully effective intervention is equivalent to a single-group SIR model of high adherent individuals.
 Model fitting and simulation was conducted using the Julia programming language, version 1.10.5 @bezansonJuliaFreshApproach2017.
 
