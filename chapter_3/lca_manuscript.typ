@@ -65,12 +65,12 @@ There are several reasons for this: the data is widely available, and therefore 
 However, epidemiological models often aim to assess the effects of heterogeneity with respect to infection, e.g., "how does an individual’s risk tolerance affect their risk of infection for influenza?".
 When addressing questions such as these, demographic data does not necessarily provide a direct link between the discretization method and the heterogeneous nature of the exposure and outcome, particularly if behavioral mechanisms are a potential driver.
 Instead, it relies on assumptions and proxy measures e.g., an individual’s age approximates their contact rates, which in turn approximates their risk of transmission.
-This paper demonstrates an alternative approach to discretizing populations for use within mechanistic models, highlighting the benefits of an interdisciplinary approach to characterize heterogeneity in a manner more closely related to the risk of infection.
+This chapter demonstrates an alternative approach to discretizing populations for use within mechanistic models, highlighting the benefits of an interdisciplinary approach to characterize heterogeneity in a manner more closely related to the risk of infection.
 
 In early 2020, shortly after the World Health Organization (WHO) declared the SARS-CoV-2 outbreak a public health emergency of international concern @worldhealthorganizationStatementSecondMeeting, universities across the United States began to close their campuses and accommodations, shifting to remote instruction @MapCoronavirusSchool2020 @collegianTIMELINEPennState2021.
 By Fall 2020, academic institutions transitioned to a hybrid working environment (in-person and online), requiring students to return to campuses @adamsReturnUniversityCampuses2020 @haddenWhatTop25 @thenewyorktimesTrackingCoronavirusColleges2020.
-In a prior paper @arnoldLongitudinalStudyImpact2022 we documented the results of a large prospective serosurvey conducted in State College, home to The Pennsylvania State University (PSU) University Park (UP) campus.
-We examined the effect of 35,000 returning students (representing a nearly 20% increase in the county population @unitedstatescensusbureauCensusBureauQuickFacts2019) on the community infection rates, testing serum for the presence of anti-Spike Receptor Binding Domain (S/RBD) IgG, indicating prior exposure @longAntibodyResponsesSARSCoV22020.
+In the @d4a and accompanying paper @arnoldLongitudinalStudyImpact2022 we documented the results of a large prospective serosurvey conducted in State College, home to The Pennsylvania State University (PSU) University Park (UP) campus.
+We examined the effect of 35,000 returning students (representing a nearly 20% increase in the county population @unitedstatescensusbureauCensusBureauQuickFacts2019) on the community infection rates, testing serum for the presence of anti-Spike Receptor Binding Domain (S/RBD) immunoglobulin G (IgG), indicating prior exposure @longAntibodyResponsesSARSCoV22020.
 Despite widespread concern that campus re-openings would lead to substantial increases in surrounding community infections @adamsReturnUniversityCampuses2020 @lopmanModelingStudyInform2021 @benneyanCommunityCampusCOVID192021, very little sustained transmission was observed between the two geographically coincident populations @arnoldLongitudinalStudyImpact2022.
 
 Given the high infection rate observed among the student body (30.4% seroprevalence), coupled with the substantial heterogeneity in infection rates between the two populations, we hypothesized that there may be further variation in exposure within the student body, resulting from behavioral heterogeneity.
@@ -83,7 +83,7 @@ We show that interventions designed to increase student compliance with PHMs wou
 == Methods
 === Design, Setting, and Participants
 This research was conducted with PSU Institutional Review Board approval and in accordance with the Declaration of Helsinki, and informed consent was obtained for all participants.
-The student population has been described in detail previously @arnoldLongitudinalStudyImpact2022, but in brief, students were eligible for the student cohort if they were: ≥ 18 years old; fluent in English; capable of providing their own consent; residing in Centre County at the time of recruitment (October 2020) with the intention to stay through April 2021; and officially enrolled as PSU UP students for the Fall 2020 term.
+The student population has been described in detail previously @arnoldLongitudinalStudyImpact2022, but in brief, students were eligible for the student cohort if they were: #sym.gt.eq 18 years old; fluent in English; capable of providing their own consent; residing in Centre County at the time of recruitment (October 2020) with the intention to stay through April 2021; and officially enrolled as PSU UP students for the Fall 2020 term.
 Upon enrollment, students completed a behavioral survey in REDCap @harrisREDCapConsortiumBuilding2019 to assess adherence and attitudes towards public health guidance, such as attendance at gatherings, travel patterns, and non-pharmaceutical interventions.
 Shortly after, they were scheduled for a clinic visit where blood samples were collected.
 Students were recruited via word-of-mouth and cold-emails.
@@ -92,13 +92,13 @@ Students were recruited via word-of-mouth and cold-emails.
 The primary outcome was the presence of S/RBD IgG antibodies, measured using an indirect isotype-specific (IgG) screening ELISA developed at PSU @gontuQuantitativeEstimationIgM2020.
 An optical density (absorbance at 450 nm) higher than six standard deviations above the mean of 100 pre-SARS-CoV-2 samples collected in November 2019, determined a threshold value of 0.169 for a positive result.
 Comparison against virus neutralization assays and RT-PCR returned sensitivities of 98% and 90%, and specificities of 96% and 100%, respectively @gontuLimitedWindowDonation2021.
-Further details in the Supplement of the previous paper @arnoldLongitudinalStudyImpact2022.
+Further details in the supplement of the previous chapter (@d4a_appendix).
 
 === Statistical Methods
 To identify behavioral risk classes, we fit a range of latent class analysis (LCA) models (two to seven class models) to the student’s behavioral survey responses, using the poLCA package @linzerPoLCAPackagePolytomous2011 in the R programming language, version 4.3.3 (2024-02-29) @rcoreteamLanguageEnvironmentStatistical2021.
 We considered their answers regarding the frequency with which they intended to engage in the following behaviors to be #emph[a priori] indicators of behavioral risk tolerance: wash hands with soap and water for at least 20s; wear a mask in public; avoid touching their face with unwashed hands; cover cough and sneeze; stay home when ill; seek medical attention when experiencing symptoms and call in advance; stay at least 6 feet (about 2 arms lengths) from other people when outside of their home; and, stay out of crowded places and avoid mass gatherings of more than 25 people.
 The behavioral survey collected responses on the Likert scale of: Never, Rarely, Sometimes, Most of the time, and Always.
-For all PHMs, Always and Most of the time accounted for \> 80% of responses (with the exception of intention to stay out of crowded places and avoid mass gatherings, where Always and Most of the time accounted for 78.8% of responses).
+For all PHMs, Always and Most of the time accounted for > 80% of responses (with the exception of intention to stay out of crowded places and avoid mass gatherings, where Always and Most of the time accounted for 78.8% of responses).
 To reduce the parameter space of the LCA and minimize overfitting, the behavioral responses were recoded as Always and Not Always.
 Measures of SARS-CoV-2 exposure e.g., IgG status, were not included in the LCA model fitting, as they reflect the outcome of interest.
 We focused on responses regarding intention to follow behaviors because this information can be feasibly collected during a public health campaign for a novel or emerging outbreak; it has also been shown that intentions are well-correlated with actual behaviors for coronavirus disease 2019 (COVID-19) public health guidelines, as well as actions that have short-term benefits @connerDoesIntentionStrength2024 @mcdonaldRecallingIntendingEnact2017.
@@ -108,7 +108,7 @@ Using the best-fit LCA model, we performed multivariate logistic regression of m
 This "three-step" approach is recommended over the "one-step" LCA model fit that includes the outcome of interest as a covariate in the LCA model @nylund-gibsonTenFrequentlyAsked20181213 @bolckEstimatingLatentStructure2004a.
 The following variables were determined a priori to be potential risk factors for exposure @arnoldLongitudinalStudyImpact2022: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; travelled in the 3 months prior to returning to campus; and travelled since returning to campus for the Fall term.
 Variables relating to attending gatherings were not included in the logistic regression due to overlap with intention variables of the initial LCA fit.
-Missing variables were deemed "Missing At Random" and imputed using the mice package @vanbuurenMiceMultivariateImputation2011, as described in the supplement of the previous paper @arnoldLongitudinalStudyImpact2022.
+Missing variables were deemed "Missing At Random" and imputed using the mice package @vanbuurenMiceMultivariateImputation2011, as described in the supplement of the previous chapter (@d4a_appendix).
 
 We parameterized a deterministic compartmental Susceptible-Infected-Recovered (SIR) model using approximate Bayesian computation (ABC) against the seroprevalence within each latent class.
 The recovery rate was set to 8 days.
@@ -142,14 +142,14 @@ Model fitting and simulation was conducted using the Julia programming language,
 
 == Results
 === Demographics
-Full details can be found in the prior paper @arnoldLongitudinalStudyImpact2022, but briefly: 1410 returning students were recruited, 725 were enrolled, and 684 students completed clinic visits for serum collection between 26 October and 21 December 2020.
+Full details can be found in the @d4a and accompanying paper @arnoldLongitudinalStudyImpact2022, but briefly: 1410 returning students were recruited, 725 were enrolled, and 684 students completed clinic visits for serum collection between 26 October and 21 December 2020.
 Of these, 673 students also completed the behavioral survey between 23 October and 8 December 2020.
 The median age of the participants was 20 years (IQR: 19-21), 64.5% identified as female and 34.6% as male, and 81.9% identified as white.
 A large proportion (30.4%) were positive for IgG antibodies, and 93.5% (100) of the 107 students with a prior positive test reported testing positive only after their return to campus.
 
 === LCA Fitting
 Of the 673 participants, most students intended to always mask (81.0%), always cover their coughs/sneezes (81.9%), and always stay home when ill (78.2%) (@tbl-plan-adherence).
-Two of the least common intentions were social distancing by maintaining a distance of at least 6 feet from others outside of their home, avoiding crowded places and mass gatherings \> 25 people (43.4% and 53.1% respectively), and avoiding face-touching with unwashed hands (43.5%).
+Three of the least common intentions were social distancing by maintaining a distance of at least 6 feet from others outside of their home, avoiding crowded places and mass gatherings > 25 people, and avoiding face-touching with unwashed hands (43.4% and 53.1%, 43.5%, respectively).
 
 #let intention_table = csv("./manuscript_files/tables/intention-responses.csv")
 
@@ -299,7 +299,7 @@ Similarly, because of the University’s extensive messaging campaigns and effor
 However, these limitations are not inherent to the modeling approach laid out, and efforts to minimize them would likely result in stronger associations and conclusions due to larger differences in the latent behavioral classes and resulting group infection rates.
 
 It is well known that classification methods, like LCA, can lead to the "naming fallacy" @wellerLatentClassAnalysis2020, whereby groups are assigned and then specific causal meaning is given to each cluster, affecting subsequent analyses and interpretation of results.
-In this paper, this effect is reduced by virtue of the analysis plan being pre-determined, and the relationship with the outcome showing a positive association with the classes in the mechanistically plausible direction (i.e., increasing adherence to PHMs results in reduced infection rates).
+In this chapter, this effect is reduced by virtue of the analysis plan being pre-determined, and the relationship with the outcome showing a positive association with the classes in the mechanistically plausible direction (i.e., increasing adherence to PHMs results in reduced infection rates).
 Our decision to conduct the simulation analysis with the three-class model was, in part, to avoid the potential bias that would arise from naming or assigning an order to the two intermediate risk groups.
 
 Despite these limitations, this work presents a novel application of a multidisciplinary technique, outlining how alternate data sources can guide future model parameterization and be incorporated into traditional epidemiological analysis, particularly within demographically homogeneous populations where there is expected or observed heterogeneity in transmission dynamics.
