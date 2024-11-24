@@ -18,6 +18,7 @@ Thank you for joining me on various outdoor excursions, or just grabbing a coffe
 And last, but certainly not least, I would like to thank my family for their unwavering support.
 I wouldn't be here without the love of my parents, Cindy and Chris, my sister, Madeleine, and my aunt, Nikki.
 As with everything, their care rendered any challenge manageable, providing necessary perspective when I had a tendency to get in my own head.
+My greatest champions, who all help nurture a curiosity and interest in science, my grand-parents: Fiona, Richard, Jean, and Harry.
 My in-laws, Bruno and Christine, could not have been bigger cheerleaders from before the PhD was even a possibility.
 Words cannot describe my appreciation for the generosity offered during every step of the last 8 years.
 And finally, I would like to thank my wife, Caroline.
