@@ -331,11 +331,11 @@ The funding sources had no role in the collection, analysis, interpretation, or 
 
 #emph[Data curation:] CA, MJF
 
-#emph[Formal analysis:] CA, MJF
+#emph[Formal analysis:] CA
 
 #emph[Funding acquisition:] AW, BP, MJF, WM
 
-#emph[Investigation:] CA, MJF
+#emph[Investigation:] CA
 
 #emph[Methodology:] CA, MJF
 
@@ -343,9 +343,9 @@ The funding sources had no role in the collection, analysis, interpretation, or 
 
 #emph[Software:] CA
 
-#emph[Supervision:] MJF, WM, AW, BP
+#emph[Supervision:] AW, BP, MJF, WM
 
-#emph[Validation:] CA, MJF
+#emph[Validation:] CA
 
 #emph[Visualization:] CA
 
