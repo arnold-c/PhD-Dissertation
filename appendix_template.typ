@@ -1,3 +1,5 @@
+#import "psu_template.typ": set_headings
+
 #let article(
   // Article's Title
   title: "Article Title",
@@ -16,27 +18,6 @@
 ) = {
 
   set math.equation(numbering: "1", supplement: "Supplemental")
-
-
-  show heading.where(level: 2): it => {
-    let key = lower(it.body.text.replace(" ", "-"))
-    [#it #label(key)]
-  }
-
-  show heading.where(level: 2): it => block(above: 1.5em, below: 0.5em)[
-      #set text(1.03em, weight: "black")
-      #it.body
-  ]
-
-  show heading.where(level: 3): it => block(above: 1em, below: 0.5em)[
-      #set text(1.01em, weight: "black")
-      #it.body
-  ]
-
-  show heading.where(level: 4): it => block(above: 1em, below: 0.5em)[
-      #set text(1.01em, weight: "bold", style: "italic")
-      #it.body
-  ]
 
   show figure.where(kind: table): set figure(supplement: [Supplemental Table])
   show figure.where(kind: image): set figure(supplement: [Supplemental Figure])

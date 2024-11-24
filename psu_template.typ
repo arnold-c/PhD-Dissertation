@@ -22,6 +22,97 @@
   body
 }
 
+#let set_linespacing(
+  top-edge: "cap-height",
+  bottom-edge: "baseline",
+  leading: 0.65em,
+  first-line-indent: 0em,
+  spacing: 1.2em,
+
+  body
+) = {
+  set text(
+    top-edge: top-edge,
+    bottom-edge: bottom-edge,
+  )
+  set par(
+    leading: leading,
+    first-line-indent: first-line-indent,
+    spacing: spacing,
+  )
+
+  body
+}
+
+#let set_headings(
+  top-edge: "cap-height",
+  bottom-edge: "baseline",
+  leading: 0.65em,
+  first-line-indent: 0em,
+  spacing: 1.2em,
+  h2-above-adjustment: 1.5em,
+  h2-below-adjustment: 0.5em,
+  h3-above-adjustment: 1em,
+  h3-below-adjustment: 0.5em,
+  h4-above-adjustment: 1em,
+  h4-below-adjustment: 0.5em,
+
+  body
+) = {
+  show heading.where(level: 2): it => block(
+    above: spacing + h2-above-adjustment,
+    below: spacing + h2-below-adjustment
+  )[
+      #set text(1.03em, weight: "black")
+      #it.body
+  ]
+
+  show heading.where(level: 3): it => block(
+    above: spacing + h3-above-adjustment,
+    below: spacing + h3-below-adjustment
+  )[
+      #set text(1.01em, weight: "black")
+      #it.body
+  ]
+
+  show heading.where(level: 4): it => block(
+    above: spacing + h4-above-adjustment,
+    below: spacing + h4-below-adjustment
+  )[
+      #set text(1.01em, weight: "bold", style: "italic")
+      #it.body
+  ]
+
+  body
+
+}
+
+#let reset_linespacing(body) = {
+  show: set_linespacing.with(
+    top-edge: "cap-height",
+    bottom-edge: "baseline",
+    leading: 0.65em,
+    first-line-indent: 0em,
+    spacing: 1.2em,
+  )
+
+  show: set_headings.with(
+    top-edge: "cap-height",
+    bottom-edge: "baseline",
+    leading: 0.65em,
+    first-line-indent: 0em,
+    spacing: 1.2em,
+    h2-above-adjustment: 0em,
+    h2-below-adjustment: 0em,
+    h3-above-adjustment: 0em,
+    h3-below-adjustment: 0em,
+    h4-above-adjustment: 0em,
+    h4-below-adjustment: 0em,
+  )
+
+  body
+}
+
 #let psu_thesis(
     title: "Title",
     author: (),
@@ -37,6 +128,8 @@
     ),
     font-size: 12pt,
     line-spacing: 1em,
+    left-margin: 1.5in,
+    remaining-margins: 1in,
     abstract: [],
     acknowledgements: [],
     dedication: [],
@@ -87,7 +180,12 @@
   set document(title: title, author: author)
   set page(
       paper: paper-size,
-      margin: 1in,
+      margin: (
+        left: left-margin,
+        right: remaining-margins,
+        top: remaining-margins,
+        bottom: remaining-margins
+      )
   )
   set text(size: font-size)
 
@@ -136,17 +234,20 @@
     pagebreak(weak: true)
 
     {
-      set text(
-        top-edge: line_spacings.top-edge,
-        bottom-edge: line_spacings.bottom-edge
+      show: set_linespacing.with(
+        ..line_spacings
       )
-      set par(
-        leading: line_spacings.leading,
-        first-line-indent: line_spacings.first-line-indent,
-        spacing: line_spacings.spacing
-      )
+      // set text(
+      //   top-edge: line_spacings.top-edge,
+      //   bottom-edge: line_spacings.bottom-edge
+      // )
+      // set par(
+      //   leading: line_spacings.leading,
+      //   first-line-indent: line_spacings.first-line-indent,
+      //   spacing: line_spacings.spacing
+      // )
 
-      heading(level: 1)[Abstract]
+      block(below: 2em)[#heading[Abstract]]
       [#abstract]
       pagebreak(weak: true)
     }
@@ -295,15 +396,18 @@
       pagebreak(weak: true)
     }
 
-    set text(
-      top-edge: line_spacings.top-edge,
-      bottom-edge: line_spacings.bottom-edge
+    show: set_linespacing.with(
+      ..line_spacings
     )
-    set par(
-      leading: line_spacings.leading,
-      first-line-indent: line_spacings.first-line-indent,
-      spacing: line_spacings.spacing
-    )
+    // set text(
+    //   top-edge: line_spacings.top-edge,
+    //   bottom-edge: line_spacings.bottom-edge
+    // )
+    // set par(
+    //   leading: line_spacings.leading,
+    //   first-line-indent: line_spacings.first-line-indent,
+    //   spacing: line_spacings.spacing
+    // )
 
     if acknowledgements != [] {
       heading(level: 1)[Acknowledgements]
@@ -349,20 +453,33 @@
     v(0.5em)
   }
 
-  show heading.where(level: 2): it => block(above: 1.5em, below: 0.5em)[
-      #set text(1.03em, weight: "black")
-      #it.body
-  ]
+  show: set_headings.with(
+    ..line_spacings
+  )
 
-  show heading.where(level: 3): it => block(above: 1em, below: 0.5em)[
-      #set text(1.01em, weight: "black")
-      #it.body
-  ]
-
-  show heading.where(level: 4): it => block(above: 1em, below: 0.5em)[
-      #set text(1.01em, weight: "bold", style: "italic")
-      #it.body
-  ]
+  // show heading.where(level: 2): it => block(
+  //   above: line_spacings.spacing+1.5em,
+  //   below: line_spacings.spacing+0.5em
+  // )[
+  //     #set text(1.03em, weight: "black")
+  //     #it.body
+  // ]
+  //
+  // show heading.where(level: 3): it => block(
+  //   above: line_spacings.spacing+1em,
+  //   below: line_spacings.spacing+0.5em
+  // )[
+  //     #set text(1.01em, weight: "black")
+  //     #it.body
+  // ]
+  //
+  // show heading.where(level: 4): it => block(
+  //   above: line_spacings.spacing+1em,
+  //   below: line_spacings.spacing+0.5em
+  // )[
+  //     #set text(1.01em, weight: "bold", style: "italic")
+  //     #it.body
+  // ]
 
   // Set figure numbers equal to Chapter number `.` figure number
   set figure(numbering: n => {

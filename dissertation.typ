@@ -34,6 +34,8 @@
     ),
     font-size: 12pt,
     line-spacing: 2,
+    left-margin: 1.5in,
+    remaining-margins: 1in,
     abstract: [#include("./additional_sections/abstract.typ")],
     acknowledgements: [#include("./additional_sections/acknowledgements.typ")],
     abbreviations: [#include("./additional_sections/abbreviations.typ")],
@@ -75,8 +77,7 @@
 
 #show heading.where(level: 1): it => {it.body}
 
-#set text(top-edge: "cap-height", bottom-edge: "baseline")
-#set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
+#show: reset_linespacing
 
 #bibliography(
     style: "elsevier-vancouver",

@@ -1,3 +1,5 @@
+#import "psu_template.typ": set_headings
+
 #let article(
   // Article's Title
   title: "Article Title",
@@ -160,12 +162,18 @@
 
         // Abstract and keyword block
         #if abstract != [] {
+            show: set_headings.with(
+              h2-above-adjustment: 0em,
+              h2-below-adjustment: 0em,
+              h3-above-adjustment: 0em,
+              h3-below-adjustment: 0em,
+            )
 
             heading(level: 2)[Abstract]
             abstract
 
             if keywords.len() > 0 {
-                linebreak()
+                v(1em)
                 text(weight: "bold", [Key words: ])
                 text([#keywords.join([; ]).])
             }
