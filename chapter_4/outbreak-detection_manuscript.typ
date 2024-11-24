@@ -6,8 +6,6 @@
   authors: (
     "Callum R.K. Arnold": (
       affiliation: ("PSU-Bio", "CIDD"),
-      corresponding: "true",
-      email: "contact\@callumarnold.com",
     ),
     "Alex C. Kong": (
       affiliation: ("Hopkins-IH"),
