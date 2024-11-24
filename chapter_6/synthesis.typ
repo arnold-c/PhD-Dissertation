@@ -1,37 +1,34 @@
 #heading("Synthesis", supplement: "Chapter") <synthesis>
 
-#show quote: it => {
-  set par(first-line-indent: 1em,hanging-indent:1em)
-  it
-}
-
 There is a growing body of literature that focusses on uncertainty in disease transmission; from incorporating viral dynamics into mechanistic models of disease @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024, to accounting for reporting and testing uncertainty in estimates of the _real-time_ reproduction number ($R_"t"$) @pitzerImpactChangesDiagnostic2021.
-In this dissertation I demonstrate how the classification of continuous infectious disease variables is both essential to inferences about disease dynamics and their underlying systems, and results in compounding uncertainty that limits our predictive and detection abilities for outbreaks.
+In this dissertation I demonstrate how the classification of continuous infectious disease variables is both essential to inferences about disease dynamics and their underlying systems, and results in compounding uncertainty that limits our detection and predictive abilities for outbreaks.
 This work has already shown relevance and impact, helping inform the target product profile (TPP) of a potential future rapid diagnostic test (RDT) for measles in outbreak surveillance settings @20240613_tpp_measles_rubell_FV_EN.
 
 == Discretization of Risk Groups
 
 In the first half of my dissertation I explore mechanisms by which populations can be classified to understand the transmission of COVID-19 within and between Pennsylvania State University students and community members of its surrounding county (Center County).
-Clear definitions of risk and transmission groups provide a natural mechanism to explore the heterogeneity in infection that may exist in a population, as it is conceivable that the student and community cohorts differ with respect to many drivers of infection e.g., demography, contact rates, perceptions of infection risk, willingness to take preventative actions.
-However, despite expectations that the high spatial proximity of these two well-defined groups in immunologically naive populations would overwhelm differences in other drivers of infection and result in similar exposure rates, substantial variation in outcomes was observed (Chapter 2).
+Clear definitions of risk and transmission groups provide a natural mechanism to explore the heterogeneity in infection that may exist in a population.
+The differences with respect to many drivers of infection e.g., demography, contact rates, perceptions of infection risk, willingness to take preventative actions, between university students and county residents imply differences in risk.
+However, the high spatial proximity of these two well-defined groups that were both immunologically naive to an emerging pathogen might have overwhelmed differences in other drivers of infection, and resulted in similar exposure rates.
+We show that, contrary to the assumptions at the time, there was substantial variation in exposure in these geographically coincident populations (@d4a).
 This, supported by evidence that the Center County community experienced lower per-capita incidence rates than its 5 surrounding counties @bhartiLargeUniversityHigh2022, implies that intervention efforts by the University were able to minimize the risk of onward transmission from the student population.
 If between-group transmission did occur, it was likely transient in nature.
 Within the study body, the only factors associated with infection outcome were the recent contact with a known COVID-19 positive individual, and the attendance of gatherings.
 
 In light of these findings, we hypothesized that, in the absence of pharmaceutical interventions, seroprevalence differences were driven by heterogeneity in behavior.
 We also theorized that similar differences in infection rates may exist _within_ each cohort, with each group being inhomogeneous behaviorally.
-However, unlike in Chapter 2 where clearly-defined exposure groups were pre-existent, no clear demarcations within the cohorts existed.
+However, unlike in @d4a where clearly-defined exposure groups were pre-existent, no clear demarcations within the cohorts existed.
 To make inferences about the heterogeneity in transmission, I sought to categorize the student body with respect to a latent (unobservable) variable: risk behavior.
 Given behavioral survey data of intentions to adhere to non-pharmaceutical public health measures (PHMs), I clustered the students using Latent Class Analysis (LCA).
 Doing so returned a probability of class assignment for each individual, along with the propensity for each class (to intend) to follow or not follow each of the individual PHMs.
-Evaluating the observed seroprevalence on these strata demonstrated that the behavioral survey data were able to define meaningfully different groups with respect to both the student behaviors and their infection outcomes.
+Calculating the observed seroprevalence of these strata demonstrated that the behavioral survey data were able to define meaningfully different groups with respect to both the student behaviors and their infection outcomes.
 Through discretizing the population, it became possible to evaluate the potential effectiveness of interventions aimed at increasing adherence to PHMs.
 Defining risk behavior groups provided group-specific seroprevalence rates that could be used to parameterize a mathematical model of transmission.
 Doing so placed realistic bounds on the expected benefit of an intervention, which did not rely upon _a priori_ assumptions as to the intervention's effectiveness in reducing transmission.
-As a large proportion of the population were already in the most adherent group that always intended to follow public health guidance, interventions targets at them would serve no direct effect: their risk of transmission was dictated by interactions with less-adherent individuals.
+As a large proportion of the population were already in the most adherent group that always intended to follow public health guidance, interventions targeted at them would serve no direct effect: their risk of transmission was dictated by interactions with less-adherent individuals.
 
 If we are to design effective interventions, it is essential to first characterize the limits of what can realistically be achieved.
-For example, supplemental immunization activities aimed to minimize the effects of an outbreak, reactively or prospectively, are partially limited by the vaccination coverage that can be achieved.
+For example, supplemental immunization activities (SIAs) aimed to minimize the effects of an outbreak, reactively or prospectively, are partially limited by the vaccination coverage that can be achieved.
 While SIAs can achieve modest improvements over routine immunization coverage, individuals who are able to access the care provided by SIAs are more likely to also be individuals who can attend routine immunizations, minimizing the potential impact of inflated efforts through traditional mechanisms @portnoyImpactMeaslesSupplementary2018 @portnoyComparativeDistributionalImpact2020 @lesslerMeasuringPerformanceVaccination2011.
 Incorporating access and dose redundancy data can provide more realistic estimates on the effectiveness of future efforts.
 Similarly, incorporating behavioral information into epidemiological models can shed light on the potential effectiveness of vaccination campaigns.
@@ -57,7 +54,7 @@ Incorporating uncertainty in the reporting of cases has been of increasing inter
 However, the accuracy of the diagnostic used to make this determination affects the incidence, necessarily turning a quantitative input (pathogen load/host response) into a binary value, with associated classification errors.
 Previous inclusions of diagnostic uncertainty amount to under-reporting as only one pathogen is simulated, removing the opportunity for false-positive test results @pitzerImpactChangesDiagnostic2021 @gosticPracticalConsiderationsMeasuring2020 @abbottEstimatingTimevaryingReproduction2020 @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024.
 
-To account for diagnostic uncertainty, in Chapters 4 & 5 I simulated both a target pathogen and background noise, using representative parameters of measles and rubella, respectively.
+To account for diagnostic uncertainty, in @outbreak-detection and @ews I simulated both a target pathogen and background noise, using representative parameters of measles and rubella, respectively.
 Through variations to the rubella vaccination coverage, I was able to evaluate the degradation of outbreak detection performance with tests of decreasingly sensitivity and specificity.
 When the background noise did not exhibit large peaks and troughs i.e., was drawn from a Poisson distribution or when there was sufficiently high vaccination coverage in the rubella dynamical noise simulations, both imperfect and perfect diagnostic tests could adequately discriminate between outbreak and non-outbreak periods.
 However, this was not the case at higher levels of dynamical noise ($approx$ 6 times, or greater, than the average incidence of measles).
@@ -72,7 +69,7 @@ Lastly, Eritrea experienced 5.0 measles cases, and 1.3 rubella cases, per 1M pop
 While this may appear to be a good candidate for the use of imperfect tests, the incidence rate for clinically compatible cases that were not measles or rubella, was 21.3 cases per 1M population @masreshaTrackingMeaslesRubella2024.
 As a result, before imperfect diagnostic tests could be implemented with confidence, a careful evaluation of the dynamics of the non-rubella background noise cases would be required; if it demonstrated large episodic outbreaks, its scale in relation to the expected measles incidence would necessitate the use of high-accuracy diagnostic tests.
 
-In Chapter 5, I build off the work in the previous chapter to explore the effects of the outlined diagnostic uncertainty on our ability to predict risk of future outbreaks.
+In @ews, I build off the work in the previous chapter to explore the effects of the outlined diagnostic uncertainty on our ability to predict risk of future outbreaks.
 Traditional outbreak detection that utilizes the exceedance of an incidence threshold is necessarily reactive in nature.
 Under ideal circumstances, it would be possible to measure trends in summary statistics derived from infection data to infer the emergence of outbreaks before they occur.
 This would allow proactive actions that could avert the most cases, reducing the morbidity and mortality resulting from a pathogen.
@@ -82,12 +79,12 @@ Not all EWS metrics performed well, but, aligning with the literature, the mean,
 Additionally, the evaluation of EWS performance required the alert in emergent simulations to occur before the tipping point $R_"E" = 1$, which indicates the potential for a future outbreak.
 As this tipping point essentially acts as a necessary precursor to an outbreak (though exceptions can occur due to the stochastic nature of infectious disease transmission), each warning would be provided with sufficient time for action to potentially avert an outbreak.
 
-The primary focus of this section of work (Chapters 4 & 5) has been to motivate new approaches to the design of surveillance systems at large, not any one specific implementation.
+The primary focus of this section of work (@outbreak-detection & @ews) has been to motivate new approaches to the design of surveillance systems at large, not any one specific implementation.
 These two chapters illustrate the complexity in evaluating the performance of reactive and proactive outbreak detection systems.
 The system's accuracy is dependent on the interaction between multiple axes: the proportion of individuals tested, the diagnostic test characteristic, the shape and magnitude of the background noise, the and the criteria required to trigger an alert.
 Each of which can be adjusted, and without consideration of the knock-on effects, can easily lead to a suboptimal path being followed.
 We found that similar accuracy could be achieved for a range of conditions by balancing traits of each of the levers of the surveillance system.
-By relaxing prior constraints on the outbreak detection system, such as the number of test positives (Chapter 5) or the maximum number of consecutive data points (Chapter 5) required to trigger and outbreak alert, for example, it is possible for imperfect diagnostic tests to obtain outbreak detection performance that mirrors performance under perfect tests.
+By relaxing prior constraints on the outbreak detection system, such as the number of test positives (@ews) or the maximum number of consecutive data points (@ews) required to trigger and outbreak alert, for example, it is possible for imperfect diagnostic tests to obtain outbreak detection performance that mirrors performance under perfect tests.
 In doing so, this opens the opportunity for the development and use of cheaper, less labor intensive, and logistically simpler diagnostics, such as (rapid) lateral flow diagnostic assays  @brownRapidDiagnosticTests2020 @warrenerEvaluationRapidDiagnostic2023 @millerAddressingBarriersDevelopment2015.
 Further, we identified conditions where accuracy was fundamentally limited; even with a perfect test, EWS occasionally trigger under null simulations due to endemic and imported cases.
 These boundaries can only be illustrated through comprehensive exploration across all axes of the surveillance system.
@@ -106,7 +103,7 @@ In addition to ethics-based decisions, countries must decide how to balance the 
 My analysis does not represent a true optimization; the partial observation of the system necessitates decisions and actions be made on the basis of incomplete information.
 In particular, the true outbreak status (and $R_"E"$) are never known, and can only be inferred.
 As a result, incorrect inferences will be made and the need to prioritize the speed of outbreak detection and response against the false positive rate of alerts will depend upon the costs associated with each, which changes by region, and over time.
-In Chapters 4 & 5 I provide equal weight to the associated alert speed and specificity metrics utilized in the system's evaluation.
+In @outbreak-detection & @ews I provide equal weight to the associated alert speed and specificity metrics utilized in the system's evaluation.
 In locations that experience large, devastating, outbreaks, where response mobilization may be heavily delayed, a greater premium could be placed on sensitive alert systems, if only to launch an active preliminary investigation.
 Furthermore, the evaluation of each alert threshold, be that incidence-based alert triggers for reactive surveillance programs, or EWS-based approaches for proactive systems, was conducted at the 'optimal' set of hyperparameters.
 This approach requires mapping the performance of each test across a wide range of possible parameter values and combinations.
@@ -115,7 +112,7 @@ Careful selection of 'training data' would be required to emulate this approach 
 
 Unlike in simulations, outbreak preparation and response scenarios often impose additional constraints, such as the financial resources available.
 Explicitly incorporating the effects of these constraints may limit the space of attainable alert performance, potentially disproportionately for particular diagnostic tests or background noise magnitudes.
-The work in Chapter 5, in particular, highlighted that not all outbreak detection scenarios are equally robust: the 'mean' EWS metric provided slightly suboptimal alert performance under most scenarios, relative to the autocovariance and variance, but was more resilient to higher levels of dynamical noise given the use of moderately accurate RDTs.
+The work in @ews, in particular, highlighted that not all outbreak detection scenarios are equally robust: the 'mean' EWS metric provided slightly suboptimal alert performance under most scenarios, relative to the autocovariance and variance, but was more resilient to higher levels of dynamical noise given the use of moderately accurate RDTs.
 The analysis approach detailed here provides a mechanism to compare these constraints to find zones of acceptable performance.
 
 In the future, efforts should be made to formally integrate the design and implementation of outbreak surveillance and early warning systems into partially observed Markov decision process (POMPD) models.
