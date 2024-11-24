@@ -15,7 +15,7 @@
     "PSU-Bio": "Department of Biology, Pennsylvania State University, University Park, PA, USA 16802",
     "CIDD": "Center for Infectious Disease Dynamics, Pennsylvania State University, University Park, PA, USA 16802",
   ),
-  keywords: ("Rapid-Diagnostic Tests","Diagnostic Test Uncertainty","Infectious Disease Surveillance","Outbreak Detection", "Early Warning Signals", "Critical Slowing Down"),
+  keywords: ("Diagnostic Test Uncertainty","Infectious Disease Surveillance","Outbreak Detection", "Early Warning Signals", "Critical Slowing Down"),
   abstract: [
     // 200 words \
     Methods to detect the emergence of infectious diseases, and approach to the "critical transition" $R_"E" = 1$, have to potential to avert substantial disease burden by facilitating pre-emptive actions like vaccination campaigns.
@@ -27,10 +27,16 @@
     Not all EWS metrics performed equally; we find that the mean was the least affected by changes to the noise structure and magnitude, given a moderately accurate diagnostic test ($gt.eq 95%$ sensitive and specific), and the autocovariance and variance were the most predictive when the noise incidence did not exhibit large temporal variations.
     In these situations, diagnostic test accuracy should not be a precursor to the implementation of an EWS metric-based alert system.
   ],
-  word-count: false,
+  word-count: true,
   line-numbers: false,
   article_label: "ews"
 )
+
+#let rename_noise_extract_vals(content, sliceval: 2) = {
+  content.flatten()
+  .map(it => it.replace(regex("(\w+)\s\w+\sNoise"), it => it.captures.at(0)))
+  .slice(sliceval)
+}
 
 == Introduction
 
@@ -79,7 +85,7 @@ Throughout the rest of the manuscript, these will be referred to as low and high
 Each day, all clinically-compatible febrile rash cases (that is, both the measles and noise time series) were tested using one of the following diagnostic tests, producing a time series of test positive cases.
 
 - A perfect test with 100% sensitivity and specificity. This was chosen to reflect the best-case scenario that the imperfect diagnostic-based alert scenarios could be compared against.
-- An RDT equivalent, imperfect diagnostic with sensitivity and specificity equal to either 99%, 98%, 97%, 96%, 95%, 90%, or 80%.
+- An imperfect diagnostic with sensitivity and specificity equal to either 99%, 98%, 97%, 96%, 95%, 90%, or 80%.
 
 #let import_rate = $(1.06*μ*R_0)/(√(N))$
 #let table_math(inset: 6pt, size: 14pt, content) = table.cell(inset: inset, text(size: size, content))
@@ -174,13 +180,14 @@ For each alert scenario, a grid search over the EWS hyperparameters (quantile th
 If multiple hyperparameter combinations produce identical alert system accuracies, the combination with the highest specificity is selected.
 After the optimal EWS hyperparameters have been selected, the accuracy of each EWS metric are compared across alert scenarios, at their respective maximal values.
 Finally, the speed and timing of detection relative to the critical transition is evaluated using Kaplan-Meier survival estimates @clarkSurvivalAnalysisPart2003.
+Alert accuracy was only evaluated on EWS calculated after the completion of the burn-in period.
 
 == Results
 === Correlation with Emergence
 
 The strength and direction of the raw correlation (Tau) between EWS metrics and the approach to the critical transition in emergent time series is strongly dependent upon the length of the time series evaluated; Tau is higher when calculated after the burn-in period for the top 5 ranked metrics (@tbl_csd-tau-ranking-perfect-test).
 Normalizing the correlation in the emergent time series against the correlation observed in null simulations yields comparable results when calculated from the full time series and only after the burn-in (@tbl_csd-tau-ranking-perfect-test).
-Consistent with previous studies, the autocovariance, variance, mean, and index of dispersion show the strongest correlations with emergence ($|"AUC"-0.5| = 0.2, 0.2, 0.18$, evaluated after the burn-in period, respectively) @brettDetectingCriticalSlowing2020 @brettAnticipatingEpidemicTransitions2018.
+Consistent with previous studies, the autocovariance, variance, mean, and index of dispersion show the strongest correlations with emergence ($|"AUC"-0.5| = 0.20, 0.20, 0.18, 0.13$, evaluated after the burn-in period, respectively) @brettDetectingCriticalSlowing2020 @brettAnticipatingEpidemicTransitions2018.
 
 #let perfect_tau_auc_table = csv("./manuscript_files/tables/perfect-test_tau-auc.csv")
 
@@ -197,52 +204,50 @@ Consistent with previous studies, the autocovariance, variance, mean, and index 
 <tbl_csd-tau-ranking-perfect-test>
 
 With an imperfect diagnostic test, the correlation with emergence was more influenced by the noise structure (Poisson vs. dynamical) than the noise magnitude (@tbl_csd-auc-magnitude-ranking-rdt-comparison).
-For an RDT-equivalent test with 90% sensitivity and specificity, the correlation between all EWS metrics and emergence was relatively unaffected by the magnitude of Poisson noise.
+For an imperfect test with 90% sensitivity and specificity, the correlation between all EWS metrics and emergence was relatively unaffected by the magnitude of Poisson noise.
 The top four metrics with a perfect diagnostic test (autocovariance, variance, mean, and index of dispersion) maintained their positions as the most strongly correlated metrics.
-// Under low levels of Poisson noise, autocorrelation was more strongly associated with emergence when calculated on the test positive time series resulting from and RDT than from a perfect diagnostic test ($|"AUC"-0.5| = 0.17 "vs." 0.12$, respectively).
-// Under high levels of Poisson noise, the association of coefficient of variation with emergence also increased ($|"AUC"-0.5| = 0.17$ for an RDT vs. 0.11 for a perfect diagnostic).
-// When simulations included rubella-like SEIR dynamical noise, the correlation of all metrics decreased (@tbl_csd-auc-magnitude-ranking-rdt-comparison), and was exacerbated at a higher magnitude of noise.
 
 For simulations with rubella-like SEIR dynamical noise, the correlation of all metrics was lower at low dynamical noise compared to low Poisson noise (@tbl_csd-auc-magnitude-ranking-rdt-comparison).
 With low levels of dynamical noise, the autocovariance, variance, and mean remained the most correlated with emergence ($|"AUC" - 0.5| = 0.16, 0.14, "and" 0.13$, respectively).
 At high dynamical noise, these correlations disappeared, with all EWS metrics exhibiting $|"AUC"-0.5| lt.eq 0.05$.
 
-// Among the EWS metrics that were correlated with emergence, most increased in value as the tipping point neared (AUC > 0.5) when computed on the test positive time series resulting from perfect diagnostic tests or an RDT with 90% sensitivity and specificity, with the exception of: the coefficient of variation, with a perfect diagnostic test, and an RDT in low and high dynamical noise ($"AUC" = 0.39, 0.45, "and" 0.48$, respectively); kurtosis with an RDT under low Poisson noise ($"AUC" = 0.45$); and autocorrelation with an RDT under high dynamical noise ($"AUC" = 0.49$) (Supplemental Table 2).
+A full characterization of the strength of association between each metric and emergence, across all diagnostic tests and noise structures, can be seen in supplemental (@fig_csd-auc-mag-heatmap-poisson-1x, @fig_csd-auc-mag-heatmap-poisson-7x, @fig_csd-auc-mag-heatmap-dynamical-1x, @fig_csd-auc-mag-heatmap-dynamical-7x).
 
 #let auc_magnitude_comparison_table = csv("./manuscript_files/tables/auc-magnitude-comparison.csv")
+#let auc_magnitude_comparison_vals = rename_noise_extract_vals(auc_magnitude_comparison_table)
 
 #figure(
-  two_header_table(
+  three_header_table(
     columns: 6,
-    table.cell(rowspan: 2, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & 90% Specific RDT],
-    ..auc_magnitude_comparison_table.flatten().slice(1)
+    align: horizon,
+    table.cell(rowspan: 3, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & Specific Imperfect Test],
+    table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Poisson Noise], table.cell(colspan:2)[Dynamical Noise],
+    ..auc_magnitude_comparison_vals
   ),
-  caption: [$|"AUC" - 0.5|$ for EWS metrics, ranked in descending order of magnitude, computed on the subset of the emergent time series after the burn-in period, for a perfect test and an RDT with 90% sensitivity and 90% specificity, under high and low Poisson and dynamical noise systems]
+  caption: [$|"AUC" - 0.5|$ for EWS metrics, ranked in descending order of magnitude, computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect diagnostic test with 90% sensitivity and 90% specificity, under high and low Poisson and dynamical noise systems]
 )
 <tbl_csd-auc-magnitude-ranking-rdt-comparison>
 
 === Predictive Ability
 
-Each alert scenario (the combination of diagnostic test, noise structure and magnitude, and EWS metric) produced its optimal accuracy at a different combination of EWS hyperparameters (the quantile threshold of the long-running metric distribution to be exceeded to return a flag, and the number of consecutive flags required to trigger an alert) (Supplemental Figures 9-12).
-At their respective maximal accuracies, the relative ranking of the EWS metrics computed with a perfect diagnostic test remained consistent to the ranking based upon $|"AUC" - 0.5|$: Mean (accuracy = 0.72), variance (0.72), autocovariance (0.7), index of dispersion (0.63), autocorrelation (0.62), skewness (0.6), kurtosis (0.58), and coefficient of variation (0.5) (Supplemental Table 3).
+Each alert scenario (the combination of diagnostic test, noise structure and magnitude, and EWS metric) produced its optimal accuracy at a different combination of EWS hyperparameters (the quantile threshold of the long-running metric distribution to be exceeded to return a flag, and the number of consecutive flags required to trigger an alert) (@fig_csd-accuracy-heatmap-poisson-1x, @fig_csd-accuracy-heatmap-poisson-7x, @fig_csd-accuracy-heatmap-dynamical-1x, @fig_csd-accuracy-heatmap-dynamical-7x).
+At their respective maximal accuracies, the relative ranking of the EWS metrics computed with a perfect diagnostic test remained consistent to the ranking based upon $|"AUC" - 0.5|$: Mean (accuracy = 0.72), variance (0.72), autocovariance (0.70), index of dispersion (0.63), autocorrelation (0.62), skewness (0.60), kurtosis (0.58), and coefficient of variation (0.50) (@tbl-accuracy-ranking-rdt-comparison).
 
-When EWS metrics were computed on time series generated from RDTs, each metric's accuracy generally remained constant, with a few notable exceptions (@fig-best-accuracy-line-plot, Supplemental Figure 13).
-
+When EWS metrics were computed on time series generated from imperfect diagnostic tests, each metric's accuracy generally remained constant, with a few notable exceptions (@fig-best-accuracy-line-plot, @fig-worst-accuracy-line-plot).
 For the 4 most correlated metrics (autocovariance, variance, mean, and index of dispersion), the accuracy achieved with imperfect diagnostic tests was comparable for low and high Poisson noise, for all diagnostic test accuracies (@fig-best-accuracy-line-plot).
-The accuracy of outbreak detection using index of dispersion increased with decreasing diagnostic test sensitivity and specificity for low and high levels of Poisson noise (@fig-best-accuracy-line-plot, Supplemental Figure 10).
-For low dynamical noise, accuracy increased slightly for diagnostic test sensitivity and specificity greater than 97% and then declined.
-For high dynamical noise, accuracy declined monotonically with decreasing test sensitivity and specificity (@fig-best-accuracy-line-plot, Supplemental Figure 12).
-Results for the 4 least well correlated EWS metrics are presented in the supplement (Supplemental Figure 13).
+The accuracy of outbreak detection using index of dispersion increased with decreasing diagnostic test sensitivity and specificity for low and high levels of Poisson noise (@fig-best-accuracy-line-plot, @fig_csd-accuracy-heatmap-poisson-1x, @fig_csd-accuracy-heatmap-poisson-7x).
+For low dynamical noise, accuracy increased slightly for diagnostic test sensitivity and specificity greater than 97% and then declined (@fig-best-accuracy-line-plot).
+For high dynamical noise, accuracy declined monotonically with decreasing test sensitivity and specificity (@fig-best-accuracy-line-plot, @fig_csd-accuracy-heatmap-dynamical-7x).
+Results for the 4 least well correlated EWS metrics are presented in the supplement (@fig-worst-accuracy-line-plot).
 
 #figure(
   image("./manuscript_files/plots/accuracy-line-plot.svg"),
-  caption: [The change in alert accuracy for the most correlated EWS metrics under increasing diagnostic uncertainty, and low and high levels of Poisson or dynamical noise]
+  caption: [The change in alert accuracy for the most correlated EWS metrics under increasing diagnostic uncertainty, and low and high levels of Poisson or dynamical noise. Low noise refers to simulations where the average incidence of noise is equal to the average incidence of measles. High noise refers to simulations where the average incidence of noise is equal to 7 times the average incidence of measles. The tests sensitivity equals the test specificity for all diagnostic tests.]
 )
 <fig-best-accuracy-line-plot>
 
 Outbreak detection produced false positives under the null simulations for all EWS metrics, except for the coefficient of variation computed on time series resulting from perfect tests, which also failed to alert in emergent simulations.
 Here we illustrate the comparison of timing of alerts for the autocovariance metric for the null and emergent simulations (@fig-autocovariance-survival).
-The remaining metrics are illustrated in the supplement (Supplemental Figures 14-20).
 Outbreak detection using the autocovariance metric resulted in comparable timing of alerts for perfect and imperfect tests under low and high Poisson noise (@fig-autocovariance-survival).
 For low dynamical noise, the imperfect test resulted in a similar number of true positives under the emergent scenario, but tended to trigger those alerts later than with a perfect test.
 Notably, an imperfect test resulted in more false positives under the null scenario and tended to trigger those alerts later.
@@ -250,7 +255,7 @@ With high dynamical noise, an imperfect test failed to produce many alerts under
 
 #figure(
   image("./manuscript_files/plots/survival/survival_ews-autocovariance.svg"),
-  caption: [Survival curves for the autocovariance EWS metric computed on emergent and null simulations, with a perfect test and an RDT equivalent with 90% sensitivity and specificity. The histogram depicts the times when the tipping point is reached ($R_"E" = 1$) under the emergent simulation, right-truncating the curves.]
+  caption: [Survival curves for the autocovariance EWS metric computed on emergent and null simulations, with a perfect test, and an imperfect test that is 90% sensitive and specific. The histogram depicts the times when the tipping point is reached ($R_"E" = 1$) under the emergent simulation, right-truncating the curves. The trajectory of the solid lines are identical in each facet, as the perfect test is unaffected by noise cases. The histogram is identical between facets as it represents the timing of the tipping points, and all testing scenarios use the same underling measles simulations that terminate at the tipping point]
 )
 <fig-autocovariance-survival>
 
@@ -275,15 +280,18 @@ Depending on the context, it may be desirable to place a greater weight in prefe
 This analysis provides a framework to explicitly explore these trade-offs through the comparison of survival curves.
 A larger separation at the end of the time series between the emergent and null simulation lines indicates higher accuracy, as there is a greater difference in the true positive and false positive rates.
 Faster declines indicate a (relatively) more sensitive alert system with more advanced warning of emergence.
-Under the simulation constraints placed here (i.e., equal weighting to speed and specificity to the alert system's accuracy, with the results of the more specific system being presented in cases where multiple thresholds hyperparameters provide the same accuracy), generally, the use of RDTs does not increase the speed of the warning for the EWS metrics that are predictive of emergence.
+Under the simulation constraints placed here (i.e., equal weighting to speed and specificity to the alert system's accuracy, with the results of the more specific system being presented in cases where multiple thresholds hyperparameters provide the same accuracy), generally, the use of imperfect diagnostic tests does not increase the speed of the warning for the EWS metrics that are predictive of emergence.
 This is likely a consequence of imperfect diagnostic tests producing more false positive cases, which, without appropriate penalization, would otherwise lead to high false alert rates under the same EWS hyperparameters.
-Adjusting the relative weighting of alert sensitivity and specificity to accuracy, as well as the accuracy tiebreaker preference, would allow for an exploration of alternative scenarios.
+Adjusting the relative weighting of alert sensitivity and specificity used to compute the alert accuracy would allow for an exploration of alternative scenarios.
+Additionally, multiple hyperparameter combinations can produce identical alert accuracy i.e., some combinations will favor the speed of alert at the expensive of its specificity, and _vice versa_.
+In situations where identical accuracies are achieved, we present the results associated with the most specific alert system i.e., reduce the number of false positive alerts.
+An equivalent set of analyses could be computed to favor the hyperparameter combinations that produced the fastest and most frequent alerts.
 
 For EWS metrics to reflect the underlying dynamics of critical slowing down, careful detrending of the data is required @gamadessavreProblemDetrendingWhen2019 @dakosSlowingEarlyWarning2008 @lentonEarlyWarningClimate2012.
 Our analysis utilizes a backward-facing uniform moving average to detrend the data: this was chosen as it can be easily intuited and implemented in a surveillance system.
 However, it has previously been stated that insufficient detrending may lead spurious patterns that do not arise from a system's dynamical response @dakosSlowingEarlyWarning2008, and the association of an EWS with the approach to a tipping point may be sensitive to the bandwidth size selected, although the sensitivity to detrending varies by EWS metric @gamadessavreProblemDetrendingWhen2019 @lentonEarlyWarningClimate2012.
 While it may be preferred to detrend using the mean over multiple realizations, this is clearly not possible in a real-world situation.
-Future work could explore the effects of different detrending methods (e.g., Gaussian weighting moving average, smaller and/or larger bandwidths) on the effectiveness of EWS metrics in systems with diagnostic uncertainty.
+Future work could explore the effects of different detrending methods (e.g., Gaussian weighting moving average, smaller and/or larger bandwidths) on the effectiveness of EWS metrics in systems with diagnostic uncertainty @gamadessavreProblemDetrendingWhen2019.
 Similarly, prior work has demonstrated the benefits of constructing composite metrics, for example, calculating a composite metric as the sum of the standardized differences for each of the individual metrics, before defining a quantile threshold for the distribution of the composite @drakeEarlyWarningSignals2010.
 However, there are numerous other techniques that could be applied, each requiring different decisions as to the appropriate weightings to be assigned to the underlying single metrics.
 For this reason, we only present the results from the individual metrics to illustrate the effects of diagnostic uncertainty, but future work should aim to extend the approach detailed to composite EWS metrics.
@@ -296,10 +304,6 @@ To address this, there is a growing body of work that seeks to evaluate the use 
 Our work expands upon these efforts, characterizing the limits of predictability for EWS metrics in systems with diagnostic uncertainty and background noise.
 
 #pagebreak()
-
-// #set par.line(
-//   numbering: none
-// )
 
 == Funding
 
