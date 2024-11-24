@@ -45,7 +45,9 @@
     === Conclusions
     The performance of an outbreak detection system is highly sensitive to the structure and the magnitude of background noise. Under the assumption that the noise is relatively static over time, RDTs can perform as well as perfect tests in a surveillance system. However, when the noise is temporally correlated, as from a separate SEIR process, imperfect tests cannot overcome their accuracy limitations through higher testing rates.
   ],
-  word-count: true
+  line-numbers: false,
+  word-count: false,
+  article_label: "outbreak-detection"
 )
 
 == Background

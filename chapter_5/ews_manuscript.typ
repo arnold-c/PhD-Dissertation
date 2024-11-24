@@ -17,7 +17,6 @@
   ),
   keywords: ("Diagnostic Test Uncertainty","Infectious Disease Surveillance","Outbreak Detection", "Early Warning Signals", "Critical Slowing Down"),
   abstract: [
-    // 200 words \
     Methods to detect the emergence of infectious diseases, and approach to the "critical transition" $R_"E" = 1$, have to potential to avert substantial disease burden by facilitating pre-emptive actions like vaccination campaigns.
     Early warning signals (EWS), summary statistics of infection case time series, show promise in providing such advanced warnings.
     As EWS are computed on test-positive case data, the accuracy of this underlying data is integral to their predictive ability, but will vary with changes in the diagnostic test accuracy and the incidence of the target disease relative to clinically-compatible background noise.
@@ -27,8 +26,8 @@
     Not all EWS metrics performed equally; we find that the mean was the least affected by changes to the noise structure and magnitude, given a moderately accurate diagnostic test ($gt.eq 95%$ sensitive and specific), and the autocovariance and variance were the most predictive when the noise incidence did not exhibit large temporal variations.
     In these situations, diagnostic test accuracy should not be a precursor to the implementation of an EWS metric-based alert system.
   ],
-  word-count: true,
   line-numbers: false,
+  word-count: false,
   article_label: "ews"
 )
 
@@ -38,7 +37,7 @@
   .slice(sliceval)
 }
 
-== Introduction
+== Background
 
 Despite sustained advances over decades, infectious diseases still pose a substantial threat to human life, causing an estimated 33.8 B infections, and 57.0 M deaths, per annum in 2019 (rising to an estimated 67.9 M deaths in 2021, as a result of the COVID-19 pandemic) @GBDResults.
 For many diseases, effective and affordable vaccines have played a substantial role in reducing this burden, averting 154 million deaths since the introduction of the Expanded Programme on Immunization in 1974 @shattockContributionVaccinationImproved2024.
