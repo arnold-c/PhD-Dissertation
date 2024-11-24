@@ -2,7 +2,7 @@
 
 Much of the world is complex, and in seeking to understand it we must often make simplifying aggregations and assumptions, create groups @boxScienceStatistics1976 @mervisCategorizationNaturalObjects1981 @rhodesDevelopmentSocialCategorization2019.
 When quantifying a student's academic achievements, or measuring distances, for example, decisions are made to create discrete categories from the underlying continuous data.
-Categorization e.g., as grades, is essential to the synthesis and interpretation of information, particularly for action; as it would be impractical to simultaneously evaluate every score a student achieved during school.
+Categorization, such as grades, is essential to the synthesis and interpretation of information, particularly for action; as it would be impractical to simultaneously evaluate every score a student achieved during school.
 Infectious diseases are no different.
 Rather than tracking pathogen loads in a population, for example, individuals are typically categorized as either susceptible, exposed/latent, infected, or removed @vynnyckyIntroductionInfectiousDisease2010a @kermackContributionMathematicalTheory1997.
 Cases are counted, providing estimates of the number of new and cumulative infected individuals at any one time; labeling individuals as infected is integral to calculation of disease burden @hesselBurdenDiseaseBurdenofDiseases2008, and the equitable and efficient allocation of vaccinations @bubarModelinformedCOVID19Vaccine2021.
@@ -28,9 +28,9 @@ In Chapters 4 & 5 I examine the impact of uncertainty in the binary classificati
 In the first half of my dissertation (Chapters 2 & 3), I explore how differences in infection rates between geographically co-incident groups can be evaluated in the context of the categorization process.
 In the spring of 2020, the COVID-19 pandemic resulted in many university campuses across the US to shut down, requiring their students to return to their respective homes @mackCollegesUniversitiesUS2020.
 When students were re-introduced to the Pennsylvania State University campus during the start of the Fall 2020 semester, two spatially entwined, but demographically and behaviorally disparate groups were defined: returning students and the surrounding community members.
-Through this grouping, it is now possible to characterize the burden of SARS-CoV-2 infection (the underlying virus that causes the disease COVID-19).
-Without discrete categories, there is no denominator for in use calculations of seroprevalence (the proportion of a population that have sufficiently high levels of antibodies, indicating past exposure to a pathogen).
-In Chapter 2, I show that substantial, unexpected, differences in infection rates can be observed between the student and community populations, highlighting that opportunities exist for infection mitigation efforts to minimize spread between spatially-linked subgroups of a population.
+Through this grouping, it is possible to characterize the burden of SARS-CoV-2 infection (the underlying virus that causes the disease COVID-19).
+Without discrete categories, there is no denominator for use in calculations of seroprevalence (the proportion of a population that have sufficiently high levels of antibodies, indicating past exposure to a pathogen).
+In Chapter 2 I show that substantial, unexpected, differences in infection rates can be observed between the student and community populations, highlighting that opportunities exist for infection mitigation efforts to minimize spread between spatially-linked subgroups of a population.
 To examine differences in COVID-19 infections that may exist in the student body, it was, once again, imperative to define groups to compare.
 However, with no clear differences in traditional demographic measures that could be used to categorize individuals, such as age, I use Latent Class Analysis (LCA) to define these group from behavioral survey data @wellerLatentClassAnalysis2020 @nylund-gibsonTenFrequentlyAsked20181213.
 The process of discovering categories with unsupervised clustering methods provides a mechanism to quantify the variation in risk perception and behavior, that cannot be directly measured.
@@ -64,4 +64,4 @@ Addressing the context explicitly when designing a reactive or proactive outbrea
 When evaluated in its entirety, my dissertation provides a clear and principled approach to evaluating the effects of categorizing continuous infectious disease data.
 I demonstrate that through acknowledging the imperfect nature of discretization, it is possible to identify meaningfully different clusters of individuals and outcomes that can inform our understanding of the populations most at risk of infection, and how outbreak surveillance systems can be designed to best address context-specific priorities.
 
-#bibliography(style: "elsevier-vancouver", "../Dissertation.bib")
+// #bibliography(style: "elsevier-vancouver", "../Dissertation.bib")
