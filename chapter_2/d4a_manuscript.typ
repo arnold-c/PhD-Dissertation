@@ -149,7 +149,7 @@ A total of 9299 community residents were identified through an initial REDCap su
 
 Among participants with serum samples: the median age of community residents was 47 years (IQR: 36-58), with 86.5% between the ages 18-65 years, and for the returning students the median age was 20 years (IQR: 19-21), with 99.7% between the ages 18-65 years; 66.9% of the community residents identified as female and 34.6% as male; 81.9% of the community residents identified as white, as did 81.9% of the students.
 Similar proportions were seen in those enrolled without samples, and among the initial REDCap survey respondents (@tbl-comb-demo-table; @tbl-stu-demo-table).
-Although all county residents were eligible for participation, 74.9% of community resident participants were from the 5 townships (College, Ferguson, Harris, Half Moon, Patton) and 1 borough (State College) that form the "Centre Region" and account for #sym.approx 59% of Centre County's population @unitedstatescensusbureauCensusBureauQuickFacts2019 (@fig-comb-map).
+Although all county residents were eligible for participation, 74.9% of community resident participants were from the 5 townships (College, Ferguson, Harris, Half Moon, Patton) and 1 borough (State College) that form the "Centre Region" and account for $approx$ 59% of Centre County's population @unitedstatescensusbureauCensusBureauQuickFacts2019 (@fig-comb-map).
 The median household income group in the community residents providing samples was \$100,000 to \$149,999 USD (IQR: \$50,000 to \$74,999; \$150,000 to \$199,999).
 The median household income in the county is \$60,403 @unitedstatescensusbureauCensusBureauQuickFacts2019.
 47.4% of the county is female, 87.9% white, and 70.3% are between the ages of 18-65 years old @unitedstatescensusbureauCensusBureauQuickFacts2019.
@@ -323,7 +323,7 @@ Less than one third of both groups (29.1% and 30.0%, respectively) self-reported
 == Discussion
 
 The return of students to in-person instruction on the PSU UP campus was associated with a large increase in COVID-19 incidence in the county, evidenced by over 4,500 student cases at PSU @pennsylvaniastateuniversityCOVID19Dashboard2021.
-In a sample of 684 returning students, 30.4% were positive for SARS-CoV-2 antibodies. Out of approximately 35,000 students who returned to campus, this implies that the detected cases may account for #sym.approx 40% of all infections among PSU UP students.
+In a sample of 684 returning students, 30.4% were positive for SARS-CoV-2 antibodies. Out of approximately 35,000 students who returned to campus, this implies that the detected cases may account for $approx$ 40% of all infections among PSU UP students.
 Despite this high overall incidence of SARS-CoV-2 infection in the county during the Fall 2020 term, the studied cohort of community residents (who disproportionately identified as female and lived in close proximity to campus) saw only a modest increase in the prevalence of SARS-CoV-2 IgG antibodies (3.2 to 7.3%) between September and December 2020; consistent with a nation-wide estimate of seroprevalence for the summer of 2020 @kalishMappingPandemicSARSCoV22021.
 The true prevalence of prior SARS-CoV-2 infection in the cohorts depends on the assumed sensitivity and specificity.
 However, for most realistic values of sensitivity and specificity, there was little evidence of a significant increase among the community resident sample.
