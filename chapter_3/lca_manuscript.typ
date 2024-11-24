@@ -83,7 +83,7 @@ We show that interventions designed to increase student compliance with PHMs wou
 == Methods
 === Design, Setting, and Participants
 This research was conducted with PSU Institutional Review Board approval and in accordance with the Declaration of Helsinki, and informed consent was obtained for all participants.
-The student population has been described in detail previously @arnoldLongitudinalStudyImpact2022, but in brief, students were eligible for the student cohort if they were: #sym.gt.eq 18 years old; fluent in English; capable of providing their own consent; residing in Centre County at the time of recruitment (October 2020) with the intention to stay through April 2021; and officially enrolled as PSU UP students for the Fall 2020 term.
+The student population has been described in detail previously @arnoldLongitudinalStudyImpact2022, but in brief, students were eligible for the student cohort if they were: $gt.eq$ 18 years old; fluent in English; capable of providing their own consent; residing in Centre County at the time of recruitment (October 2020) with the intention to stay through April 2021; and officially enrolled as PSU UP students for the Fall 2020 term.
 Upon enrollment, students completed a behavioral survey in REDCap @harrisREDCapConsortiumBuilding2019 to assess adherence and attitudes towards public health guidance, such as attendance at gatherings, travel patterns, and non-pharmaceutical interventions.
 Shortly after, they were scheduled for a clinic visit where blood samples were collected.
 Students were recruited via word-of-mouth and cold-emails.
