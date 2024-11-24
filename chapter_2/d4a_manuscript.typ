@@ -170,14 +170,14 @@ The study cohort is moderately older and more affluent (in part because of the e
       table.cell(rowspan: 4)[Race],
         [White], [1220 (92.9%)], [194 (89.0%)], [6206 (79.9%)],
         [Aggregated Category\*], [12 (0.9%)], [2 (0.9%)], [256 (3.3%)],
-        [Listed more than one race or ethnicity], [6 (0.5%)], [0 (0%)], [18 (0.2%)],
+        [Listed more than one race or ethnicity], [6 (0.5%)], [0 (0.0%)], [18 (0.2%)],
         [Missing], [5 (5.7%)], [22 (10.1%)], [1288 (16.6%)],
       table.cell(rowspan: 5)[Gender],
-        [Female], [879 (66.9%)], [113 (51.8%)], [0 (0%)],
-        [Male], [424 (32.3%)], [54 (24.8%)], [0 (0%)],
-        [Non-binary/Transgender/Self-described], [10 (0.8%)], [1 (0.5%)], [0 (0%)],
-        [Prefer not to answer], [0 (0%)], [0 (0%)], [0 (0%)],
-        [Missing], [0 (0%)], [50 (22.9%)], [7768 (100%)],
+        [Female], [879 (66.9%)], [113 (51.8%)], [0 (0.0%)],
+        [Male], [424 (32.3%)], [54 (24.8%)], [0 (0.0%)],
+        [Non-binary/Transgender/Self-described], [10 (0.8%)], [1 (0.5%)], [0 (0.0%)],
+        [Prefer not to answer], [0 (0.0%)], [0 (0.0%)], [0 (0.0%)],
+        [Missing], [0 (0.0%)], [50 (22.9%)], [7768 (100%)],
       table.cell(rowspan: 9)[Household Income (USD)],
         [\$200,000 and over], [137 (10.4%)], [21 (9.6%)], [681 (8.8%)],
         [\$150,000 to \$199,999], [186 (14.2%)], [24 (11.0%)], [764 (9.8%)],
@@ -187,7 +187,7 @@ The study cohort is moderately older and more affluent (in part because of the e
         [\$25,000 to \$49,999], [142 (10.8%)], [22 (10.1%)], [747 (9.6%)],
         [Under \$25,000], [43 (3.3%)], [13 (6.0%)], [256 (3.3%)],
         [Prefer not to answer], [102 (7.8%)], [26 (11.9%)], [799 (10.3%)],
-        [Missing], [1 (0.1%)], [0 (0%)], [969 (12.5%)],
+        [Missing], [1 (0.1%)], [0 (0.0%)], [969 (12.5%)],
     )
   ],
   caption: [Demographic characteristics of study participants. Non-D4A participants are all participants in the initial anonymous survey from which Data4Action participants were drawn. D4A participants are divided into subsets for which antibody assays were conducted (N=1313) and those for which assays were not conducted (N=218).],
@@ -211,13 +211,12 @@ The study cohort is moderately older and more affluent (in part because of the e
     table.cell(rowspan: 4)[Gender],
       [Female], [441 (64.5%)], [19 (46.3%)],
       [Male], [237 (34.6%)], [22 (53.7%)],
-      [Genderqueer/nonconforming/transgender/different identity], [5 (0.7%)], [0 (0%)],
-      [Missing], [1 (0.1%)], [0 (0%)],
+      [Genderqueer/nonconforming/transgender/different identity], [5 (0.7%)], [0 (0.0%)],
+      [Missing], [1 (0.1%)], [0 (0.0%)],
     table.cell(rowspan: 3)[University Housing],
       [Not Uni housing], [501 (73.2%)], [27 (65.9%)],
       [Uni housing], [181 (26.5%)], [8 (19.5%)],
       [Missing], [2 (0.3%)], [6 (14.6%)],
-
   ),
   caption: [Demographic characteristics of the returning student participants],
 )
@@ -235,14 +234,14 @@ The study cohort is moderately older and more affluent (in part because of the e
 
 === Prior Positive Results and Seroprevalence
 
-Of the returning student participants, 673 (92.8%) had at least one test prior to enrollment in the study; of these, 107 (15.9%) self-reported a positive result (@tbl-prior-pos-table)).
+Of the returning student participants, 673 (92.8%) had at least one test prior to enrollment in the study; of these, 107 (15.9%) self-reported a positive result (@tbl-prior-pos-table).
 Of these, 100 (93.5%) indicated that this test result occurred after their return to campus (median: 25 September; IQR: 10 September, 07 October). Of the 684 returning students with an ELISA result, 95 of the 102 (93.1%) with a self-reported prior positive test result were positive for SARS-CoV-2 IgG antibodies. Of the 582 returning students with ELISA results who did not report a positive SARS-CoV-2 test, 113 (16.5%) were positive for SARS-CoV-2 IgG antibodies.
 Of the total 648 returning students with ELISA results, 208 (30.41%) were positive for SARS-CoV-2 IgG antibodies (@fig-raw-prev).
 Among the community resident participants, 42 of 1313 (3.2%) were positive for SARS-CoV-2 antibodies at their first visit (@fig-raw-prev).
 Between their first and second visit, 54 participants converted from negative to positive and 19 converted from positive to negative; 96 (7.3%) were positive for SARS-CoV-2 IgG antibodies at either visit.
 There were no differences by age or the number of days separating visit samples, between those that seroconverted and seroreverted (p = 0.91; p = 0.91, respectively).
 The Wave 1 quantitative OD values of those who seroreverted (n = 19) were significantly lower than individuals who remained positive from waves 1 to 2 (n = 23) (Welch's t-test, p = 0.001; mean of 0.32 vs 0.63).
-Community residents who were of similar age and household income as the returning students (age <= 30y and income <= 50k USD) did not have significantly different seroprevalence than community residents age >30y or with income > 50k USD (@tbl-comm-sim-wave-1, @tbl-comm-sim-wave-2, @tbl-comm-sim-wave-2-cum).
+Community residents who were of similar age and household income as the returning students (age #sym.lt.eq 30y and income #sym.lt.eq 50k USD) did not have significantly different seroprevalence than community residents age > 30y or with income > 50k USD (@tbl-comm-sim-wave-1, @tbl-comm-sim-wave-2, @tbl-comm-sim-wave-2-cum).
 
 #figure(
   two_header_table(
@@ -252,7 +251,7 @@ Community residents who were of similar age and household income as the returnin
     [Prior Positive \ (N = 107)], [No Prior Positive \ (N = 550)], [Awaiting Results \ (N = 16)], [No Prior Test],
       [Positive], [95 (88.8%)], [102 (18.5%)], [3 (18.8%)],	[8 (15.4%)],
       [Negative], [7 (6.5%)], [419 (76.2%)], [13 (81.3%)], [37 (71.2%)],
-      [Missing], [5 (4.7%)], [29 (5.3%)], [0 (0%)], [7 (13.5%)],
+      [Missing], [5 (4.7%)], [29 (5.3%)], [0 (0.0%)], [7 (13.5%)],
   ),
   caption: [IgG ELISA results as a function of self-reported prior SARS-CoV-2 diagnostic test outcome among returning student cohort participants],
 )
