@@ -305,14 +305,14 @@ Our work expands upon these efforts, characterizing the limits of predictability
 
 #pagebreak()
 
-== Funding
+== Acknowledgements
+
+=== Funding
 
 This work was supported by the Bill & Melinda Gates Foundation through grant No. INV-016091_2020.
 This project was also supported by the National Science Foundation, by grant: NSF-NIH-NIFA Ecology and Evolution of Infectious Disease award DEB 1911962.
 The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
-
-== Acknowledgements
 === Author Contributions
 #emph[Conceptualization:] CA, MJF
 
@@ -336,5 +336,5 @@ The authors declare no conflicts of interest.
 === Data Access, Responsibility, and Analysis
 Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis. Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State University) conducted the data analysis.
 
-=== Data Availability
+== Data Availability
 All code and data for the simulations can be found at #link("https://github.com/arnold-c/CSDNoise")

@@ -311,26 +311,16 @@ Future research should consider including perceived agency and efficacy for PHM 
 
 #pagebreak()
 
-== Additional Information
+== Acknowledgements
+
 === Funding
 This work was supported by funding from the Office of the Provost and the Clinical and Translational Science Institute, Huck Life Sciences Institute, and Social Science Research Institutes at the Pennsylvania State University.
 The project described was supported by the National Center for Advancing Translational Sciences, National Institutes of Health, through Grant UL1 TR002014.
 The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH.
 The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
-=== Conflicts of Interest and Financial Disclosures
-The authors declare no conflicts of interest.
+=== Author Contributions
 
-=== Data Access, Responsibility, and Analysis
-Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis.
-Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State University) conducted the data analysis.
-
-=== Data Availability
-The datasets generated during and/or analyzed during the current study are not publicly available as they contain personally identifiable information, but are available from the corresponding author on reasonable request.
-
-#pagebreak()
-
-== Author Contributions
 #emph[Conceptualization:] CA, MJF
 
 #emph[Data curation:] CA, MJF
@@ -357,8 +347,22 @@ The datasets generated during and/or analyzed during the current study are not p
 
 #emph[Writing - review and editing:] all authors.
 
-== Acknowledgements
+=== Conflicts of Interest and Financial Disclosures
+The authors declare no conflicts of interest.
+
+=== Data Access, Responsibility, and Analysis
+Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis.
+Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State University) conducted the data analysis.
+
+=== Collaborators
+
 + Florian Krammer, Mount Sinai, USA for generously providing the transfection plasmid pCAGGS-RBD
 + Scott E. Lindner, Allen M. Minns, Randall Rossi produced and purified RBD
 + The D4A Research Group: Dee Bagshaw, Clinical & Translational Science Institute, Cyndi Flanagan, Clinical Research Center and the Clinical & Translational Science Institute; Thomas Gates, Social Science Research Institute; Margeaux Gray, Dept. of Biobehavioral Health; Stephanie Lanza, Dept. of Biobehavioral Health and Prevention Research Center; James Marden, Dept. of Biology and Huck Institutes of the Life Sciences; Susan McHale, Dept. of Human Development and Family Studies and the Social Science Research Institute; Glenda Palmer, Social Science Research Institute; Connie J. Rogers, Dept. of Nutritional Sciences; Rachel Smith, Dept. of Communication Arts and Sciences and Huck Institutes of the Life Sciences; and Charima Young, Penn State Office of Government and Community Relations.
 + The authors thank the following for their assistance in the lab: Sophie Rodriguez, Natalie Rydzak, Liz D. Cambron, Elizabeth M. Schwartz, Devin F. Morrison, Julia Fecko, Brian Dawson, Sean Gullette, Sara Neering, Mark Signs, Nigel Deighton, Janhayi Damani, Mario Novelo, Diego Hernandez, Ester Oh, Chauncy Hinshaw, B. Joanne Power, James McGee, Riëtte van Biljon, Andrew Stephenson, Alexis Pino, Nick Heller, Rose Ni, Eleanor Jenkins, Julia Yu, Mackenzie Doyle, Alana Stracuzzi, Brielle Bellow, Abriana Cain, Jaime Farrell, Megan Kostek, Amelia Zazzera, Sara Ann Malinchak, Alex Small, Sam DeMatte, Elizabeth Morrow, Ty Somberger, Haylea Debolt, Kyle Albert, Corey Price, Nazmiye Celik
+
+== Data Availability
+The datasets generated during and/or analyzed during the current study are not publicly available as they contain personally identifiable information, but are available from the corresponding author on reasonable request.
+
+#pagebreak()
+

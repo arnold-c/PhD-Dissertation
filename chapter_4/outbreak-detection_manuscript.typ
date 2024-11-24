@@ -312,12 +312,14 @@ However, the general patterns should hold, and more importantly, the analysis fr
 
 
 #pagebreak()
-== Funding
+
+== Acknowledgements
+
+=== Funding
 
 This work was supported by Gavi, the Vaccine Alliance, through Contract No. 266639 PO4500012795, A01.
 The funding sources had no role in the collection, analysis, interpretation, or writing of the work.
 
-== Acknowledgements
 === Author Contributions
 #emph[Conceptualization:] all authors
 
@@ -351,5 +353,5 @@ The authors declare no conflicts of interest.
 === Data Access, Responsibility, and Analysis
 Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis. Callum Arnold (Department of Biology, Pennsylvania State University) conducted the data analysis.
 
-=== Data Availability
+== Data Availability
 All code and data for the simulations can be found at #link("https://github.com/arnold-c/OutbreakDetection")
