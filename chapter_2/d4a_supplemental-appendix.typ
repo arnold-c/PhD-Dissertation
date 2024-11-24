@@ -5,7 +5,7 @@
   header-title: "true",
   line-numbers: false,
   word-count: false,
-  article_label: "data4action_appendix"
+  article_label: "d4a_appendix"
 )
 
 == Laboratory Methods:

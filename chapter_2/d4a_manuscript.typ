@@ -72,7 +72,7 @@
   ],
   line-numbers: false,
   word-count: false,
-  article_label: "data4action"
+  article_label: "d4a"
 )
 
 == Background
@@ -120,7 +120,7 @@ All eligible participants were scheduled for a clinical visit at each time inter
 The primary outcome was the presence of S/RBD IgG antibodies, measured using an indirect isotype-specific (IgG) screening ELISA developed at PSU @gontuQuantitativeEstimationIgM2020.
 An optical density (absorbance at 450 nm) higher than six standard deviations above the mean of 100 pre-SARS-CoV-2 samples collected in November 2019, determined a threshold value of 0.169 for a positive result.
 Comparison against virus neutralization assays and RT-PCR returned sensitivities of 98% and 90%, and specificities of 96% and 100%, respectively @gontuLimitedWindowDonation2021.
-Further details in the Supplement.
+Further details in the supplement (@d4a_appendix).
 The presence of anti-SARS-CoV-2 antibodies has been documented in prior seroprevalence studies as a method of quantifying cumulative exposure @uyogaSeroprevalenceSARSCoV2IgG2021 @stringhiniSeroprevalenceAntiSARSCoV2Antibodies2021 @kalishMappingPandemicSARSCoV22021.
 
 === Statistical Methods
@@ -131,7 +131,7 @@ We calculated a 95% binomial confidence interval for test sensitivity of the IgG
 Prevalence estimates were then calculated across all possible values of specificity between 0.85 and 0.99. Estimates were not corrected for demographics as participants were not enrolled using a probability-based sample.
 We assessed demographic characteristics of the tested participants relative to all study participants to illustrate potential selection biases (@tbl-comb-demo-table).
 
-Missing values were deemed "Missing At Random" and imputed, as described in the Supplement.
+Missing values were deemed "Missing At Random" and imputed, as described in the supplement (@d4a_appendix).
 We estimated the adjusted odds ratios (aOR) of IgG positivity in the student subgroup using multivariable logistic regression implemented with the *mice* and *finalfit* packages @harrisonFinalfitQuicklyCreate2021 @vanbuurenMiceMultivariateImputation2011, two-sided Chi-squared tests for raw odds ratios (OR), and Welch Two Sample t-test for continuous distributions, and present 95% confidence intervals.
 We considered the following variables _a priori_ to be potential risk factors as they increase contact with individuals outside of a participants' household @huangEstimationSecondaryAttack2020 @chengContactTracingAssessment2020 @leclercWhatSettingsHave2020 @brooks-pollockPopulationAttributableFraction2020: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); attendance at a small gathering (20-50 people) in the past 3 months; attendance at a medium gathering (51-1000 people) in the past 3 months; lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; travelled in the 3 months prior to returning to campus; and travelled since returning to campus for the Fall term.
 
@@ -266,7 +266,7 @@ Community residents who were of similar age and household income as the returnin
 )
 <fig-raw-prev>
 
-Of returning students with a self-reported prior positive SARS-CoV-2 test, 93.1% (95% CI: 86.4-97.2%) had positive IgG antibodies; this was used as an estimate of sensitivity of the IgG assay for detecting previously detectable infection (see Supplement for an alternative calculation of sensitivity that includes community resident responses).
+Of returning students with a self-reported prior positive SARS-CoV-2 test, 93.1% (95% CI: 86.4-97.2%) had positive IgG antibodies; this was used as an estimate of sensitivity of the IgG assay for detecting previously detectable infection (see @d4a_appendix for an alternative calculation of sensitivity that includes community resident responses).
 For all values of specificity below 0.95, the 95% credible intervals for the prevalence in the community residents overlapped for the pre- and post-term time points, and neither overlapped with the returning student subgroup (@fig-true-prev).
 
 #figure(
