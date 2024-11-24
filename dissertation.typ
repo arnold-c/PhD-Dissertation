@@ -77,11 +77,14 @@
 
 #set text(top-edge: "cap-height", bottom-edge: "baseline")
 #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
+
 #bibliography(
-    style: "elsevier-vancouver",
+    // style: "elsevier-vancouver",
     "./Dissertation.bib"
-) <bibliography>
+)
+<bibliography>
 
 #pagebreak()
 
+#set page(numbering: none)
 #include "./additional_sections/vita.typ"
