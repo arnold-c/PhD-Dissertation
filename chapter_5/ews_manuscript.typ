@@ -319,13 +319,13 @@ The funding sources had no role in the collection, analysis, interpretation, or 
 
 #emph[Conceptualization:] CA, MJF
 
-#emph[Data curation:] MJF, CA
+#emph[Data curation:] CA, MJF
 
-#emph[Formal analysis:] CA, MJF
+#emph[Formal analysis:] CA
 
 #emph[Funding acquisition:] MJF
 
-#emph[Investigation:] CA, MJF
+#emph[Investigation:] CA
 
 #emph[Methodology:] CA, MJF
 
@@ -337,7 +337,8 @@ The funding sources had no role in the collection, analysis, interpretation, or 
 The authors declare no conflicts of interest.
 
 === Data Access, Responsibility, and Analysis
-Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis. Callum Arnold and Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State University) conducted the data analysis.
+Callum Arnold and Dr. Matthew J. Ferrari had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis.
+Callum Arnold (Department of Biology, Pennsylvania State University) conducted the data analysis.
 
 == Data Availability
 All code and data for the simulations can be found at #link("https://github.com/arnold-c/CSDNoise")
