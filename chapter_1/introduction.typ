@@ -22,21 +22,21 @@ By identifying the most at-risk groups in a population, limited resources can be
 For example, accounting for injection drug use status can help target interventions to reduce human immunodeficiency virus (HIV) and Hepatitis C Virus incidence @levittInfectiousDiseasesInjection2020.
 
 Throughout my dissertation I specifically address the discretization of 3 categories of continuous phenomena: risk classes, infection status, and outbreaks.
-Chapters 2 & 3 address the definition of exposure and risk classes in the context of the COVID-19 pandemic and the implications for intervention effectiveness.
-In Chapters 4 & 5 I examine the impact of uncertainty in the binary classification of an individual's infection status via diagnostics on the determination of outbreak status, and consequentially, outbreak response and prediction.
+@d4a & @lca address the definition of exposure and risk classes in the context of the COVID-19 pandemic and the implications for intervention effectiveness.
+In @outbreak-detection & @ews I examine the impact of uncertainty in the binary classification of an individual's infection status via diagnostics on the determination of outbreak status, and consequentially, outbreak response and prediction.
 
-In the first half of my dissertation (Chapters 2 & 3), I explore how differences in infection rates between geographically co-incident groups can be evaluated in the context of the categorization process.
+In the first half of my dissertation (@d4a & @lca ), I explore how differences in infection rates between geographically co-incident groups can be evaluated in the context of the categorization process.
 In the spring of 2020, the COVID-19 pandemic resulted in many university campuses across the US shutting down, requiring their students to return to their respective homes @mackCollegesUniversitiesUS2020.
 When students were re-introduced to the Pennsylvania State University campus during the start of the Fall 2020 semester, two spatially entwined but demographically and behaviorally disparate groups were defined: returning students and the surrounding community members.
 Through this grouping, it is possible to characterize the burden of SARS-CoV-2 infection (the underlying virus that causes the disease COVID-19).
 Without discrete categories, there is no denominator for use in calculations of seroprevalence (the proportion of a population that have sufficiently high levels of antibodies, indicating past exposure to a pathogen); a key metric in the evaluation of disease burden.
-In Chapter 2 I show that substantial, unexpected, differences in infection rates can be observed between the student and community populations, highlighting that opportunities exist for infection mitigation efforts to minimize spread between spatially-linked subgroups of a population.
+In @d4a I show that substantial, unexpected, differences in infection rates can be observed between the student and community populations, highlighting that opportunities exist for infection mitigation efforts to minimize spread between spatially-linked subgroups of a population.
 To examine differences in COVID-19 infections that may exist in the student body, it was, once again, imperative to define groups to compare.
 However, with no clear differences in traditional demographic measures that could be used to categorize individuals, such as age, I use Latent Class Analysis (LCA) to define these group from behavioral survey data @wellerLatentClassAnalysis2020 @nylund-gibsonTenFrequentlyAsked20181213.
 The process of discovering categories with unsupervised clustering methods provides a mechanism to quantify the variation in risk perception and behavior, that cannot be directly measured.
-In Chapter 3, I map the association between these emergent risk groups with infection rates from serological data to parameterize a mechanistic model of infection, and demonstrate the limits of solely using non-pharmaceutical interventions to reduce infections within the student population.
+In @lca, I map the association between these emergent risk groups with infection rates from serological data to parameterize a mechanistic model of infection, and demonstrate the limits of solely using non-pharmaceutical interventions to reduce infections within the student population.
 
-In the second half of my dissertation (Chapters 4 & 5), I examine the necessity and implications of categorizations for action in regions with persistent and emerging infection dynamics.
+In the second half of my dissertation (@outbreak-detection & @ews), I examine the necessity and implications of categorizations for action in regions with persistent and emerging infection dynamics.
 Infectious disease surveillance has 3 primary objectives: to observe and quantify the burden of disease, monitor trends in prevalence, and detect and inform response to outbreaks @murrayInfectiousDiseaseSurveillance2017 @DiseaseSurveillance.
 In pursuit of these goals, numerous continuous values must be discretized.
 Firstly, cases must be counted, which requires a set of criteria to convert the underlying infection dynamics within an individual into a binary status: infected or not.
@@ -51,11 +51,11 @@ Unlike the sensitivity, it is not preconditioned on the assumption that the indi
 The complement to the PPV is the negative predictive value (NPV); the probability that a negative test result accurately reflects reality.
 When counting for infectious disease surveillance, decisions are made on the basis of these imperfect categorizations.
 
-In my 4th chapter I explore how fallible diagnostic tests interact with non-target background infections (that change the PPV of test results), producing different time series that are used to detect outbreaks.
+In my #link("outbreak-detection")[4th chapter] I explore how fallible diagnostic tests interact with non-target background infections (that change the PPV of test results), producing different time series that are used to detect outbreaks.
 Additionally, the very notion of an outbreak is itself a categorization of a continuous phenomenon, separating a time series of test positive cases by suspected outbreak status, and faces similar issues of sensitivity/specificity/PPV/NPV @kanindaEffectivenessIncidenceThresholds2000 @trotterResponseThresholdsEpidemic2015 @guidelinesworkinggroupUpdatedGuidelinesEvaluating2001.
 My work demonstrates how uncertainty that arises at each step of the outbreak detection process must be accounted for, highlighting contexts where different combinations of diagnostic tests and outbreak classification criteria can produce equivalent outbreak detection accuracies.
 
-In the final chapter, I address how these discontinuity errors affect efforts to build _proactive_ rather than _reactive_ outbreak alert systems.
+In the #link("ews")[final chapter], I address how these discontinuity errors affect efforts to build _proactive_ rather than _reactive_ outbreak alert systems.
 In contrast to traditional outbreak detection systems that require the observation of test positive cases to trigger an alert i.e., respond to the detection of an ongoing outbreak, proactive alert systems have been developed to predict the risk and potential of future outbreaks.
 Instead of categorizing incidence to define a prediction target, proactive alert systems calculate summary statistics of test positive time series to predict the approach to the _tipping point_ of infectious diseases, $R_"E" = 1$.
 $R_"E"$ (the effective reproduction number) is the expected number of secondary infections that would be generated by each infectious individual before they recover (given the current population size and susceptibility).
