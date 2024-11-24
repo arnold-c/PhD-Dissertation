@@ -79,7 +79,7 @@
 #set par(leading: 0.65em, first-line-indent: 0em, spacing: 1.2em)
 
 #bibliography(
-    // style: "elsevier-vancouver",
+    style: "elsevier-vancouver",
     "./Dissertation.bib"
 )
 <bibliography>
