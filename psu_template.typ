@@ -134,6 +134,7 @@
     acknowledgements: [],
     dedication: [],
     abbreviations: [],
+    epigraph: [],
 
     body
 ) = {
@@ -418,6 +419,11 @@
     if dedication != [] {
       heading(level: 1)[Dedication]
       [#dedication]
+      pagebreak(weak: true)
+    }
+
+    if epigraph != [] {
+      [#epigraph]
       pagebreak(weak: true)
     }
   }

@@ -40,6 +40,7 @@
     acknowledgements: [#include("./additional_sections/acknowledgements.typ")],
     abbreviations: [#include("./additional_sections/abbreviations.typ")],
     // dedication: [#include "./additional_sections/dedication.typ"]
+    epigraph: [#include("./additional_sections/epigraph.typ")]
 )
 
 #include "./chapter_1/introduction.typ"
