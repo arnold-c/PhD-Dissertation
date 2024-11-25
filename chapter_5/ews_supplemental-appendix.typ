@@ -12,47 +12,6 @@
   .slice(sliceval)
 }
 
-// Adjust to ensure first table doesn't overflow to second page
-#block(above: 0.75em)[
-== Tables
-]
-
-#let tau_comparison_table = csv("./manuscript_files/tables/tau-comparison.csv")
-#let tau_comparison_vals = rename_noise_extract_vals(tau_comparison_table)
-
-#figure(
-  block[
-    #set text(size: 11pt)
-    #three_header_table(
-      columns: 6,
-      align: horizon,
-      table.cell(rowspan: 3, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & Specific Imperfect Test],
-      table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Poisson Noise], table.cell(colspan:2)[Dynamical Noise],
-      ..tau_comparison_vals
-    )
-  ],
-  caption: [The ranking and mean value of Kendall's Tau computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect test with sensitivity and specificity equal to 90%, under high and low Poisson and dynamical noise systems]
-)
-<tbl-tau-ranking-rdt-comparison>
-
-#let accuracy_comparison_table = csv("./manuscript_files/tables/accuracy-comparison.csv")
-#let accuracy_comparison_vals = rename_noise_extract_vals(accuracy_comparison_table)
-
-#figure(
-  block[
-    #set text(size: 11pt)
-    #three_header_table(
-      columns: 6,
-      align: horizon,
-      table.cell(rowspan: 3, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & Specific Imperfect Test],
-      table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Poisson Noise], table.cell(colspan:2)[Dynamical Noise],
-      ..accuracy_comparison_vals
-    )
-  ],
-  caption: [The ranking and alert accuracy of the EWS-based alert system computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect test with sensitivity and specificity equal to 90%, under high and low Poisson and dynamical noise systems]
-)
-<tbl-accuracy-ranking-rdt-comparison>
-
 == Figures
 
 #figure(
@@ -108,3 +67,42 @@
   caption: [The maximal alert accuracy achieved by each EWS metric under high levels of dynamical noise. Q) refers to the long-running quantile threshold to return a flag, and C) the number of consecutive flags to trigger an alert, that in combination produce the maximal accuracy. S) refers to the resulting specificity of the alert system.  The test sensitivity equals the test specificity for all diagnostic tests.]
 )
 <fig_csd-accuracy-heatmap-dynamical-7x>
+
+== Tables
+
+#let tau_comparison_table = csv("./manuscript_files/tables/tau-comparison.csv")
+#let tau_comparison_vals = rename_noise_extract_vals(tau_comparison_table)
+
+#figure(
+  block[
+    #set text(size: 11pt)
+    #three_header_table(
+      columns: 6,
+      align: horizon,
+      table.cell(rowspan: 3, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & Specific Imperfect Test],
+      table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Poisson Noise], table.cell(colspan:2)[Dynamical Noise],
+      ..tau_comparison_vals
+    )
+  ],
+  caption: [The ranking and mean value of Kendall's Tau computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect test with sensitivity and specificity equal to 90%, under high and low Poisson and dynamical noise systems]
+)
+<tbl-tau-ranking-rdt-comparison>
+
+#let accuracy_comparison_table = csv("./manuscript_files/tables/accuracy-comparison.csv")
+#let accuracy_comparison_vals = rename_noise_extract_vals(accuracy_comparison_table)
+
+#figure(
+  block[
+    #set text(size: 11pt)
+    #three_header_table(
+      columns: 6,
+      align: horizon,
+      table.cell(rowspan: 3, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & Specific Imperfect Test],
+      table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Poisson Noise], table.cell(colspan:2)[Dynamical Noise],
+      ..accuracy_comparison_vals
+    )
+  ],
+  caption: [The ranking and alert accuracy of the EWS-based alert system computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect test with sensitivity and specificity equal to 90%, under high and low Poisson and dynamical noise systems]
+)
+<tbl-accuracy-ranking-rdt-comparison>
+

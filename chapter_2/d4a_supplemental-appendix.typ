@@ -1,7 +1,7 @@
 #import "../appendix_template.typ": *
 
 #show: article.with(
-  title: "Supplemental Material for Chapter 2",
+  title: "Supplementary Material for Chapter 2",
   header-title: "true",
   line-numbers: false,
   word-count: false,
@@ -59,9 +59,29 @@ For all values of specificity greater than 0.85, there is no change in the quali
 
 === Comparison of Community Member Infections by Similarity To Student Cohort
 
-Given the spread of community resident ages and household incomes, we examined the seroprevalence among community members of a similar age and household income as the students (age <= 30y and household income <= 50k USD) and compared the seroprevalence against the rest of the community cohort (age > 30y or household income > 50k USD).
+Given the spread of community resident ages and household incomes, we examined the seroprevalence among community members of a similar age and household income as the students (age $lt.eq$ 30y and household income $lt.eq$ 50k USD) and compared the seroprevalence against the rest of the community cohort (age $gt.eq$ 30y or household income $gt.eq$ 50k USD).
 If risk of infection was correlated with age and income status, rather than student status, we would expect to see higher seroprevalence in this subset of community residents.
 There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulative seroprevalence (p = 0.142, p = 1, p = 0.691, respectively) (Supplemental @tbl-comm-sim-wave-1, @tbl-comm-sim-wave-2, @tbl-comm-sim-wave-2-cum).
+
+== Figures
+
+#figure(
+  image(
+    "./supplemental_files/student_glm_imp_psu_log_or_plot.png",
+    width: 100%
+  ),
+  caption: [Imputation method comparison among returning students],
+)
+<fig-imputation-log-ors>
+
+#figure(
+  image(
+    "./supplemental_files/true_prev_first_two_comm_pooled_plot.png",
+    width: 100%
+  ),
+  caption: [Sensitivity analysis of true prevalence amongst returning student and community subgroups, using pooled estimate of IgG test sensitivity against self-reported prior positive test],
+)
+<fig-true-prev-pooled>
 
 == Tables
 
@@ -73,7 +93,7 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     [Negative], [1173 (97.0%)], [98 (94.2%)],
     [Positive], [36 (3.0%)], [6 (5.8%)],
   ),
-  caption: [Wave 1 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
+  caption: [Wave 1 seroprevalence among community cohort members that are similar/not similar in age ($lt.eq$ 30) and household income ($lt.eq$ 50k USD p.a.) to returning students.],
 )
 <tbl-comm-sim-wave-1>
 
@@ -87,7 +107,7 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     [Negative], [1138 (94.1%)], [98 (94.2%)],
     [Positive], [71 (5.9%)], [6 (5.8%)],
   ),
-  caption: [Wave 2 seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
+  caption: [Wave 2 seroprevalence among community cohort members that are similar/not similar in age ($lt.eq$ 30) and household income ($lt.eq$ 50k USD p.a.) to returning students.],
 )
 <tbl-comm-sim-wave-2>
 
@@ -101,10 +121,9 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     [Negative], [1122 (92.8%)], [95 (91.3%)],
     [Positive], [87 (7.2%)], [9 (8.7%)],
   ),
-  caption: [Wave 2 cumulative seroprevalence among community cohort members that are similar/not similar in age (<= 30) and household income (<= 50k USD p.a.) to returning students.],
+  caption: [Wave 2 cumulative seroprevalence among community cohort members that are similar/not similar in age ($lt.eq$ 30) and household income ($lt.eq$ 50k USD p.a.) to returning students.],
 )
 <tbl-comm-sim-wave-2-cum>
-
 
 #figure(
   two_header_table(
@@ -118,7 +137,7 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     table.cell(rowspan: 2)[Distancing in Public],
       [Always], [249 (30.0%)], [198 (29.1%)], table.cell(rowspan: 2)[0.749],
       [Not Always], [582 (70.0%)], [483 (70.9%)],
-    table.cell(rowspan: 2)[Avoiding Crowds of > 25 People],
+    table.cell(rowspan: 2)[Avoiding Crowds of $gt.eq$ 25 People],
       [Always], [549 (65.8%)], [293 (43.0%)], table.cell(rowspan: 2)[< 0.001],
       [Not Always], [285 (34.2%)], [389 (57.0%)],
   ),
@@ -142,7 +161,7 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
       [Always], [242 (30.1%)], [7 (22.6%)], [150 (31.5%)], [48 (23.1%)],
       [Not Always], [558 (69.4%)], [24 (77.4%)], [324 (68.1%)], [159 (76.4%)],
       [Missing], [4 (0.5%)], [0 (0%)], [2 (0.4%)], [1 (0.5%)],
-    table.cell(rowspan: 3)[Avoiding Crowds of > 25 People],
+    table.cell(rowspan: 3)[Avoiding Crowds of $gt.eq$ 25 People],
       [Always], [530 (65.9%)], [19 (61.3%)], [219 (46.0%)], [74 (35.6%)],
       [Not Always], [273 (34.0%)], [12 (38.7%)], [256 (53.8%)], [133 (63.9%)],
       [Missing], [1 (0.1%)], [0 (0%)], [1 (0.2%)], [1 (0.5%)],
@@ -151,23 +170,3 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
 )
 <tbl-ph-meas-seroprev>
 
-
-== Figures
-
-#figure(
-  image(
-    "./supplemental_files/student_glm_imp_psu_log_or_plot.png",
-    width: 100%
-  ),
-  caption: [Imputation method comparison among returning students],
-)
-<fig-imputation-log-ors>
-
-#figure(
-  image(
-    "./supplemental_files/true_prev_first_two_comm_pooled_plot.png",
-    width: 100%
-  ),
-  caption: [Sensitivity analysis of true prevalence amongst returning student and community subgroups, using pooled estimate of IgG test sensitivity against self-reported prior positive test],
-)
-<fig-true-prev-pooled>

@@ -241,7 +241,7 @@ Among the community resident participants, 42 of 1313 (3.2%) were positive for S
 Between their first and second visit, 54 participants converted from negative to positive and 19 converted from positive to negative; 96 (7.3%) were positive for SARS-CoV-2 IgG antibodies at either visit.
 There were no differences by age or the number of days separating visit samples, between those that seroconverted and seroreverted (p = 0.91; p = 0.91, respectively).
 The Wave 1 quantitative OD values of those who seroreverted (n = 19) were significantly lower than individuals who remained positive from waves 1 to 2 (n = 23) (Welch's t-test, p = 0.001; mean of 0.32 vs 0.63).
-Community residents who were of similar age and household income as the returning students (age #sym.lt.eq 30y and income #sym.lt.eq 50k USD) did not have significantly different seroprevalence than community residents age > 30y or with income > 50k USD (@tbl-comm-sim-wave-1, @tbl-comm-sim-wave-2, @tbl-comm-sim-wave-2-cum).
+Community residents who were of similar age and household income as the returning students (age $lt.eq$ 30y and income $lt.eq$ 50k USD) did not have significantly different seroprevalence than community residents age $gt.eq$ 30y or with income $gt.eq$ 50k USD (@tbl-comm-sim-wave-1, @tbl-comm-sim-wave-2, @tbl-comm-sim-wave-2-cum).
 
 #figure(
   two_header_table(
