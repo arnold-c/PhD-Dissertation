@@ -105,9 +105,9 @@ We report on measures from the first two clinic visits for the community residen
 To assist with recruitment into studies under the Data4Action (D4A) Centre County COVID Cohort Study umbrella, a REDCap survey was distributed to residents of Centre County where respondents could indicate interest in future study participation and provide demographic data.
 Returning students received a similar survey and were also recruited through cold-emails and word-of-mouth.
 
-Individuals were eligible for participation in the community resident cohort if they were: ≥18 years old, residing in Centre County at the time of recruitment (June through September 2020); expecting to reside in Centre County until June 2021; fluent in English; and capable of providing their own consent.
+Individuals were eligible for participation in the community resident cohort if they were: $gt.eq$ 18 years old, residing in Centre County at the time of recruitment (June through September 2020); expecting to reside in Centre County until June 2021; fluent in English; and capable of providing their own consent.
 PSU students who remained in Centre County through spring and summer university closure were eligible for inclusion in the community resident cohort as they experienced similar geographic COVID-19 risks as community residents.
-Participants were eligible for inclusion in the returning student cohort if they were: ≥18 years old; fluent in English; capable of providing their own consent; residing in Centre County at the time of recruitment (October 2020); officially enrolled as PSU UP students for the Fall 2020 term; and intended to be living in Centre County through April 2021.
+Participants were eligible for inclusion in the returning student cohort if they were: $gt.eq$ 18 years old; fluent in English; capable of providing their own consent; residing in Centre County at the time of recruitment (October 2020); officially enrolled as PSU UP students for the Fall 2020 term; and intended to be living in Centre County through April 2021.
 In both cohorts, individuals were invited to participate in the survey-only portion of the study if they were: lactating, pregnant, or intended to become pregnant in the next 12 months; unable to wear a mask for the clinic visit; demonstrated acute COVID-19 symptoms within the previous 14 days; or reported a health condition that made them uncomfortable with participating in the clinic visit.
 Informed consent was obtained for all participants.
 
@@ -126,19 +126,19 @@ The presence of anti-SARS-CoV-2 antibodies has been documented in prior seroprev
 === Statistical Methods
 
 Community resident and returning student cohorts' seroprevalence are presented with binomial 95% confidence intervals.
-We estimated each subgroup's true prevalence, accounting for imperfect sensitivity and specificity of the IgG assay, using the *prevalence* package in R @devleesschauwerPrevalenceToolsPrevalence2014.
+We estimated each subgroup's true prevalence, accounting for imperfect sensitivity and specificity of the IgG assay, using the prevalence package in R @devleesschauwerPrevalenceToolsPrevalence2014.
 We calculated a 95% binomial confidence interval for test sensitivity of the IgG assay for detecting prior self-reported positive tests in the returning student cohort (students had high access to testing from a common University provider) with a uniform prior distribution between these limits.
 Prevalence estimates were then calculated across all possible values of specificity between 0.85 and 0.99. Estimates were not corrected for demographics as participants were not enrolled using a probability-based sample.
 We assessed demographic characteristics of the tested participants relative to all study participants to illustrate potential selection biases (@tbl-comb-demo-table).
 
 Missing values were deemed "Missing At Random" and imputed, as described in the supplement (@d4a_appendix).
-We estimated the adjusted odds ratios (aOR) of IgG positivity in the student subgroup using multivariable logistic regression implemented with the *mice* and *finalfit* packages @harrisonFinalfitQuicklyCreate2021 @vanbuurenMiceMultivariateImputation2011, two-sided Chi-squared tests for raw odds ratios (OR), and Welch Two Sample t-test for continuous distributions, and present 95% confidence intervals.
+We estimated the adjusted odds ratios (aOR) of IgG positivity in the student subgroup using multivariable logistic regression implemented with the mice and finalfit packages @harrisonFinalfitQuicklyCreate2021 @vanbuurenMiceMultivariateImputation2011, two-sided Chi-squared tests for raw odds ratios (OR), and Welch Two Sample t-test for continuous distributions, and present 95% confidence intervals.
 We considered the following variables _a priori_ to be potential risk factors as they increase contact with individuals outside of a participants' household @huangEstimationSecondaryAttack2020 @chengContactTracingAssessment2020 @leclercWhatSettingsHave2020 @brooks-pollockPopulationAttributableFraction2020: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); attendance at a small gathering (20-50 people) in the past 3 months; attendance at a medium gathering (51-1000 people) in the past 3 months; lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; travelled in the 3 months prior to returning to campus; and travelled since returning to campus for the Fall term.
 
 We estimated the aOR of IgG positivity at either time point in the returning community subgroup, with the following risk factors determined _a priori_ to the study's inception: being a PSU employee; and the amount of contact with PSU students when "Stay at home" orders are not in place (self-reported on a scale of 1-10).
 BIC and AIC were used to evaluate the contribution of the variables to the model.
 
-All statistical analyses were conducted using R version 4.2.1 (2022-06-23) @rcoreteamLanguageEnvironmentStatistical2021, with a pipeline created using the *targets* package @landauTargetsPackageDynamic2021.
+All statistical analyses were conducted using R version 4.2.1 (2022-06-23) @rcoreteamLanguageEnvironmentStatistical2021, with a pipeline created using the targets package @landauTargetsPackageDynamic2021.
 
 == Results
 === Demographics
@@ -434,4 +434,9 @@ Callum Arnold, Dr. Matthew J. Ferrari (Department of Biology, Pennsylvania State
 
 == Data Availability
 The datasets generated during and/or analyzed during the current study are not publicly available due to containing personally identifiable information but are available from the corresponding author on reasonable request.
+
+== Notes
+This work has been published in Nature Scientific Reports and is available online at the following link: https://www.nature.com/articles/s41598-022-12499-5
+
+Arnold, C.R.K., Srinivasan, S., Rodriguez, S. et al. A longitudinal study of the impact of university student return to campus on the SARS-CoV-2 seroprevalence among the community members. Sci Rep 12, 8586 (2022). https://doi.org/10.1038/s41598-022-12499-5
 ]
