@@ -2,7 +2,6 @@
 
 #show: article.with(
   title: "Supplementary Material for Chapter 4",
-  header-title: "true",
   line-numbers: false,
   word-count: false,
   article_label: "outbreak-detection_appendix"

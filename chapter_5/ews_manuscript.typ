@@ -3,7 +3,6 @@
 
 #show: article.with(
   title: "Diagnostic Uncertainty Limits the Potential of Early Warning Signals to Identify Epidemic Emergence",
-  header-title: "true",
   authors: (
     "Callum R.K. Arnold": (
       affiliation: ("PSU-Bio", "CIDD"),

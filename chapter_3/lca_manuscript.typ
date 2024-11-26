@@ -3,7 +3,6 @@
 
 #show: article.with(
   title: "The Maximal Expected Benefit of SARS-CoV-2 Interventions Among University Students: A Simulation Study Using Latent Class Analysis",
-  header-title: "The Maximal Expected Benefit of SARS-CoV-2 Interventions Among University Students",
   authors: (
     "Callum R.K. Arnold": (
       affiliation: ("PSU-Bio", "CIDD"),

@@ -130,6 +130,7 @@
     line-spacing: 1em,
     left-margin: 1.5in,
     remaining-margins: 1in,
+    line-numbers: false,
     abstract: [],
     acknowledgements: [],
     dedication: [],
@@ -146,7 +147,7 @@
       if degree_type == "doctorate" [Doctor of Philosophy]
       else [Master of Science]
   }
-  let unit = "The Graduate School"
+  let unit = "The J. Jeffrey and Ann Marie Fox Graduate School"
   let front_matter_sections = (
     [List of Figures],
     [List of Tables],
@@ -228,25 +229,20 @@
     for member in committee_members {
         text[#member.name] + "\n"
         text[#member.title] + "\n"
-        text[#member.committee-position] + "\n"
+        if member.keys().contains("committee-position") {
+          text[#member.committee-position] + "\n"
+        }
         v(12pt)
     }
 
     pagebreak(weak: true)
 
+    set par.line(numbering: "1") if line-numbers
     {
       show: set_linespacing.with(
         ..line_spacings
       )
-      // set text(
-      //   top-edge: line_spacings.top-edge,
-      //   bottom-edge: line_spacings.bottom-edge
-      // )
-      // set par(
-      //   leading: line_spacings.leading,
-      //   first-line-indent: line_spacings.first-line-indent,
-      //   spacing: line_spacings.spacing
-      // )
+
 
       block(below: 2em)[#heading[Abstract]]
       [#abstract]
@@ -349,6 +345,7 @@
 
   }
 
+  set par.line(numbering: "1") if line-numbers
   {
     show heading.where(level: 1): it => [
       #set align(center)
@@ -400,15 +397,6 @@
     show: set_linespacing.with(
       ..line_spacings
     )
-    // set text(
-    //   top-edge: line_spacings.top-edge,
-    //   bottom-edge: line_spacings.bottom-edge
-    // )
-    // set par(
-    //   leading: line_spacings.leading,
-    //   first-line-indent: line_spacings.first-line-indent,
-    //   spacing: line_spacings.spacing
-    // )
 
     if acknowledgements != [] {
       heading(level: 1)[Acknowledgements]
@@ -433,7 +421,7 @@
   set heading(numbering: "1.1")
   counter(page).update(1)
 
-  // Set up line spacing for chapters
+// Set up line spacing for chapters
   show: set_linespacing.with(..line_spacings)
   show: set_headings.with(..line_spacings)
 

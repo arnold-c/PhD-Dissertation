@@ -2,7 +2,6 @@
 
 #show: article.with(
   title: "Supplementary Material for Chapter 5",
-  header-title: "true",
   article_label: "ews_appendix"
 )
 

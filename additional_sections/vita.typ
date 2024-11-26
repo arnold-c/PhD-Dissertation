@@ -2,7 +2,7 @@
 
 == Education
 
-PhD Biology, _Pennsylvania State University_ #box(width: 1fr, repeat[]) December 2024 (Expected)
+PhD Biology, _Pennsylvania State University_ #box(width: 1fr, repeat[]) May 2025 (Expected)
 
 MSc Global Health Policy, _London School of Hygiene & Tropical Medicine_ #box(width: 1fr, repeat[]) June 2020
 

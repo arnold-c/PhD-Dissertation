@@ -2,7 +2,6 @@
 
 #show: article.with(
   title: "Supplementary Material for Chapter 2",
-  header-title: "true",
   line-numbers: false,
   word-count: false,
   article_label: "d4a_appendix"
@@ -41,7 +40,7 @@ Similarly, comparing outcomes from 200 virus neutralization assays showed a 98% 
 In the subset of individuals in the returning student subgroup that had ELISA results, there are few missing values for the model variables, with the exception of "working as a service professional" (421/684).
 As a result of high missingness, service professional was removed as a predictor in the model.
 Exploration of the missing values in the remaining predictor variables demonstrate no bias by outcome, confirmed using Chi-squared tests of missingness in predictors by outcome level.
-Little's test of Missing Completely At Random (MCAR) indicated that the data was not MCAR (p = 0.0728) @littleTestMissingCompletely1988, and three imputation methods (MICE, k-Nearest Neighbour with 5 neighbours, and Bagged Tree) @vanbuurenMiceMultivariateImputation2011 @kuhnTidymodelsCollectionPackages2020 @kuhnFeatureEngineeringSelection2019 were used to compare model fits (Supplemental @fig-imputation-log-ors).
+Little's test of Missing Completely At Random (MCAR) indicated that the data was not MCAR (p = 0.0728) @littleTestMissingCompletely1988, and three imputation methods (MICE, k-Nearest Neighbor with 5 neighbors, and Bagged Tree) @vanbuurenMiceMultivariateImputation2011 @kuhnTidymodelsCollectionPackages2020 @kuhnFeatureEngineeringSelection2019 were used to compare model fits (Supplemental @fig-imputation-log-ors).
 Most missing values occurred across all variables, and there was no observable pattern among the majority of variables: there was some evidence that missingness in "travel in the 3 months prior to return" was associated with "travelling since campus return" response, and that missingness in "eaten in a restaurant in the past 7 days" was associated with "IgG classification".
 As such, the predictor variables were deemed to be 'Missing At Random', and MICE was used to impute missing values.
 

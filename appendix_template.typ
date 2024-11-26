@@ -3,7 +3,6 @@
 #let article(
   // Article's Title
   title: "Article Title",
-  header-title: none,
 
   // Word count
   word-count: false,
@@ -30,20 +29,6 @@
 
   set table(fill: (x, y) => if y == 0 { gray })
   show table.cell.where(y: 0): strong
-
-  // Add header titles to all pages after the 1st (which contains the title)
-  set page(header: context {
-    let next_h1 = query(selector(heading.where(level: 1))
-      .after(here()))
-      .at(0)
-      .location()
-      .page()
-
-    if here().page() < next_h1 {
-      let header-title = if header-title == "true" { title }
-      align(right)[#header-title]
-    }
-  })
 
   block([
     #set text(top-edge: "cap-height", bottom-edge: "baseline")

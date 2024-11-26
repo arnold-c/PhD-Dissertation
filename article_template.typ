@@ -3,7 +3,6 @@
 #let article(
   // Article's Title
   title: "Article Title",
-  header-title: none,
 
   // A dictionary of authors.
   // Dictionary keys are authors' names.
@@ -189,18 +188,6 @@
             v(1em)
         }
     ])
-
-    if header-title == "true" {
-      header-title = title
-    }
-
-    set page(
-        header: [
-            #set text(8pt)
-            #align(right)[#header-title]
-        ],
-    )
-
 
     // Display contents
 

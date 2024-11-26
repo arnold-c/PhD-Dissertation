@@ -1,4 +1,4 @@
-Infectious diseases have impacted civilisations throughout history, shaping human interactions and influencing the growth of populations.
+Infectious diseases have impacted civilizations throughout history, shaping human interactions and influencing the growth of populations.
 Despite advances in the control of disease, they still pose a substantial threat to human life.
 To minimize disease burden it is essential to gain a greater understanding of the underlying dynamics of disease within populations, and efficient control efforts require explicit decisions and the targeted application of resources, both of which are aided by clearly defined categories.
 I consider how the classification of 3 axes of infectious disease data (risk of exposure, infection status, and accumulation of cases in populations), provides opportunities and challenges to these aims.
@@ -20,7 +20,7 @@ When the non-target disease does not experience large peaks and troughs in incid
 However, the performance of an outbreak detection system based upon incidence estimates from an imperfect diagnostic test degrades substantially with increasing magnitudes of background dynamical noise, like from uncontrolled rubella.
 
 Designing _proactive_ rather than _reactive_ outbreak detection systems requires the calculation of summary statistics that are correlated with emergence of an outbreak.
-In @ews, I show that anticipating outbreaks with imperfect diagnostic tests is as context-dependant as reactive systems.
+In @ews, I show that anticipating outbreaks with imperfect diagnostic tests is as context-dependent as reactive systems.
 When there are low levels of background noise, imperfect diagnostics can provide advanced warning of outbreak emergence.
 However, when the incidence of measles is small relative to the incidence of rubella, false positive test results dominate the time series used to compute the summary statistics, rendering them unable to discriminate between emergent and non-emergent time periods.
 

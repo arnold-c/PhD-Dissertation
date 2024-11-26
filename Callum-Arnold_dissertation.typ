@@ -3,39 +3,43 @@
 #show: psu_thesis.with(
     title: "The Role of Categories in Shaping Our Understanding of Infectious Disease Outbreaks",
     author: "Callum R. K. Arnold",
-    department: "Department of Biology",
+    department: "Biology",
     degree_type: "doctorate", // one of "doctorate" or "masters"
     committee_members: (
     (
-        name: "Dr. Katriona Shea",
+        name: "Katriona Shea",
         title: "Professor of Biology\nAlumni Professor in the Biological Sciences",
         committee-position: "Chair of Committee",
     ),
     (
-        name: "Dr. Matthew J. Ferrari",
+        name: "Matthew J. Ferrari",
         title: "Professor of Biology\nCenter for Infectious Disease Dynamics Director",
-        committee-position: "Major Field Member & Dissertation Advisor",
+        committee-position: "Dissertation Advisor",
     ),
     (
-        name: "Dr. Maciej Boni",
+        name: "Maciej Boni",
         title: "Professor of Biology, Temple University",
-        committee-position: "Major Field Member",
     ),
     (
-        name: "Dr. Stephen Berg",
+        name: "Stephen Berg",
         title: "Assistant Professor of Statistics",
-        committee-position: "Outside Unit & Field Member",
+    ),
+    (
+        name: "Elizabeth McGraw",
+        title: "Professor of Biology",
+        committee-position: "Department Head of Biology",
     ),
     ),
     date: ( // Date of degree CONFERRAL
-    year: "2024",
-    month: "December",
+    year: "2025",
+    month: "May",
     day: "22",
     ),
     font-size: 12pt,
     line-spacing: 2,
     left-margin: 1.5in,
     remaining-margins: 1in,
+    line-numbers: false,
     abstract: [#include("./additional_sections/abstract.typ")],
     acknowledgements: [#include("./additional_sections/acknowledgements.typ")],
     abbreviations: [#include("./additional_sections/abbreviations.typ")],
