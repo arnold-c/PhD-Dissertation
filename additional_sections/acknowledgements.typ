@@ -12,7 +12,7 @@ Amy Winter, Bill Moss, Bryan Patenaude, and Alex Kong for irreplaceable feedback
 I am also incredibly grateful to the whole of the Ferrari lab: Deepit Bhatia, Ariel Greiner, Brian Lambert, Tiffany Leung, Candace Todd, Kai Zou, and honorary member, Emily Howerton.
 Thank you for acting as a sounding board and providing constructive criticism; my work is notably better for your engagement and strength to listen to me repeat the same presentation multiple meetings in a row.
 
-To the friends throughout my time: John, Suzana, Alexa, Kate, Des, Deepit, Emily, Chiara, Alex, Jared, Ryan, Scott, Betty, Dave, Jen.
+To the friends throughout my time: John, Suzana, Alexa, Brittany, Jarett, Kate, Des, Deepit, Emily, Chiara, Alex, Jared, Ryan, Scott, Betty, Dave, Jen.
 Thank you for joining me on various outdoor excursions, or just grabbing a coffee or something to eat, and helping make both State College and Toronto wonderful places to live for the past 4 years.
 
 And last, but certainly not least, I would like to thank my family for their unwavering support.
