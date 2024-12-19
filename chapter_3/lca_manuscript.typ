@@ -1,5 +1,6 @@
 #import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": article
+#let darkred(body) = text(fill: rgb("#8B0000"))[#body]
 
 #show: article.with(
   title: "The Maximal Expected Benefit of SARS-CoV-2 Interventions Among University Students: A Simulation Study Using Latent Class Analysis",
@@ -49,26 +50,26 @@
 )
 
 == Background
-Within epidemiology, the importance of heterogeneity, whether that host, population, statistical, or environmental, has long been recognized @fletcherWhatHeterogeneityIt2007 @noldHeterogeneityDiseasetransmissionModeling1980 @trauerImportanceHeterogeneityEpidemiology2019 @zhangMonitoringRealtimeTransmission2022 @lloyd-smithSuperspreadingEffectIndividual2005.
+Within epidemiology, the importance of heterogeneity, whether host, population, statistical, or environmental, has long been recognized @fletcherWhatHeterogeneityIt2007 @noldHeterogeneityDiseasetransmissionModeling1980 @trauerImportanceHeterogeneityEpidemiology2019 @zhangMonitoringRealtimeTransmission2022 @lloyd-smithSuperspreadingEffectIndividual2005.
 For example, when designing targeted interventions, it is crucial to understand and account for differences that may exist within populations @woolhouseHeterogeneitiesTransmissionInfectious1997 @wangHeterogeneousInterventionsReduce2021 @mcdonaldImpactIndividuallevelHeterogeneity2016.
 These differences can present in a variety of forms: heterogeneity in susceptibility, transmission, response to guidance, and treatment effects etc.; all of which affect the dynamics of an infectious disease @fletcherWhatHeterogeneityIt2007 @noldHeterogeneityDiseasetransmissionModeling1980 @woolhouseHeterogeneitiesTransmissionInfectious1997 @seveliusBarriersFacilitatorsEngagement2014 @tuschhoffDetectingQuantifyingHeterogeneity2023 @delaneyStrategiesAdoptedGay2022 @andersonQuantifyingIndividuallevelHeterogeneity2022 @macdonaldInfluenceHLASupertypes2000 @elieSourceIndividualHeterogeneity2022.
 While heterogeneity may exist on a continuous spectrum, it can be difficult to incorporate into analysis and interpretation, so individuals are often placed in discrete groups according to a characteristic that aims to represent the true differences @mossongSocialContactsMixing2008 @klepacContagionBBCFour2018 @daviesAgedependentEffectsTransmission2020 @haySerodynamicsReviewMethods2023 @yangLifeCourseExposures2020.
-When examining optimal influenza vaccination policy in the United Kingdom, Baguelin et al. @baguelinAssessingOptimalTarget2013 classified individuals within one of seven age groups.
+When examining optimal influenza vaccination policy in the United Kingdom, Baguelin _et al._ @baguelinAssessingOptimalTarget2013 classified individuals within one of seven age groups.
 Explicitly accounting for, and grouping, individuals by whether they inject drugs can help target interventions to reduce human immunodeficiency virus (HIV) and Hepatitis C Virus incidence @levittInfectiousDiseasesInjection2020.
 Similarly, epidemiological models have demonstrated the potential for HIV pre-exposure prophylaxis to reduce racial disparities in HIV incidence @jennessAddressingGapsHIV2019.
 Therefore, heterogeneity can be used to inform more complete theories of change, increasing intervention effectiveness @bryanBehaviouralScienceUnlikely2021
 
 When discretizing a population for the purposes of inclusion within a mechanistic model, three properties need to be defined: 1) the number of groups, 2) the size of the groups, and 3) the differences between the groups.
-Typically, as seen in the examples above, demographic data is used e.g., age, sex, race, ethnicity, socio-economic status, etc., often in conjunction with the contact patterns and rates @wangHeterogeneousInterventionsReduce2021 @seveliusBarriersFacilitatorsEngagement2014 @mossongSocialContactsMixing2008 @daviesAgedependentEffectsTransmission2020 @baguelinAssessingOptimalTarget2013 @jennessAddressingGapsHIV2019 @foxDisproportionateImpactsCOVID192023.
-There are several reasons for this: the data is widely available, and therefore can be applied almost universally; it is easily understandable; and there are clear demarcations of the groups, addressing properties 1) and 2).
+Typically, as seen in the examples above, demographic data are used e.g., age, sex, race, ethnicity, socio-economic status, etc., often in conjunction with the contact patterns and rates @wangHeterogeneousInterventionsReduce2021 @seveliusBarriersFacilitatorsEngagement2014 @mossongSocialContactsMixing2008 @daviesAgedependentEffectsTransmission2020 @baguelinAssessingOptimalTarget2013 @jennessAddressingGapsHIV2019 @foxDisproportionateImpactsCOVID192023.
+There are several reasons for this: the data are widely available, and therefore can be applied almost universally; they are easily understandable; and there are clear demarcations of the groups, addressing properties 1) and 2).
 However, epidemiological models often aim to assess the effects of heterogeneity with respect to infection, e.g., "how does an individual’s risk tolerance affect their risk of infection for influenza?".
-When addressing questions such as these, demographic data does not necessarily provide a direct link between the discretization method and the heterogeneous nature of the exposure and outcome, particularly if behavioral mechanisms are a potential driver.
-Instead, it relies on assumptions and proxy measures e.g., an individual’s age approximates their contact rates, which in turn approximates their risk of transmission.
+When addressing questions such as these, demographic data do not necessarily provide a direct link between the discretization method and the heterogeneous nature of the exposure and outcome, particularly if behavioral mechanisms are a potential driver.
+Instead, they rely on assumptions and proxy measures e.g., an individual’s age approximates their contact rates, which in turn approximates their risk of transmission.
 This chapter demonstrates an alternative approach to discretizing populations for use within mechanistic models, highlighting the benefits of an interdisciplinary approach to characterize heterogeneity in a manner more closely related to the risk of infection.
 
 In early 2020, shortly after the World Health Organization (WHO) declared the SARS-CoV-2 outbreak a public health emergency of international concern @worldhealthorganizationStatementSecondMeeting, universities across the United States began to close their campuses and accommodations, shifting to remote instruction @MapCoronavirusSchool2020 @collegianTIMELINEPennState2021.
 By Fall 2020, academic institutions transitioned to a hybrid working environment (in-person and online), requiring students to return to campuses @adamsReturnUniversityCampuses2020 @haddenWhatTop25 @thenewyorktimesTrackingCoronavirusColleges2020.
-In the @d4a and accompanying paper @arnoldLongitudinalStudyImpact2022 we documented the results of a large prospective serosurvey conducted in State College, home to The Pennsylvania State University (PSU) University Park (UP) campus.
+In @d4a and the accompanying paper @arnoldLongitudinalStudyImpact2022 we documented the results of a large prospective serosurvey conducted in State College, home to The Pennsylvania State University (PSU) University Park (UP) campus.
 We examined the effect of 35,000 returning students (representing a nearly 20% increase in the county population @unitedstatescensusbureauCensusBureauQuickFacts2019) on the community infection rates, testing serum for the presence of anti-Spike Receptor Binding Domain (S/RBD) immunoglobulin G (IgG), indicating prior exposure @longAntibodyResponsesSARSCoV22020.
 Despite widespread concern that campus re-openings would lead to substantial increases in surrounding community infections @adamsReturnUniversityCampuses2020 @lopmanModelingStudyInform2021 @benneyanCommunityCampusCOVID192021, very little sustained transmission was observed between the two geographically coincident populations @arnoldLongitudinalStudyImpact2022.
 
@@ -95,17 +96,22 @@ Further details in the supplement of the previous chapter (@d4a_appendix).
 
 === Statistical Methods
 To identify behavioral risk classes, we fit a range of latent class analysis (LCA) models (two to seven class models) to the student’s behavioral survey responses, using the poLCA package @linzerPoLCAPackagePolytomous2011 in the R programming language, version 4.3.3 (2024-02-29) @rcoreteamLanguageEnvironmentStatistical2021.
+#darkred[
+  LCA is an unsupervised parametric approach to identifying unobserved groups, mostly commonly used in the Social Sciences @nylund-gibsonTenFrequentlyAsked20181213.
+  As LCA is a subset of finite mixture models, and is model-based, its primary advantage over other clustering approaches, like support vector machines or K-Nearest Neighbor, is the ability to compare model fits using traditional statistical approaches, such as the Bayesian Information Criterion (BIC) @linzerPoLCAPackagePolytomous2011.
+]
 We considered their answers regarding the frequency with which they intended to engage in the following behaviors to be #emph[a priori] indicators of behavioral risk tolerance: wash hands with soap and water for at least 20s; wear a mask in public; avoid touching their face with unwashed hands; cover cough and sneeze; stay home when ill; seek medical attention when experiencing symptoms and call in advance; stay at least 6 feet (about 2 arms lengths) from other people when outside of their home; and, stay out of crowded places and avoid mass gatherings of more than 25 people.
 The behavioral survey collected responses on the Likert scale of: Never, Rarely, Sometimes, Most of the time, and Always.
-For all PHMs, Always and Most of the time accounted for > 80% of responses (with the exception of intention to stay out of crowded places and avoid mass gatherings, where Always and Most of the time accounted for 78.8% of responses).
+For all PHMs, Always and Most of the time accounted for > 80% of responses (with the exception of intention to stay out of crowded places and avoid mass gatherings, where Always and Most of the time accounted for 78.8% of responses) #darkred[(@tbl-alternate-plan-adherence, @tbl-likert-plan-adherence)].
 To reduce the parameter space of the LCA and minimize overfitting, the behavioral responses were recoded as Always and Not Always.
+#darkred[Alternative groupings could be selected e.g., Always and Mostly, (@tbl-alternate-plan-adherence) but Always/Not Always was chosen to avoid vast class imbalances that would impact the LCA model fitting.]
 Measures of SARS-CoV-2 exposure e.g., IgG status, were not included in the LCA model fitting, as they reflect the outcome of interest.
 We focused on responses regarding intention to follow behaviors because this information can be feasibly collected during a public health campaign for a novel or emerging outbreak; it has also been shown that intentions are well-correlated with actual behaviors for coronavirus disease 2019 (COVID-19) public health guidelines, as well as actions that have short-term benefits @connerDoesIntentionStrength2024 @mcdonaldRecallingIntendingEnact2017.
 We examined the latent class models using Bayesian Information Criterion, which is a commonly recommended as part of LCA model evaluation @wellerLatentClassAnalysis2020 @nylund-gibsonTenFrequentlyAsked20181213, to select the model that represented the best balance between parsimony and maximal likelihood fit.
 
 Using the best-fit LCA model, we performed multivariate logistic regression of modal class assignment against IgG seropositivity to assess the association between the latent classes and infection.
 This "three-step" approach is recommended over the "one-step" LCA model fit that includes the outcome of interest as a covariate in the LCA model @nylund-gibsonTenFrequentlyAsked20181213 @bolckEstimatingLatentStructure2004a.
-The following variables were determined a priori to be potential risk factors for exposure @arnoldLongitudinalStudyImpact2022: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; travelled in the 3 months prior to returning to campus; and travelled since returning to campus for the Fall term.
+The following variables were determined #emph[a priori] to be potential risk factors for exposure @arnoldLongitudinalStudyImpact2022: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; traveled in the 3 months prior to returning to campus; and traveled since returning to campus for the Fall term.
 Variables relating to attending gatherings were not included in the logistic regression due to overlap with intention variables of the initial LCA fit.
 Missing variables were deemed "Missing At Random" and imputed using the mice package @vanbuurenMiceMultivariateImputation2011, as described in the supplement of the previous chapter (@d4a_appendix).
 
@@ -193,7 +199,7 @@ Given these factors, the three-class model was selected for use in simulation fo
 <tbl-lca-glm-fits>
 
 In the three-class model, approximately 15.75% of individuals were members of the group that rarely intended to always follow the PHMs, 38.04% intended to always follow all guidelines, and the remaining 46.21% mostly intended to mask, test, and manage symptoms, but not distance or avoid crowds (@tbl-lca-props).
-We have labelled the three classes as "Low-", "High-" and "Medium-Adherence" groups, respectively, for ease of interpretation.
+We have labeled the three classes as "Low-", "High-" and "Medium-Adherence" groups, respectively, for ease of interpretation.
 Examining the class-conditional item response probabilities, the Medium Adherence class had a probability of 0.88 of always wearing a mask in public, but a probability of only 0.19 of social distancing when outside of their homes, for example.
 Calculating the class-specific seroprevalence, the Low Adherence group had the highest infection rates (37.7%, 95% Binomial CI: 28.5-47.7%), the medium adherence the next highest (32.2%, 95% Binomial CI: 27.0-37.7%), and the most adherent group experienced the lowest infection rates (25.4%, 95% Binomial CI: 20.2-31.1%).
 Incorporating latent class membership into the imputed GLM model described in our previous paper (30) retained the relationship between adherence and infection.
@@ -308,7 +314,7 @@ Future research should consider including perceived agency and efficacy for PHM 
 #pagebreak()
 
 #reset_linespacing[
-== Acknowledgements
+== Acknowledgments
 
 === Funding
 This work was supported by funding from the Office of the Provost and the Clinical and Translational Science Institute, Huck Life Sciences Institute, and Social Science Research Institutes at the Pennsylvania State University.

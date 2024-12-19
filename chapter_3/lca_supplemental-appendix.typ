@@ -7,6 +7,43 @@
   article_label: "lca_appendix"
 )
 
+== PH Measure Responses
+
+#let alternate_intention_table = csv("./supplemental_files/tables/alternate-intention-responses.csv")
+
+#figure(
+  block[
+    #set text(fill: rgb("#8B0000"))
+    #table(
+      columns: 3,
+      align: (left, horizon, horizon, horizon, horizon, horizon, horizon, horizon),
+      ..alternate_intention_table.flatten()
+    )
+  ],
+  caption: [Participants' intention to always or mostly follow 8 public health measures],
+)
+<tbl-alternate-plan-adherence>
+
+#pagebreak()
+
+#set page(flipped: true)
+#let likert_intention_table = csv("./supplemental_files/tables/likert-intention-responses.csv")
+
+#figure(
+  block[
+    #set text(fill: rgb("#8B0000"))
+    #table(
+      columns: (20%, auto, auto, auto, 18%, auto, auto, auto),
+      align: (left, horizon, horizon, horizon, horizon, horizon, horizon, horizon),
+      ..likert_intention_table.flatten()
+    )
+  ],
+  caption: [Participants' intention to follow 8 public health measures],
+)
+<tbl-likert-plan-adherence>
+#set page(flipped: false)
+
+
 == LCA Model Fitting
 
 #let lca_irp_table = csv("./supplemental_files/tables/lca-item-response-probs.csv")
@@ -44,7 +81,6 @@
   caption: [Class-conditional item response probabilities shown in the main body of the table for a four-class LCA model, with footers indicating the size of the respective classes, and the class-specific seroprevalence],
 )
 <tbl-lca-props_4-class>
-
 
 == Matrix Structure Sensitivity Analysis
 
