@@ -1,5 +1,6 @@
 #import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": *
+#let darkred(body) = text(fill: rgb("#8B0000"))[#body]
 
 #show: article.with(
   title: "Diagnostic Uncertainty Limits the Potential of Early Warning Signals to Identify Epidemic Emergence",
@@ -49,6 +50,10 @@ Infectious disease surveillance systems are crucial for detecting outbreaks @mur
 Outbreak detection and response systems are reactive in nature; cases are collated, counted, and if a pre-determined threshold is met or breached, an action is undertaken (e.g., preliminary investigation, or reactive vaccination campaign) @worldhealthorganizationOperationalThresholds2014 @worldhealthorganizationMeaslesOutbreakGuide2022.
 However, due to the exponential trajectory of incidence in the early stages of an outbreak, the reactive nature necessarily results in excess infections that cannot be prevented @graisTimeEssenceExploring2008 @ferrariTimeStillEssence2014 @azmanUrbanCholeraTransmission2012.
 To limit the burden of disease, ideally, epidemiologists could utilize the output of a surveillance system (e.g., the trend in cases of a pathogen) to predict the risk of a future outbreak, triggering a _proactive_ action, such as a preventative vaccination campaign.
+#darkred[
+  In @outbreak-detection I examine the impact of diagnostic uncertainty on _reactive_ outbreak detection.
+  In this chapter I explore the limits to predictability for anticipating outbreaks.
+]
 
 The risk of an outbreak can be quantified in terms of the effective reproduction number, $R_"E"$, defined as the expected number of secondary cases due to each infectious individual @vynnyckyIntroductionInfectiousDisease2010a.
 $R_"E" = 1$ represents a "critical transition", below which epidemics should not spread, and above which outbreaks should propagate.
