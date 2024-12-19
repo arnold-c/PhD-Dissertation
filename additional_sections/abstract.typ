@@ -1,7 +1,14 @@
+#let darkred(body) = text(fill: rgb("#8B0000"))[#body]
+#let mystrike(body) = strike(stroke: 0.05em + red)[#body]
+
 Infectious diseases have impacted civilizations throughout history, shaping human interactions and influencing the growth of populations.
 Despite advances in the control of disease, they still pose a substantial threat to human life.
-To minimize disease burden it is essential to gain a greater understanding of the underlying dynamics of disease within populations, and efficient control efforts require explicit decisions and the targeted application of resources, both of which are aided by clearly defined categories.
-I consider how the classification of 3 axes of infectious disease data (risk of exposure, infection status, and accumulation of cases in populations), provides opportunities and challenges to these aims.
+To minimize disease burden it is essential to gain a greater understanding of the underlying dynamics of disease within populations, and efficient control efforts require explicit decisions and the targeted application of resources. #mystrike[ , both of which are aided by clearly defined categories]
+#darkred[
+  The knowledge that can produce these set of actions are predicated on the careful linking of infectious disease exposures and outcomes, and becomes increasingly complicated when either, or both, are continuous in nature.
+  Through discretization, it is possible to create simpler maps that retain the core properties of the data and relationships.
+]
+I consider how the classification of #mystrike[3 axes] #darkred[the exposures and outcomes] of infectious disease data (#mystrike[risk of exposure] #darkred[behavior into risk classes], #darkred[determination of ] infection status #darkred[into infected or not], and #mystrike[accumulation of cases in populations] #darkred[classifying a time series of individual case counts into outbreak and non-outbreak periods]), provides opportunities and challenges to these aims.
 I illustrate this in the context of two outbreak settings: COVID-19, and measles.
 Due to the novelty of COVID-19, disease spread rapidly but infection risk groups were not well characterized.
 For measles, however, drivers of disease transmission are well documented, but the episodic nature of cases combined with imperfect surveillance systems make outbreak detection and response imprecise.
