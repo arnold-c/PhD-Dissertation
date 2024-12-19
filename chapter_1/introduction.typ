@@ -1,4 +1,6 @@
 #heading("Introduction", supplement: "Chapter") <intro>
+#let darkred(body) = text(fill: rgb("#8B0000"))[#body]
+#let mystrike(body) = strike(stroke: 0.05em + red)[#body]
 
 Much of the world is complex, and in seeking to understand it we must often make simplifying aggregations and assumptions, often to create groups @boxScienceStatistics1976 @mervisCategorizationNaturalObjects1981 @rhodesDevelopmentSocialCategorization2019.
 When quantifying a student's academic achievements, or measuring distances, for example, decisions are made to create discrete categories from the underlying continuous data.
@@ -11,7 +13,7 @@ At every scale in an infectious disease system, from variability of infectivity 
 In this dissertation I explore how variability in continuous measures can be discretized, and the interactions that arise from the compounding uncertainty of these categorization decisions.
 
 The use of discretization is prevalent throughout the history of infectious disease biology and epidemiology; to produce more accurate mathematical models of disease transmission, detailed maps of contact rates have been generated that categorize a population into age groups and log the relative frequency of the interactions within and between these groups @mossongSocialContactsMixing2008 @klepacContagionBBCFour2018 @daviesAgedependentEffectsTransmission2020.
-Extending this work, networks of individuals and animals have been created to provide a more granular picture of interactions that can exist within an infectious disease system (human or animal), characterizing nodes, vertices, and edges to represent individuals, locations, movement patterns, and connection @kretzschmarMeasuresConcurrencyNetworks1996 @herrera-diestraCattleTransportNetwork2022.
+Extending this work, networks of individuals and animals have been created to provide a more granular picture of interactions that can exist within an infectious disease system (human or animal), characterizing vertices and edges to represent individuals, locations, movement patterns, and connection @kretzschmarMeasuresConcurrencyNetworks1996 @herrera-diestraCattleTransportNetwork2022.
 Furthermore, there is variation that exists between the infectious properties of a population.
 The (basic) reproduction number is defined as the expected number of secondary cases generated from one infectious individual (in a completely susceptible population) @vynnyckyIntroductionInfectiousDisease2010a.
 While often used to describe the transmissibility of a disease within a population, it is a discretization of the underlying, continuous, infectiousness associated with each individual.
@@ -32,9 +34,22 @@ Through this grouping, it is possible to characterize the burden of SARS-CoV-2 i
 Without discrete categories, there is no denominator for use in calculations of seroprevalence (the proportion of a population that have sufficiently high levels of antibodies, indicating past exposure to a pathogen); a key metric in the evaluation of disease burden.
 In @d4a I show that substantial, unexpected, differences in infection rates can be observed between the student and community populations, highlighting that opportunities exist for infection mitigation efforts to minimize spread between spatially-linked subgroups of a population.
 To examine differences in COVID-19 infections that may exist in the student body, it was, once again, imperative to define groups to compare.
-However, with no clear differences in traditional demographic measures that could be used to categorize individuals, such as age, I use Latent Class Analysis (LCA) to define these group from behavioral survey data @wellerLatentClassAnalysis2020 @nylund-gibsonTenFrequentlyAsked20181213.
-The process of discovering categories with unsupervised clustering methods provides a mechanism to quantify the variation in risk perception and behavior, that cannot be directly measured.
-In @lca, I map the association between these emergent risk groups with infection rates from serological data to parameterize a mechanistic model of infection, and demonstrate the limits of solely using non-pharmaceutical interventions to reduce infections within the student population.
+However, with no clear differences in traditional demographic measures that could be used to categorize individuals, such as age, #mystrike[I use Latent Class Analysis (LCA) to define these group from behavioral survey data @wellerLatentClassAnalysis2020 @nylund-gibsonTenFrequentlyAsked20181213]
+#darkred[
+  an alternative method of defining groups is required.
+  Statistical models to cluster data can occur in the form of #emph[supervised] or #emph[unsupervised] methods @jamesIntroduction2021 @kuhnAnIntroductionToFeatureSelection2013.
+]
+#mystrike[The process of discovering categories with unsupervised clustering methods provides a mechanism to quantify the variation in risk perception and behavior, that cannot be directly measured.]
+#darkred[
+  To quantify the variation in risk perception and behavior, which cannot be directly measured, and identify unobservable risk groups without a variable that could be included in the model, an unsupervised clustering algorithm is required.
+  While it would be possible to use a supervised approach by including the serological data as a response variable, @lca aims to first identify if variation in behavior can be identified by survey responses alone, and secondly, if risk profile is related to infection outcomes.
+  Including outcomes in a supervised model reduces the generalizability of the approach outlined, and its implementation feasibility, as it would require future operational work that aims to identify behavioral groups for targeted interventions to undergo both behavioral #emph[and] serological surveys, when behavior alone may suffice.
+  There are numerous unsupervised approaches that could be applied, such as support vector machines or k-Nearest Neighbor @jamesUnsupervisedClustering2021 @kuhnNonlinearClassificationModels2013.
+  I chose to implement Latent Class Analysis (LCA) as it is a parametric model-based approach that allows for statistical, likelihood-based, comparisons of model fits, such as Bayesian Information Criterion (BIC).
+  LCA is a subset of finite mixture modeling where both the predictor and response variables are categorical in nature @linzerPoLCAPackagePolytomous2011.
+  This makes it suitable for use with data collected from both behavioral and serological surveys where inputs are often represented on a ordinal Likert scale and outputs as a binary classification of serostatus @willitsAnotherLookLikert2016 @haySerodynamicsPrimerSynthetic2024.
+]
+In @lca, #darkred[after identifying the emergent risk groups], I map the association between these #mystrike[emergent risk groups] #darkred[latent classes] with infection rates from serological data to parameterize a mechanistic model of infection, and demonstrate the limits of solely using non-pharmaceutical interventions to reduce infections within the student population.
 
 In the second half of my dissertation (@outbreak-detection & @ews), I examine the necessity and implications of categorizations for action in regions with persistent and emerging infection dynamics.
 Infectious disease surveillance has 3 primary objectives: to observe and quantify the burden of disease, monitor trends in prevalence, and detect and inform response to outbreaks @murrayInfectiousDiseaseSurveillance2017 @DiseaseSurveillance.
