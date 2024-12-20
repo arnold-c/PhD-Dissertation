@@ -84,8 +84,8 @@ An initial population of 500,000 individuals was simulated, with commuter-style 
 
 To evaluate the predictive ability of EWS metrics in environments with background disease that could produce false positive test results if tested with an imperfect diagnostic, we generated a time series of "suspected measles" by summing the measles and background noise time series.
 The noise time series is modeled as either: independent draws of a Poisson distribution, with mean equal to a multiple (c) of the daily average measles incidence, where $c in {1, 7}$; or from an SEIR time series with rubella-like parameters with additional noise drawn from a Poisson distribution with mean equal to 15% of the daily average of the rubella incidence time series, to account for non-rubella sources of clinically-compatible febrile rash e.g., parvovirus (@tbl_csd-model-parameters) @papadopoulosEstimatesBasicReproduction2022 @RubellaCDCYellow.
-Under dynamical (SEIR-generated) noise simulations, the vaccination rate at birth was selected to produce equivalent magnitudes of daily average noise incidence as observed in the Poisson-like noise simulations (10.20% and 87.34%).
-Throughout the rest of the manuscript, these will be referred to as low and high Poisson/dynamical noise scenarios, accordingly.
+Under dynamical (SEIR-generated) noise simulations, the vaccination rate at birth was selected to produce equivalent magnitudes of daily average noise incidence as observed in the static noise simulations that were drawn from Poisson distributions (10.20% and 87.34%).
+Throughout the rest of the manuscript, these will be referred to as low and high dynamical/static noise scenarios, accordingly.
 Each day, all clinically-compatible febrile rash cases (that is, both the measles and noise time series) were tested using one of the following diagnostic tests, producing a time series of test positive cases.
 
 - A perfect test with 100% sensitivity and specificity. This was chosen to reflect the best-case scenario that the imperfect diagnostic-based alert scenarios could be compared against.
@@ -205,11 +205,11 @@ Consistent with previous studies, the autocovariance, variance, mean, and index 
 )
 <tbl_csd-tau-ranking-perfect-test>
 
-With an imperfect diagnostic test, the correlation with emergence was more influenced by the noise structure (Poisson vs. dynamical) than the noise magnitude (@tbl_csd-auc-magnitude-ranking-rdt-comparison).
-For an imperfect test with 90% sensitivity and specificity, the correlation between all EWS metrics and emergence was relatively unaffected by the magnitude of Poisson noise.
+With an imperfect diagnostic test, the correlation with emergence was more influenced by the noise structure (static vs. dynamical) than the noise magnitude (@tbl_csd-auc-magnitude-ranking-rdt-comparison).
+For an imperfect test with 90% sensitivity and specificity, the correlation between all EWS metrics and emergence was relatively unaffected by the magnitude of static noise.
 The top four metrics with a perfect diagnostic test (autocovariance, variance, mean, and index of dispersion) maintained their positions as the most strongly correlated metrics.
 
-For simulations with rubella-like SEIR dynamical noise, the correlation of all metrics was lower at low dynamical noise compared to low Poisson noise (@tbl_csd-auc-magnitude-ranking-rdt-comparison).
+For simulations with rubella-like SEIR dynamical noise, the correlation of all metrics was lower at low dynamical noise compared to low static noise (@tbl_csd-auc-magnitude-ranking-rdt-comparison).
 With low levels of dynamical noise, the autocovariance, variance, and mean remained the most correlated with emergence ($|"AUC" - 0.5| = 0.16, 0.14, "and" 0.13$, respectively).
 At high dynamical noise, these correlations disappeared, with all EWS metrics exhibiting $|"AUC"-0.5| lt.eq 0.05$.
 
@@ -225,11 +225,11 @@ A full characterization of the strength of association between each metric and e
       columns: 6,
       align: horizon,
       table.cell(rowspan: 3, align: horizon)[Rank], [Perfect Test], table.cell(colspan: 4)[90% Sensitive & Specific Imperfect Test],
-      table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Poisson Noise], table.cell(colspan:2)[Dynamical Noise],
+      table.cell(rowspan: 2)[All Noise], table.cell(colspan: 2)[Static Noise], table.cell(colspan:2)[Dynamical Noise],
       ..auc_magnitude_comparison_vals
     )
   ],
-  caption: [$|"AUC" - 0.5|$ for EWS metrics, ranked in descending order of magnitude, computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect diagnostic test with 90% sensitivity and 90% specificity, under high and low Poisson and dynamical noise systems]
+  caption: [$|"AUC" - 0.5|$ for EWS metrics, ranked in descending order of magnitude, computed on the subset of the emergent time series after the burn-in period, for a perfect test and an imperfect diagnostic test with 90% sensitivity and 90% specificity, under high and low static and dynamical noise systems]
 )
 <tbl_csd-auc-magnitude-ranking-rdt-comparison>
 
@@ -239,21 +239,21 @@ Each alert scenario (the combination of diagnostic test, noise structure and mag
 At their respective maximal accuracies, the relative ranking of the EWS metrics computed with a perfect diagnostic test remained consistent to the ranking based upon $|"AUC" - 0.5|$: mean (accuracy = 0.72), variance (0.72), autocovariance (0.70), index of dispersion (0.63), autocorrelation (0.62), skewness (0.60), kurtosis (0.58), and coefficient of variation (0.50) (@tbl-accuracy-ranking-rdt-comparison).
 
 When EWS metrics were computed on time series generated from imperfect diagnostic tests, each metric's accuracy generally remained constant, with a few notable exceptions (@fig-best-accuracy-line-plot, @fig-worst-accuracy-line-plot).
-For the 4 most correlated metrics (autocovariance, variance, mean, and index of dispersion), the accuracy achieved with imperfect diagnostic tests was comparable for low and high Poisson noise, for all diagnostic test accuracies (@fig-best-accuracy-line-plot).
-The accuracy of outbreak detection using index of dispersion increased with decreasing diagnostic test sensitivity and specificity for low and high levels of Poisson noise (@fig-best-accuracy-line-plot, @fig_csd-accuracy-heatmap-poisson-1x, @fig_csd-accuracy-heatmap-poisson-7x).
+For the 4 most correlated metrics (autocovariance, variance, mean, and index of dispersion), the accuracy achieved with imperfect diagnostic tests was comparable for low and high static noise, for all diagnostic test accuracies (@fig-best-accuracy-line-plot).
+The accuracy of outbreak detection using index of dispersion increased with decreasing diagnostic test sensitivity and specificity for low and high levels of static noise (@fig-best-accuracy-line-plot, @fig_csd-accuracy-heatmap-poisson-1x, @fig_csd-accuracy-heatmap-poisson-7x).
 For low dynamical noise, accuracy increased slightly for diagnostic test sensitivity and specificity greater than 97% and then declined (@fig-best-accuracy-line-plot).
 For high dynamical noise, accuracy declined monotonically with decreasing test sensitivity and specificity (@fig-best-accuracy-line-plot, @fig_csd-accuracy-heatmap-dynamical-7x).
 Results for the 4 least well correlated EWS metrics are presented in the supplement (@fig-worst-accuracy-line-plot).
 
 #figure(
   image("./manuscript_files/plots/accuracy-line-plot.svg"),
-  caption: [The change in alert accuracy for the most correlated EWS metrics under increasing diagnostic uncertainty, and low and high levels of Poisson or dynamical noise. Low noise refers to simulations where the average incidence of noise is equal to the average incidence of measles. High noise refers to simulations where the average incidence of noise is equal to 7 times the average incidence of measles. The tests sensitivity equals the test specificity for all diagnostic tests.]
+  caption: [The change in alert accuracy for the most correlated EWS metrics under increasing diagnostic uncertainty, and low and high levels of static or dynamical noise. Low noise refers to simulations where the average incidence of noise is equal to the average incidence of measles. High noise refers to simulations where the average incidence of noise is equal to 7 times the average incidence of measles. The tests sensitivity equals the test specificity for all diagnostic tests.]
 )
 <fig-best-accuracy-line-plot>
 
 Outbreak detection produced false positives under the null simulations for all EWS metrics, except for the coefficient of variation computed on time series resulting from perfect tests, which also failed to alert in emergent simulations.
 Here we illustrate the comparison of timing of alerts for the autocovariance metric for the null and emergent simulations (@fig-autocovariance-survival).
-Outbreak detection using the autocovariance metric resulted in comparable timing of alerts for perfect and imperfect tests under low and high Poisson noise (@fig-autocovariance-survival).
+Outbreak detection using the autocovariance metric resulted in comparable timing of alerts for perfect and imperfect tests under low and high static noise (@fig-autocovariance-survival).
 For low dynamical noise, the imperfect test resulted in a similar number of true positives under the emergent scenario, but tended to trigger those alerts later than with a perfect test.
 Notably, an imperfect test resulted in more false positives under the null scenario and tended to trigger those alerts later.
 With high dynamical noise, an imperfect test failed to produce many alerts under either the null or emergent scenarios (@fig-autocovariance-survival).
@@ -268,7 +268,7 @@ With high dynamical noise, an imperfect test failed to produce many alerts under
 == Discussion
 
 Outbreak detection using EWS metrics is robust to diagnostic uncertainty depending on the structure and magnitude of the noise due to non-target infections in the surveillance time series.
-Under Poisson noise, outbreak detection using a time series of test positive cases resulted in similar performance to a corresponding time series with a perfect diagnostic, regardless of the incidence of the non-target infections.
+Under static noise, outbreak detection using a time series of test positive cases resulted in similar performance to a corresponding time series with a perfect diagnostic, regardless of the incidence of the non-target infections.
 However, when the background noise due to non-target infections in the time series of suspected cases is consistent with a dynamical SEIR-type process (e.g., tends to produce cycles or periods of consistent outbreaks), the accuracy of outbreak detection declines with decreasing diagnostic test sensitivity and specificity and with increasing relative incidence of the non-target infections.
 Thus, the performance of outbreak warning systems using EWS depends on both the properties of the individual diagnostics used and structure and magnitude of non-target disease incidence, which may vary with the local context.
 
