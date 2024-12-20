@@ -1,5 +1,7 @@
 #import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": article
+#let darkred(body) = text(fill: rgb("#8B0000"))[#body]
+#let mystrike(body) = strike(stroke: 0.05em + red)[#body]
 
 #show: article.with(
   title: "Individual and Population Level Uncertainty Interact to Determine Performance of Outbreak Surveillance Systems",
@@ -40,7 +42,7 @@
     We generated a stochastic SEIR model with importation to simulate true measles and non-measles sources of febrile rash (noise) daily incidence. We generated time series of febrile rash (i.e., measles clinical case definition) by summing the daily incidence of measles and either independent Poisson noise or non-measles dynamical noise (consistent with rubella virus). For each time series we assumed a fraction of all cases were seen at a healthcare clinic, and a subset of those were diagnostically confirmed using a test with sensitivity and specificity consistent with either a rapid diagnostic test (RDT) or perfect diagnostic test. From the resulting time series of test positive cases, we define an outbreak alert as the exceedance of a threshold by the 7-day rolling average of observed (test positive) cases. For each threshold level, we calculated percentages of alerts that were aligned with an outbreak (analogous to the positive predictive value), the percentage of outbreaks detected (analogous to the sensitivity), and combined these two measures into an accuracy metric for outbreak detection. We selected the optimal threshold as the value that maximizes accuracy. We show how the optimal threshold and resulting accuracy depend on the diagnostic test, testing rate, and the type and magnitude of the non-measles noise.
 
     === Results
-    The optimal threshold for each test increased monotonically as the percentage of clinic visits who were tested increased. With Poisson-only noise, similar outbreak detection accuracies could be achieved with imperfect RDT-like tests as with perfect diagnostic tests (c. 93%), given moderately high testing rates. With larger delays (14 days) between the perfect test administration and result date, RDTs could outperform the perfect tests. Similar numbers of unavoidable cases and outbreak alert delays could be achieved between the test types. With dynamical noise, however, the accuracy of perfect test scenarios was far superior to those achieved with RDTs (c.~93% vs.~73%). For dynamical noise, RDT-based scenarios typically favored a more sensitive alert threshold than perfect test-based scenarios (at a given testing rate), observed with lower numbers of unavoidable cases and detection delays.
+    The optimal threshold for each test increased monotonically as the percentage of clinic visits who were tested increased. With Poisson-only noise, similar outbreak detection accuracies could be achieved with imperfect RDT-like tests as with perfect diagnostic tests (c. 93%), given moderately high testing rates. With larger delays (14 days) between the perfect test administration and result date, RDTs could outperform the perfect tests. Similar numbers of unavoidable cases and outbreak alert delays could be achieved between the test types. With dynamical noise, however, the accuracy of perfect test scenarios was far superior to those achieved with RDTs (c.~93% vs.~73%). For dynamical noise, RDT-based scenarios typically favored a more sensitive alert threshold than perfect test-based scenarios (at a given testing rate), #mystrike[observed with] #darkred[demonstrated by] lower numbers of unavoidable cases and detection delays.
 
     === Conclusions
     The performance of an outbreak detection system is highly sensitive to the structure and the magnitude of background noise. Under the assumption that the noise is relatively static over time, imperfect diagnostic tests can perform as well as perfect tests in a surveillance system. However, when the noise is temporally correlated, as from a separate SEIR process, imperfect tests cannot overcome their accuracy limitations through higher testing rates.
@@ -53,7 +55,7 @@
 == Background
 
 Diagnostics are medical devices and techniques used to detect the presence of a specific pathogen in a host @DiagnosticsGlobal.
-This may include #emph[in vivo] measures, such as x-ray imagery, or #emph[in vitro] tests to directly quantify the presence of the pathogen itself, e.g. polymerase chain reaction (PCR), or the host's response to the pathogen e.g., enzyme immunoassay/enzyme-linked immunosorbent assay (EIA/ELISA) @DiagnosticsGlobal @yangPCRbasedDiagnosticsInfectious2004 @alhajjEnzymeLinkedImmunosorbent2024.
+This may include #emph[in vivo] measures, such as x-ray imagery, or #emph[in vitro] tests to directly quantify the presence of the pathogen itself, e.g., polymerase chain reaction (PCR), or the host's response to the pathogen e.g., enzyme immunoassay/enzyme-linked immunosorbent assay (EIA/ELISA) @DiagnosticsGlobal @yangPCRbasedDiagnosticsInfectious2004 @alhajjEnzymeLinkedImmunosorbent2024.
 Any given diagnostic will vary in its ability to correctly identify the presence of the pathogen, which is described by its sensitivity and specificity.
 The sensitivity of a diagnostic is the ability to correctly identify a positive result, conditional on a positive individual being tested i.e., a true positive result @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024 @parikhUnderstandingUsingSensitivity2008.
 The specificity is the opposite: the ability to correctly determine a true negative result, conditional on a negative individual being tested @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024 @parikhUnderstandingUsingSensitivity2008.
@@ -75,7 +77,7 @@ Accumulating multiple individual test results to produce population-level counts
 This process becomes increasingly important when the prevalence of the surveillance program's target disease is low relative to the presence of other sources of clinically-compatible cases; the PPV of an individual diagnostic decreases, increasing the number of false positives, making it harder to identify true anomalies in disease incidence.
 As a result, it has been commonplace for surveillance systems to be developed around high-accuracy tests, such as PCR and ELISA tests, when financially and logistically feasible @gastanaduyMeasles2019 @commissionerCoronavirusCOVID19Update2020@grasslyComparisonMolecularTesting2020@ezhilanSARSCoVMERSCoVSARSCoV22021 @worldhealthorganizationCholera2023 @essentialprogrammeonimmunizationepiimmunizationClinicalSpecimensLaboratory2018.
 
-Outbreak detection systems, like diagnostic tests, must prioritize the sensitivity or specificity of an alerts @germanSensitivityPredictiveValue2000@worldhealthorganizationOperationalThresholds2014 @lewisTimelyDetectionMeningococcal2001.
+Outbreak detection systems, like diagnostic tests, must prioritize the sensitivity or specificity of an alert @germanSensitivityPredictiveValue2000@worldhealthorganizationOperationalThresholds2014 @lewisTimelyDetectionMeningococcal2001.
 For many disease systems, particularly in resource constrained environments where the burden of infectious diseases is typically highest @gbd2019childandadolescentcommunicablediseasecollaboratorsUnfinishedAgendaCommunicable2023 @roserBurdenDisease2023, cases are counted and if a pre-determined threshold is breached, be that weekly, monthly, or some combination of the two, an alert is triggered that may launch a further investigation and/or a response @worldhealthorganizationMeaslesOutbreakGuide2022 @worldhealthorganizationOperationalThresholds2014.
 In effect, this discretizes a distinctly continuous phenomenon (observed cases) into a binary measure (outbreak or no outbreak) for decision making purposes.
 For reactive management approaches, such as vaccination campaigns and non-pharmaceutical based interventions that are designed to reduce transmission or limit and suppress outbreaks, early action has the potential to avert the most cases @atkinsAnticipatingFutureLearning2020@taoLogisticalConstraintsLead @graisTimeEssenceExploring2008 @ferrariTimeStillEssence2014 @worldhealthorganizationConfirmingInvestigatingManaging2009 @minettiLessonsChallengesMeasles2013.
@@ -85,7 +87,7 @@ Much like the need to carefully evaluate the balance of an individual diagnostic
 The concept of using incidence-based alert triggers to detect the discrete event of an outbreak with characteristics analogous to individual tests has been well documented in the case of meningitis, measles, and malaria @worldhealthorganizationMeaslesOutbreakGuide2022 @lewisTimelyDetectionMeningococcal2001 @worldhealthorganizationConfirmingInvestigatingManaging2009 @trotterResponseThresholdsEpidemic2015 @cooperReactiveVaccinationControl2019 @zalwangoEvaluationMalariaOutbreak2024 @kanindaEffectivenessIncidenceThresholds2000.
 However, an overlooked, yet critical, aspect of an outbreak detection system is the interplay between the individual test and outbreak alert characteristics.
 With their success within malaria surveillance systems, and particularly since the COVID-19 pandemic, rapid diagnostic tests (RDTs) have garnered wider acceptance, and their potential for use in other disease systems has been gaining interest @warrenerEvaluationRapidDiagnostic2023.
-Despite concerns of their lower diagnostic accuracy slowing their adoption until recently @millerAddressingBarriersDevelopment2015, the reduced cold-chain requirements @brownRapidDiagnosticTests2020, reduced training and laboratory requirements and costs @essentialprogrammeonimmunizationepiimmunizationClinicalSpecimensLaboratory2018 @worldhealthorganizationMeaslesOutbreakGuide2022 @brownRapidDiagnosticTests2020, and faster speed of result provided by RDTs has been show to outweigh the cost of false positive/negative results in some settings @warrenerEvaluationRapidDiagnostic2023 @mcmorrowMalariaRapidDiagnostic2011 @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024.
+Despite concerns about their lower diagnostic accuracy slowing their adoption until recently @millerAddressingBarriersDevelopment2015, the reduced cold-chain requirements @brownRapidDiagnosticTests2020, reduced training and laboratory requirements and costs @essentialprogrammeonimmunizationepiimmunizationClinicalSpecimensLaboratory2018 @worldhealthorganizationMeaslesOutbreakGuide2022 @brownRapidDiagnosticTests2020, and faster speed of result provided by RDTs has been show to outweigh the cost of false positive/negative results in some settings @warrenerEvaluationRapidDiagnostic2023 @mcmorrowMalariaRapidDiagnostic2011 @larremoreTestSensitivitySecondary2021 @middletonModelingTransmissionMitigation2024.
 
 In this chapter we examine how the use of imperfect diagnostic tests affects the performance of outbreak detection in the context of measles where RDTs are being developed with promising results @20240613_tpp_measles_rubell_FV_EN @brownRapidDiagnosticTests2020 @warrenerEvaluationRapidDiagnostic2023 @shonhaiInvestigationMeaslesOutbreak2015 (though not exclusively @seninMeaslesIgMRapid2024).
 We evaluate the scenarios under which equivalence in outbreak detection can be achieved, where altering testing rates can offset the reduction in diagnostic discrimination of imperfect tests relative to perfect tests, and meaningful improvements can be attained with respect to specific metrics e.g., speed of response.
@@ -160,7 +162,7 @@ Each day, 60% of the measles and non-measles febrile rash cases visit the clinic
 The percentage of clinic visits (P) that are tested is varied between 10% and 60%, in 10% increments.
 Each "testing scenario" combines a testing rate (P) with one of the following tests:
 
-- An imperfect test with 85% sensitivity and specificity, and 0-day lag in result return. That is, 85% of true measles cases will be correctly labelled as positive, and 15% of non-measles febrile rash individuals that are tested will be incorrectly labelled as positive for measles. This acts as a lower bound of acceptability for a hypothetical measles RDT @20240613_tpp_measles_rubell_FV_EN
+- An imperfect test with 85% sensitivity and specificity, and 0-day lag in result return. That is, 85% of true measles cases will be correctly labeled as positive, and 15% of non-measles febrile rash individuals that are tested will be incorrectly labeled as positive for measles. This acts as a lower bound of acceptability for a hypothetical measles RDT @20240613_tpp_measles_rubell_FV_EN
 - An imperfect test with 90% sensitivity and specificity, and 0-day lag in result return @brownRapidDiagnosticTests2020
 - A perfect test with 100% sensitivity and specificity, and a 0-day test result delay. This is more accurate than is observed for current ELISA tests @hiebertEvaluationDiagnosticAccuracy2021, but it used to evaluate the theoretical best-case scenario
 - A perfect test with 100% sensitivity and specificity, and a 14-day test result delay
@@ -242,7 +244,7 @@ This always leads to an increase in the median delay from outbreak start to aler
 <fig-delay>
 
 It is notable that surveillance metrics do not change monotonically with an increase in testing rate, and this holds regardless of the type of test.
-This effect is exaggerated for some metrics (detection delays, proportion of time in alert, and number of unavoidable cases) than others (accuracy).
+This effect is more exaggerated for some metrics (detection delays, proportion of time in alert, and number of unavoidable cases) than for others (accuracy).
 In general, the increase in accuracy with higher testing rates is accompanied with longer testing delays.
 This reflects the change from highly sensitive systems with low thresholds to more specific systems with higher thresholds at higher testing rates.
 For Poisson noise, similar detection delays are observed for all test and noise magnitudes, with most of the variation attributable to the change in the testing rate (means of -3.7 to 36.1 days).
@@ -268,7 +270,7 @@ Given the exponential trajectory of infections in the initial phase of an outbre
 == Discussion
 
 The performance of an outbreak detection system is highly sensitive to the structure and level of background noise in the simulation.
-Despite the mean daily noise incidence set to equivalent values between the dynamical and Poisson-only simulations, drastically different results are observed.
+Despite the mean daily noise incidence being set to equivalent values for the dynamical and Poisson-only simulations, drastically different results are observed.
 
 Under the assumption that non-measles febrile rash is relatively static in time (Poisson noise scenarios), imperfect (RDT-like) diagnostics can perform as well, if not better than perfect (ELISA-like) tests at moderate to high testing rates, and at a fraction of the cost @brownRapidDiagnosticTests2020.
 However, if it is expected that the noise is dynamic, imperfect tests cannot overcome their accuracy limitations through higher testing rates, saturating at c. 74% accuracy, relative to 93% achieved with perfect tests.
@@ -306,7 +308,7 @@ Additionally, it has been well documented that the performance of an individual 
 Finally, the optimal threshold for a testing scenario is affected by the use of integer-values; smaller steps could be chosen to potentially minimize discontinuities.
 Similarly, the optimal threshold depends heavily on the costs ascribed to incorrect actions, be that failing to detect an outbreak or incorrectly mounting a response for an outbreak that doesn’t exist.
 In the simulations we have weighted them equally, but it is likely that they should not be deemed equivalent; missing an outbreak may result in many thousands of cases, whereas an unnecessary alert would generally launch an initial low-cost investigation for full determination of the outbreak status.
-This is particularly important in countries with vast heterogeneity in transmission: different weightings should be applied to higher vs. lower priority/risk regions to account for discrepancies in consequences of incorrect decisions.
+This is particularly important in countries with vast heterogeneity in transmission: different weightings should be applied to higher vs. lower priority/risk regions to account for discrepancies in the consequences of incorrect decisions.
 
 Given these limitations, the explicit values (i.e., optimal thresholds, accuracies etc.) should be interpreted with caution, and the exact results observed in the real-world will likely be highly dependent on unseen factors, such as the proportion of measles and non-measles sources of febrile rash that seek healthcare.
 However, the general patterns should hold, and more importantly, the analysis framework provides a consistent and holistic approach to evaluating the trade-off between individual level tests and the alert system enacted to detect outbreaks.
@@ -314,7 +316,7 @@ However, the general patterns should hold, and more importantly, the analysis fr
 #pagebreak()
 
 #reset_linespacing[
-== Acknowledgements
+== Acknowledgments
 
 === Funding
 

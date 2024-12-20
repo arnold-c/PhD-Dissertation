@@ -110,7 +110,7 @@ Participants were eligible for inclusion in the returning student cohort if they
 In both cohorts, individuals were invited to participate in the survey-only portion of the study if they were: lactating, pregnant, or intended to become pregnant in the next 12 months; unable to wear a mask for the clinic visit; demonstrated acute COVID-19 symptoms within the previous 14 days; or reported a health condition that made them uncomfortable with participating in the clinic visit.
 Informed consent was obtained for all participants.
 
-Upon enrollment, returning students were supplied with a REDCap survey to examine socio-behavioral phenomena, such as attendance at gatherings and adherence to non-pharmaceutical interventions, in addition to information pertaining to their travel history and contact with individuals who were known or suspected of being positive for SARS-CoV-2.
+Upon enrollment, returning students were supplied with a REDCap survey to examine sociobehavioral phenomena, such as attendance at gatherings and adherence to non-pharmaceutical interventions, in addition to information pertaining to their travel history and contact with individuals who were known or suspected of being positive for SARS-CoV-2.
 Community residents received similar surveys with questions relating to potential SARS-CoV-2 household exposures.
 All eligible participants were scheduled for a clinical visit at each time interval where blood samples were collected.
 
@@ -132,7 +132,7 @@ We assessed demographic characteristics of the tested participants relative to a
 
 Missing values were deemed "Missing At Random" and imputed, as described in the supplement (@d4a_appendix).
 We estimated the adjusted odds ratios (aOR) of IgG positivity in the student subgroup using multivariable logistic regression implemented with the mice and finalfit packages @harrisonFinalfitQuicklyCreate2021 @vanbuurenMiceMultivariateImputation2011, two-sided Chi-squared tests for raw odds ratios (OR), and Welch Two Sample t-test for continuous distributions, and present 95% confidence intervals.
-We considered the following variables _a priori_ to be potential risk factors as they increase contact with individuals outside of a participants' household @huangEstimationSecondaryAttack2020 @chengContactTracingAssessment2020 @leclercWhatSettingsHave2020 @brooks-pollockPopulationAttributableFraction2020: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); attendance at a small gathering (20-50 people) in the past 3 months; attendance at a medium gathering (51-1000 people) in the past 3 months; lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; travelled in the 3 months prior to returning to campus; and travelled since returning to campus for the Fall term.
+We considered the following variables _a priori_ to be potential risk factors as they increase contact with individuals outside of a participants' household @huangEstimationSecondaryAttack2020 @chengContactTracingAssessment2020 @leclercWhatSettingsHave2020 @brooks-pollockPopulationAttributableFraction2020: close proximity (6 feet or less) to an individual who tested positive for SARS-CoV-2; close proximity to an individual showing key COVID-19 symptoms (fever, cough, shortness of breath); attendance at a small gathering (20-50 people) in the past 3 months; attendance at a medium gathering (51-1000 people) in the past 3 months; lives in University housing; ate in a restaurant in the past 7 days; ate in a dining hall in the past 7 days; only ate in their room/apartment in the past 7 days; traveled in the 3 months prior to returning to campus; and traveled since returning to campus for the Fall term.
 
 We estimated the aOR of IgG positivity at either time point in the returning community subgroup, with the following risk factors determined _a priori_ to the study's inception: being a PSU employee; and the amount of contact with PSU students when "Stay at home" orders are not in place (self-reported on a scale of 1-10).
 BIC and AIC were used to evaluate the contribution of the variables to the model.
@@ -297,9 +297,9 @@ Neither AIC or BIC were improved by the addition of student contact as a variabl
           [Yes], [198  \ (41.7%)], [146  \ (70.5%)], [3.35  \ (2.37-4.78, p < 0.001)], [3.10  \ (2.07-4.64, p < 0.001)],
       table.cell(rowspan: 2)[Close proximity to individual showing COVID-19 symptoms], [No], [346  \ (73.0%)], [128  \ (61.8%)],[-], [-],
           [Yes], [128  \ (27.0%)], [79  \ (38.2%)], [1.67  \ (1.18-2.36, p = 0.004)], [0.87  \ (0.58-1.30, p = 0.494)],
-      table.cell(rowspan: 2)[Travelled in the 3 months prior to campus arrival], [No], [209  \ (45.4%)], [82  \ (40.8%)],[-], [-],
+      table.cell(rowspan: 2)[Traveled in the 3 months prior to campus arrival], [No], [209  \ (45.4%)], [82  \ (40.8%)],[-], [-],
           [Yes], [251  \ (54.6%)], [119  \ (59.2%)], [1.21  \ (0.86-1.69, p = 0.269)], [1.05  \ (0.73-1.53, p = 0.785)],
-      table.cell(rowspan: 2)[Travelled since campus arrival], [No], [183  \ (38.5%)], [82  \ (39.6%)],[-], [-],
+      table.cell(rowspan: 2)[Traveled since campus arrival], [No], [183  \ (38.5%)], [82  \ (39.6%)],[-], [-],
           [Yes], [292  \ (61.5%)], [125  \ (60.4%)], [0.96  \ (0.68-1.34, p = 0.789)], [0.85  \ (0.59-1.23, p = 0.394)],
       table.cell(rowspan: 2)[Attended a gathering of 20-50 people since arrival for the Fall Semester], [No], [280  \ (59.1%)], [82  \ (39.6%)],[-], [-],
           [Yes], [194  \ (40.9%)], [125  \ (60.4%)], [2.20  \ (1.58-3.08, p < 0.001)], [1.52  \ (1.03-2.24, p = 0.034)],
@@ -333,7 +333,7 @@ Within the community cohort, 19 individuals seroreverted.
 Given the high specificity of the ELISA, the probability of observing 19 or greater false positives is < 0.0001, so it is possible that this reflects waning immunity.
 We note that these 19 individuals had lower OD values in wave 1 than those that remained positive from wave 1 to wave 2, which is consistent with waning from an initially low antibody titer.
 
-While in-person student instruction has been associated with an increase in per-capita COVID-19 incidence @leidnerOpeningLargeInstitutions2021, these results suggest that outbreaks in the returning student and the community resident cohorts we studied were asynchronous, implying limited between-cohort transmission.
+While in-person student instruction has been associated with an increase in per capita COVID-19 incidence @leidnerOpeningLargeInstitutions2021, these results suggest that outbreaks in the returning student and the community resident cohorts we studied were asynchronous, implying limited between-cohort transmission.
 A recent analysis of age-specific movement and transmission patterns in the US suggested that individuals between the ages of 20-34 disproportionately contributed to spread of SARS-CoV-2 @monodAgeGroupsThat2021.
 Despite close geographic proximity to a college-aged population, transmission in our community resident sample appears distinctly lagged; suggestive of the potential for health behaviors to prevent infection.
 
@@ -342,7 +342,7 @@ No other risk factors were correlated with an increase in IgG test positivity, a
 It is not possible to discern how much the likelihood of contact with a SARS-CoV-2 positive individual is due to the high campus prevalence versus individual behaviors.
 Considered independently, eating in dining halls within the past 7 days was weakly associated with testing positive for SARS-CoV-2 antibodies, and participation in medium-sized events (51-1000 individuals) and close proximity to a symptomatic individual were significantly associated with testing positive for SARS-CoV-2 antibodies, which is consistent with patterns observed elsewhere @leclercWhatSettingsHave2020 @brooks-pollockPopulationAttributableFraction2020.
 Within the community group, being a PSU employee was significantly associated with lower odds of IgG test positivity.
-There were no significant differences in the age distributions of by employment status. Bharti _et al._ @bhartiLargeUniversityHigh2022 identified lower per-capita incidence in Centre County residents relative to the 5 surrounding counties, as well as a greater movement restriction and less time spent outside the home.
+There were no significant differences in the age distributions of by employment status. Bharti _et al._ @bhartiLargeUniversityHigh2022 identified lower per capita incidence in Centre County residents relative to the 5 surrounding counties, as well as a greater movement restriction and less time spent outside the home.
 Whilst this paper only examined Centre County residents, it is plausible that PSU employees were more able to work remotely and similarly reduced their movement and non-household contacts, relative to non-PSU employees.
 The low number of positive community cases meant that it was not possible to identify other associations with IgG positivity.
 
@@ -378,7 +378,7 @@ Other studies have observed this influence using a cross-sectional or matched ca
 #pagebreak()
 
 #reset_linespacing[
-== Acknowledgements
+== Acknowledgments
 === Funding
 
 This work was supported by funding from the Office of the Provost and the Clinical and Translational Science Institute, Huck Life Sciences Institute, and Social Science Research Institutes at the Pennsylvania State University.
@@ -437,5 +437,5 @@ The datasets generated during and/or analyzed during the current study are not p
 == Notes
 This work has been published in Nature Scientific Reports and is available online at the following link: https://www.nature.com/articles/s41598-022-12499-5
 
-Arnold, C.R.K., Srinivasan, S., Rodriguez, S. et al. A longitudinal study of the impact of university student return to campus on the SARS-CoV-2 seroprevalence among the community members. Sci Rep 12, 8586 (2022). https://doi.org/10.1038/s41598-022-12499-5
+Arnold, C.R.K., Srinivasan, S., Rodriguez, S. #emph[et al.] A longitudinal study of the impact of university student return to campus on the SARS-CoV-2 seroprevalence among the community members. Sci Rep 12, 8586 (2022). https://doi.org/10.1038/s41598-022-12499-5
 ]

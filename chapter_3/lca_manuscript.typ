@@ -1,6 +1,7 @@
 #import "../psu_template.typ": reset_linespacing
 #import "../article_template.typ": article
 #let darkred(body) = text(fill: rgb("#8B0000"))[#body]
+#let mystrike(body) = strike(stroke: 0.05em + red)[#body]
 
 #show: article.with(
   title: "The Maximal Expected Benefit of SARS-CoV-2 Interventions Among University Students: A Simulation Study Using Latent Class Analysis",
@@ -202,7 +203,7 @@ In the three-class model, approximately 15.75% of individuals were members of th
 We have labeled the three classes as "Low-", "High-" and "Medium-Adherence" groups, respectively, for ease of interpretation.
 Examining the class-conditional item response probabilities, the Medium Adherence class had a probability of 0.88 of always wearing a mask in public, but a probability of only 0.19 of social distancing when outside of their homes, for example.
 Calculating the class-specific seroprevalence, the Low Adherence group had the highest infection rates (37.7%, 95% Binomial CI: 28.5-47.7%), the medium adherence the next highest (32.2%, 95% Binomial CI: 27.0-37.7%), and the most adherent group experienced the lowest infection rates (25.4%, 95% Binomial CI: 20.2-31.1%).
-Incorporating latent class membership into the imputed GLM model described in our previous paper (30) retained the relationship between adherence and infection.
+Incorporating latent class membership into the imputed GLM model described in #darkred[@d4a and the accompanying] #mystrike[our previous] paper @arnoldLongitudinalStudyImpact2022 retained the relationship between adherence and infection.
 Relative to the least adherent group, the Medium Adherence group experienced a non-significant reduction in infection risk (aOR, 95% CI: 0.73, 0.45-1.18), and the most adherent group a significant reduction (aOR, 95% CI: 0.59, 0.36-0.98) (@tbl-lca-mice-fit).
 
 #let lca_irp_table = csv("./manuscript_files/tables/lca-item-response-probs.csv")
@@ -291,6 +292,7 @@ Examining the three classes, 38% of individuals already intended to always follo
 As a result, only 62% of the study population could have their risk reduced with respect to the PHMs surveyed.
 Further, the infection rates observed in the High Adherence group indicates that even a perfectly effective intervention aimed at increasing adherence to non-pharmaceutical PHMs (i.e., after the intervention, all individuals always followed every measure) would not eliminate transmission in a population, an observation that aligns with prior COVID-19 research @flaxmanEstimatingEffectsNonpharmaceutical2020a @banholzerEstimatingEffectsNonpharmaceutical2021 @braunerInferringEffectivenessGovernment2021 @geUntanglingChangingImpact2022.
 The extent to which the infection in the High Adherence group is a result of mixing with lower adherence classes cannot be explicitly described, but the sensitivity analysis allows for an exploration of the effect and ABC fits suggest near-homogeneous mixing occurred.
+#darkred[One possible explanation for homogeneous mixing improving model fit is that the attendance of in-person lectures resulted in the interaction of students of varying degrees of risk behavior.]
 Varying the structure of the transmission matrix yielded very similar quantitative and qualitative results (@fig-abc-distance-whiskers-rows, @fig-intervention-rows, @fig-abc-distance-whiskers-constant, @fig-intervention-constant).
 
 Examining the impact of increasing adherence to PHMs (modeled as increasing the proportion of the population in the High Adherence class), a fully effective intervention saw between a 76-93% reduction in the final size of the simulation outbreak.

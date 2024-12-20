@@ -54,12 +54,12 @@ In @lca, #darkred[after identifying the emergent risk groups], I map the associa
 In the second half of my dissertation (@outbreak-detection & @ews), I examine the necessity and implications of categorizations for action in regions with persistent and emerging infection dynamics.
 Infectious disease surveillance has 3 primary objectives: to observe and quantify the burden of disease, monitor trends in prevalence, and detect and inform response to outbreaks @murrayInfectiousDiseaseSurveillance2017 @DiseaseSurveillance.
 In pursuit of these goals, numerous continuous values must be discretized.
-Firstly, cases must be counted, which requires a set of criteria to convert the underlying infection dynamics within an individual into a binary status: infected or not.
-This criteria often comes in the form of a diagnostic test, like an enzyme linked immunosorbent assay (ELISA).
+First, cases must be counted, which requires a set of criteria to convert the underlying infection dynamics within an individual into a binary status: infected or not.
+This criterion often comes in the form of a diagnostic test, like an enzyme linked immunosorbent assay (ELISA).
 ELISAs measure the presence and quantity of antibodies in a biological sample that are produced by a person's immune system in response to pathogen exposure, and attempts to discriminate between two hypothetical infection/exposure states @alhajjEnzymeLinkedImmunosorbent2024.
 In practice, no threshold will be able to perfectly discriminate between these groups of individuals, leading to classification errors @hiebertEvaluationDiagnosticAccuracy2021.
-The sensitivity of a test refers to its ability to correctly detect the presence of infection when an infectious individual is tested, also called the true positive rate @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024 @parikhUnderstandingUsingSensitivity2008.
-The specificity is the opposite: the ability to correct detect the _lack_ of infection in an uninfected individual, also called the true negative rate @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024 @parikhUnderstandingUsingSensitivity2008.
+The sensitivity of a test refers to its ability to correctly detect the presence of infection when an infected individual is tested, also called the true positive rate @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024 @parikhUnderstandingUsingSensitivity2008.
+The specificity is the opposite: the ability to correctly detect the _lack_ of infection in an uninfected individual, also called the true negative rate @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024 @parikhUnderstandingUsingSensitivity2008.
 An important third characteristic of diagnostic tests that arises from the discretization of a continuous measure is the positive predictive value (PPV) of a test.
 The PPV is the probability that a positive test result actually reflects a positive individual @westreichDiagnosticTestingScreening2019 @shrefflerDiagnosticTestingAccuracy2024.
 Unlike the sensitivity, it is not preconditioned on the assumption that the individual tested is truly positive.
@@ -80,4 +80,4 @@ I show that when imperfect diagnostic tests are utilized to create the underlyin
 Addressing the context explicitly when designing a reactive or proactive outbreak surveillance system allows public health officials and policy-makers to account for the compounding layers of uncertainty, finding zones of alert accuracy equivalence where particular objectives can be given greater prioritization e.g., speed of response vs. the number of false alerts.
 
 When evaluated in its entirety, my dissertation provides a clear and principled approach to evaluating the effects of categorizing continuous infectious disease data.
-I demonstrate that through acknowledging the imperfect nature of discretization, it is possible to identify meaningfully different clusters of individuals and outcomes that can inform our understanding of the populations most at risk of infection, and how outbreak surveillance systems can be designed to best address context-specific priorities.
+I demonstrate that by acknowledging the imperfect nature of discretization, it is possible to identify meaningfully different clusters of individuals and outcomes that can inform our understanding of the populations most at risk of infection, and how outbreak surveillance systems can be designed to best address context-specific priorities.
