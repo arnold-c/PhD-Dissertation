@@ -41,7 +41,7 @@ In the subset of individuals in the returning student subgroup that had ELISA re
 As a result of high missingness, service professional was removed as a predictor in the model.
 Exploration of the missing values in the remaining predictor variables demonstrate no bias by outcome, confirmed using Chi-squared tests of missingness in predictors by outcome level.
 Little's test of Missing Completely At Random (MCAR) indicated that the data was not MCAR (p = 0.0728) @littleTestMissingCompletely1988, and three imputation methods (MICE, k-Nearest Neighbor with 5 neighbors, and Bagged Tree) @vanbuurenMiceMultivariateImputation2011 @kuhnTidymodelsCollectionPackages2020 @kuhnFeatureEngineeringSelection2019 were used to compare model fits (Supplemental @fig-imputation-log-ors).
-Most missing values occurred across all variables, and there was no observable pattern among the majority of variables: there was some evidence that missingness in "travel in the 3 months prior to return" was associated with "travelling since campus return" response, and that missingness in "eaten in a restaurant in the past 7 days" was associated with "IgG classification".
+Most missing values occurred across all variables, and there was no observable pattern among the majority of variables: there was some evidence that missingness in "travel in the 3 months prior to return" was associated with "traveling since campus return" response, and that missingness in "eaten in a restaurant in the past 7 days" was associated with "IgG classification".
 As such, the predictor variables were deemed to be 'Missing At Random', and MICE was used to impute missing values.
 
 === Alternative Estimate of True Prevalence
@@ -78,7 +78,7 @@ There were no differences in Wave 1 or Wave 2 seroprevalence, or Wave 2 cumulati
     "./supplemental_files/true_prev_first_two_comm_pooled_plot.png",
     width: 100%
   ),
-  caption: [Sensitivity analysis of true prevalence amongst returning student and community subgroups, using pooled estimate of IgG test sensitivity against self-reported prior positive test],
+  caption: [Sensitivity analysis of true prevalence among returning student and community subgroups, using pooled estimate of IgG test sensitivity against self-reported prior positive test],
 )
 <fig-true-prev-pooled>
 
