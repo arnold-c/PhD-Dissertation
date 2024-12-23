@@ -326,7 +326,7 @@
             continue
           }
           let string = [
-            #(" " * 4 * h.level)
+            #(" " * 2 * (h.level - 1))
             #h.body
             #box(width: 1fr, repeat[.])
             #counter(page).at(h.location()).first()\
