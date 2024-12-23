@@ -1,19 +1,14 @@
-#let darkred(body) = text(fill: rgb("#8B0000"))[#body]
-#let mystrike(body) = strike(stroke: 0.05em + red)[#body]
-
 Infectious diseases have impacted civilizations throughout history, shaping human interactions and influencing the growth of populations.
 Despite advances in the control of disease, they still pose a substantial threat to human life.
-To minimize disease burden it is essential to gain a greater understanding of the underlying dynamics of disease within populations, and efficient control efforts require explicit decisions and the targeted application of resources. #mystrike[ , both of which are aided by clearly defined categories]
-#darkred[
-  The knowledge that can produce these set of actions are predicated on the careful linking of infectious disease exposures and outcomes, and becomes increasingly complicated when either, or both, are continuous in nature.
-  Through discretization, it is possible to create simpler maps that retain the core properties of the data and relationships.
-]
-I consider how the classification of #mystrike[3 axes] #darkred[the exposures and outcomes] of infectious disease data (#mystrike[risk of exposure] #darkred[behavior into risk classes], #darkred[determination of ] infection status #darkred[into infected or not], and #mystrike[accumulation of cases in populations] #darkred[classifying a time series of individual case counts into outbreak and non-outbreak periods]), provides opportunities and challenges to these aims.
+To minimize disease burden it is essential to gain a greater understanding of the underlying dynamics of disease within populations, and efficient control efforts require explicit decisions and the targeted application of resources.
+The knowledge that can produce these set of actions are predicated on the careful linking of infectious disease exposures and outcomes, and becomes increasingly complicated when either, or both, are continuous in nature.
+Through discretization, it is possible to create simpler maps that retain the core properties of the data and relationships.
 I illustrate this in the context of two outbreak settings: COVID-19, and measles.
 Due to the novelty of COVID-19, disease spread rapidly but infection risk groups were not well characterized.
+In @d4a & @lca, I use empirical data to characterize behavioral risk classes for exposure to SARS-CoV-2 (the virus that causes COVID-19).
 For measles, however, drivers of disease transmission are well documented, but the episodic nature of cases combined with imperfect surveillance systems make outbreak detection and response imprecise.
-In @d4a & @lca, I use empirical data to characterize the emergent risk classes.
-For @outbreak-detection and @ews, I use mathematical models to simulate infections and quantify the outbreak detection and predictive ability of surveillance systems.
+In @outbreak-detection and @ews, I address how uncertainty in the classification of outcomes at the individual (classification of individuals as infected or not, using imperfect diagnostics) and population (classification of time series as outbreak and non-outbreak periods) level affect the performance of outbreak detection and anticipation in the context of measles.
+I use mathematical models to simulate infections and quantify the outbreak detection and predictive ability of surveillance systems.
 
 The COVID-19 pandemic threw the world into a state of uncertainty, shutting down university campuses, towns, and cities across the United States and wider world.
 With the return of students to the Pennsylvania State University in the Fall of 2020, two exposure groups emerged: students and the surrounding community members.
